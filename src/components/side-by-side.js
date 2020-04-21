@@ -23,13 +23,8 @@ export default ({ headerThree, headerTwo, paragraph, alt, src, children }) => (
       `}
       render={data => (
 
-            <Wrapper>
-                <FlexItem>
-                <Image
-                    fluid={src}
-                    alt={alt}
-                />
-                </FlexItem>
+            <Wrapper className="wrapper">
+                
                 <FlexItem>
                     <Copy>
                         <H3>{headerThree}</H3>
@@ -37,6 +32,12 @@ export default ({ headerThree, headerTwo, paragraph, alt, src, children }) => (
                         <P>{paragraph}</P>
                         {children}
                     </Copy>
+                </FlexItem>
+                <FlexItem>
+                <Image
+                    fluid={src}
+                    alt={alt}
+                />
                 </FlexItem>
                 <BackgroundImage
                     fluid={data.background.childImageSharp.fluid}
@@ -55,7 +56,6 @@ const Wrapper = styled.div`
     @media (min-width: 900px) {
         display: flex;
         align-items: center;
-        flex-direction: row-reverse;
     }
 `
 const Copy = styled.div`

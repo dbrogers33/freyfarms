@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => (
     </Quote>
 
     {/* ABOUT SECTION */}
-    <SideBySide
+    <SideBySide reverse
       headerThree="Our Story"
       headerTwo="Sharing our love of the farm with you"
       paragraph="It is our vision to bring our love of the farm to all families. Whether it is one of our farm grown pumpkins, watermelons, or one of our beverages juiced from our produce, we want you to enjoy the very best. We hope you can kick back, relax and share in our love for delicious fruits and vegetables, Sarah’s Homegrown™ agua frescas, and Tsamma® watermelon juice."

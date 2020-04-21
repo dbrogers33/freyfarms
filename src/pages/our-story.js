@@ -38,16 +38,21 @@ const IndexPage = ({ data }) => (
       />
     </Values>
 
-    <SideBySide
-      headerThree="Our Story"
-      headerTwo="Sharing our love of the farm with you"
-      paragraph="It is our vision to bring our love of the farm to all families. Whether it is one of our farm grown pumpkins, watermelons, or one of our beverages juiced from our produce, we want you to enjoy the very best. We hope you can kick back, relax and share in our love for delicious fruits and vegetables, Sarah’s Homegrown™ agua frescas, and Tsamma® watermelon juice."
-      src={data.map.childImageSharp.fluid}
-      alt="Sarah Frey sitting in a pumpkin field"
-    />
+    <Map>
+      <SideBySide
+        headerThree="Our Story"
+        headerTwo="Sharing our love of the farm with you"
+        paragraph="Today, we have farms and facilities across the U.S. and distribution partners who help us to get all of our produce and beverages straight from the farm, to you."
+        src={data.map.childImageSharp.fluid}
+        alt="Sarah Frey sitting in a pumpkin field"
+      />
+    </Map>
   </Layout>
 )
 
+const Map = styled.div`
+  margin-top: 6em;
+`
 const Values = styled.div`
   position: relative;
   height: 80vh;
