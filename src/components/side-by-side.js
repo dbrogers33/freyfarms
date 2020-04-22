@@ -8,7 +8,7 @@ import P from '../components/typography/p'
 import Img from "gatsby-image/withIEPolyfill"
 
 
-export default ({ headerThree, headerTwo, paragraph, alt, src, children }) => (
+export default ({ headerThree, headerTwo, paragraph, alt, src, children, reverse }) => (
     <StaticQuery
       query={graphql`
         query {
@@ -23,8 +23,13 @@ export default ({ headerThree, headerTwo, paragraph, alt, src, children }) => (
       `}
       render={data => (
 
-            <Wrapper className="wrapper">
-                
+            <Wrapper className="wrapper" reverse={reverse}>
+                <FlexItem>
+                    <Image
+                        fluid={src}
+                        alt={alt}
+                    />
+                    </FlexItem>
                 <FlexItem>
                     <Copy>
                         <H3>{headerThree}</H3>
@@ -32,12 +37,6 @@ export default ({ headerThree, headerTwo, paragraph, alt, src, children }) => (
                         <P>{paragraph}</P>
                         {children}
                     </Copy>
-                </FlexItem>
-                <FlexItem>
-                <Image
-                    fluid={src}
-                    alt={alt}
-                />
                 </FlexItem>
                 <BackgroundImage
                     fluid={data.background.childImageSharp.fluid}
@@ -56,6 +55,7 @@ const Wrapper = styled.div`
     @media (min-width: 900px) {
         display: flex;
         align-items: center;
+        flex-direction: ${props => props.reverse || "row"};
     }
 `
 const Copy = styled.div`

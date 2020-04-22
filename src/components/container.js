@@ -13,7 +13,7 @@ Container.defaultProps = {
 
 const Wrap = styled.div`
     margin: 0 auto;
-    width: 90%;
+    width: 95%;
     max-width: ${props => props.width};
 `
 

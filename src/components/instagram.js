@@ -45,6 +45,7 @@ const Instagram = () => {
                             <Image
                                 fluid={post.node.localFile.childImageSharp.fluid}
                                 objectPosition='50% 100%'
+                                alt="instagram image from @FreyFarms"
                             />
                         </Card>
                     </a>

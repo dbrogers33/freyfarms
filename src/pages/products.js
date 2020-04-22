@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => (
     
     <Products>
     <ProductWrapper>
-      <SideBySide reverse
+      <SideBySide reverse="row-reverse"
         headerThree="Sarah's Homegrown"
         headerTwo="Produce"
         paragraph="From the very beginning, Frey Farms was focused on growing the best fruit and vegetables to distribute across the country. After 25 years in business, The Frey family still bases its business on produce, serving the nation’s largest retailers."
@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => (
       />
     </ProductWrapper>
     
-    <ProductWrapper reverse>
+    <ProductWrapper>
       <SideBySide
         headerThree="Sarah's Homegrown"
         headerTwo="Beverages"
@@ -35,7 +35,7 @@ const IndexPage = ({ data }) => (
     </ProductWrapper>
     
     <ProductWrapper>
-      <SideBySide reverse
+      <SideBySide reverse="row-reverse"
         headerThree="Tsamma"
         headerTwo="Watermelon Juice"
         paragraph="Watermelon has been a source of natural, refreshing hydration for thousands of years. At Frey Farms we are committed to the growth and science of watermelon,
@@ -60,7 +60,7 @@ const ProductWrapper = styled.section`
     margin: 3em;
     box-shadow: 10px 4px 34px rgba(0, 0, 0, 0.15);
     & > .wrapper {
-    flex-direction: ${props => props.reverse ? "row-reverse" : "row"};
+    
     }
   }
 `
