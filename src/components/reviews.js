@@ -73,13 +73,14 @@ const NewButtonNext= styled(ButtonNext)`
 
 const Buttons = styled.div`
     position: absolute;
-    top: 50%;
-    width: 120%;
+    top: 45%;
+    width: 110%;
     z-index: 1;
-    transform: translateX(-10%);
+    left: 0;
+    transform: translate(-5%);
     @media (max-width: 899px) {
-        width: 150%;
-        transform: translateX(-20%);
+        width: 120%;
+        transform: translateX(-10%);
     }
 `
 
