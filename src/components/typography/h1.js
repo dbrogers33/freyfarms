@@ -23,7 +23,7 @@ const H1 = styled.h1`
     text-transform: uppercase;
     color: ${props => props.color};
     font-weight: 800;
-    font-size: 48px;
+    font-size: 38px;
     text-align: ${props => props.textAlign};
     margin: .1em 0;
     @media (min-width: 800px) {

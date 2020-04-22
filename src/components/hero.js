@@ -20,20 +20,28 @@ const HeroSection = ({ heroImage, headline }) => {
 
 const Hero = styled.section`
     position: relative;
-    height: 90vh;
+    height: 70vh;
+    @media (min-width: 800px) {
+        height: 90vh;
+    }
 `
 const Tagline = styled(Headliner)`
     color: white;
     position: absolute;
-    bottom: 1em;
+    bottom: .5em;
 `
 const Absolute = styled.div`
     position: absolute;
     z-index: 2;
     color: white;
-    bottom: 2em;
-    margin-left: 3em;
-    width: 60%;
+    bottom: 1em;
+    margin-left: 1em;
+    width: 90%;
+    @media (min-width: 800px) {
+        bottom: 2em;
+        margin-left: 3em;
+        width: 60%;
+    }
 `
 const Image = styled(Img)`
     position: absolute;
