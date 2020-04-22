@@ -24,7 +24,7 @@ export default () => (
       render={data => (
         <div>
             <NavBar>
-                <Logo fixed={data.logo.childImageSharp.fixed}/>
+                <Link to="/"><Logo fixed={data.logo.childImageSharp.fixed}/></Link>
                 <DesktopMenu>
                     <StyledLink to="/">Home</StyledLink>
                     <StyledLink to="/products">Products</StyledLink>
@@ -44,9 +44,7 @@ const NavBar = styled.div`
     z-index: 2;
     display: flex;
     align-items: center;
-    @media (max-width: 800px) {
-        display: none;
-    }
+
 `
 const Logo = styled(Img)`
     margin: 0 2em 0 2em;
