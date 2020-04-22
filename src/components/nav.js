@@ -44,10 +44,12 @@ const NavBar = styled.div`
     z-index: 2;
     display: flex;
     align-items: center;
-
 `
 const Logo = styled(Img)`
     margin: 0 2em 0 2em;
+    @media (max-width: 800px) {
+        margin: 0 1em; 
+    }
 `
 const DesktopMenu = styled.nav`
     @media (max-width: 800px) {

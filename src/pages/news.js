@@ -12,51 +12,25 @@ import P from "../components/typography/p"
 import Hero from "../components/hero"
 import Container from "../components/container"
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data }) => {
+  const news = data.allContentfulNews.edges
+  return (
   <Layout>
     <SEO title="Our Story" />
     <Hero headline="Fresh from the vine." heroImage={data.hero.childImageSharp.fluid} />
 
     <Container width="900px">
-      <Article>
-        <H3>New York Times</H3>
-        <StyledLink href="#" target="_blank" rel="noopener noreferrer"><H2>America’s Pumpkin Queen Has a Request</H2></StyledLink>
-        <P>She grows more jacks (field shorthand for the basic big orange Halloween model) than anyone else in the country. This fall, she shipped more than five million. If it hadn’t been so hot and humid, she would have shipped more.</P>
-      </Article>
-      <Article>
-        <H3>New York Times</H3>
-        <StyledLink href="#" target="_blank" rel="noopener noreferrer"><H2>America’s Pumpkin Queen Has a Request</H2></StyledLink>
-        <P>She grows more jacks (field shorthand for the basic big orange Halloween model) than anyone else in the country. This fall, she shipped more than five million. If it hadn’t been so hot and humid, she would have shipped more.</P>
-      </Article>
-      <Article>
-        <H3>New York Times</H3>
-        <StyledLink href="#" target="_blank" rel="noopener noreferrer"><H2>America’s Pumpkin Queen Has a Request</H2></StyledLink>
-        <P>She grows more jacks (field shorthand for the basic big orange Halloween model) than anyone else in the country. This fall, she shipped more than five million. If it hadn’t been so hot and humid, she would have shipped more.</P>
-      </Article>
-      <Article>
-        <H3>New York Times</H3>
-        <StyledLink href="#" target="_blank" rel="noopener noreferrer"><H2>America’s Pumpkin Queen Has a Request</H2></StyledLink>
-        <P>She grows more jacks (field shorthand for the basic big orange Halloween model) than anyone else in the country. This fall, she shipped more than five million. If it hadn’t been so hot and humid, she would have shipped more.</P>
-      </Article>
-      <Article>
-        <H3>New York Times</H3>
-        <StyledLink href="#" target="_blank" rel="noopener noreferrer"><H2>America’s Pumpkin Queen Has a Request</H2></StyledLink>
-        <P>She grows more jacks (field shorthand for the basic big orange Halloween model) than anyone else in the country. This fall, she shipped more than five million. If it hadn’t been so hot and humid, she would have shipped more.</P>
-      </Article>
-      <Article>
-        <H3>New York Times</H3>
-        <StyledLink href="#" target="_blank" rel="noopener noreferrer"><H2>America’s Pumpkin Queen Has a Request</H2></StyledLink>
-        <P>She grows more jacks (field shorthand for the basic big orange Halloween model) than anyone else in the country. This fall, she shipped more than five million. If it hadn’t been so hot and humid, she would have shipped more.</P>
-      </Article>
-      <Article>
-        <H3>New York Times</H3>
-        <StyledLink href="#" target="_blank" rel="noopener noreferrer"><H2>America’s Pumpkin Queen Has a Request</H2></StyledLink>
-        <P>She grows more jacks (field shorthand for the basic big orange Halloween model) than anyone else in the country. This fall, she shipped more than five million. If it hadn’t been so hot and humid, she would have shipped more.</P>
-      </Article>
+      {news.map((article, key) => (
+        <Article key={key}>
+          <H3>{article.node.publicationName}</H3>
+          <StyledLink href={article.node.linkToArticle} target="_blank" rel="noopener noreferrer"><H2>{article.node.articleTitle}</H2></StyledLink>
+          <P>{article.node.articleSnippet}</P>
+        </Article>
+      ))}
     </Container>
 
   </Layout>
-)
+)}
 
 const Article = styled.div`
   padding: 2em 0;
@@ -80,6 +54,16 @@ query {
     childImageSharp {
       fluid(maxWidth: 1500) {
         ...GatsbyImageSharpFluid
+      }
+    }
+  }
+  allContentfulNews(sort: {fields: createdAt}) {
+    edges {
+      node {
+        articleSnippet
+        articleTitle
+        linkToArticle
+        publicationName
       }
     }
   }
