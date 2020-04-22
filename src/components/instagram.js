@@ -43,8 +43,12 @@ const Instagram = () => {
 }
 const Grid = styled.div`
     display: grid;
-    height: 500px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    @media (min-width: 900px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 `
 
 export default Instagram
