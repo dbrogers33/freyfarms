@@ -110,28 +110,28 @@ query {
   }
   sarah: file(relativePath: { eq: "sarah-frey.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1000) {
+      fluid(maxWidth: 900) {
         ...GatsbyImageSharpFluid
       }
     }
   }
   produce: file(relativePath: { eq: "Produce.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1000) {
+      fluid(maxWidth: 450) {
         ...GatsbyImageSharpFluid
       }
     }
   }
   beverages: file(relativePath: { eq: "Beverage.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1000) {
+      fluid(maxWidth: 450) {
         ...GatsbyImageSharpFluid
       }
     }
   }
   tsamma: file(relativePath: { eq: "Tsamma.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1000) {
+      fluid(maxWidth: 450) {
         ...GatsbyImageSharpFluid
       }
     }
