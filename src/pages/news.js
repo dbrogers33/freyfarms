@@ -57,7 +57,7 @@ query {
       }
     }
   }
-  allContentfulNews(sort: {fields: createdAt}) {
+  allContentfulNews(sort: {fields: publishDate, order: DESC}) {
     edges {
       node {
         articleSnippet
