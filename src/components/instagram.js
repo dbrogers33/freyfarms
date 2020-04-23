@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from "styled-components";
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import H2 from '../components/typography/h2'
 import Container from '../components/container'
-import HoverCard from '../components/hover-card'
 import Img from "gatsby-image/withIEPolyfill"
 import P from "../components/typography/p"
 
@@ -35,7 +34,7 @@ const Instagram = () => {
             <Grid>
             {posts.map((post, key) => (
                 <div key={key}>
-                    <a as="a" href="https://instagram.com/freyfarms" target="_blank">
+                    <a as="a" href="https://instagram.com/freyfarms" target="_blank" rel="noopener noreferrer">
                         <Card>
                             <Absolute>
                                 <CenterText>

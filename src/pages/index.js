@@ -1,11 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import H1 from "../components/typography/h1"
 import H2 from "../components/typography/h2"
 import H3 from "../components/typography/h3"
 import P from "../components/typography/p"

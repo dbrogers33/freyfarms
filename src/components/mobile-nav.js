@@ -19,7 +19,7 @@ const MobileMenu = () => {
             Our Story
           </StyledLink>
     
-          <a href="https://thegrowingseason.green" target="_blank" className="menu-item">
+          <a href="https://thegrowingseason.green" target="_blank" rel="noopener noreferrer" className="menu-item">
             The Growing Season
           </a>
 

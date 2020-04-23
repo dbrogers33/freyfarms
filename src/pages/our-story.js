@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components";
-import { Link } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 
 import Layout from "../components/layout"
@@ -8,9 +7,11 @@ import SEO from "../components/seo"
 
 import Hero from "../components/hero"
 import About from "../components/side-by-side-small"
-import SideBySide from "../components/side-by-side"
 import ValueSlider from "../components/reviews"
-import Container from "../components/container"
+
+import H2 from "../components/typography/h2"
+import H3 from "../components/typography/h3"
+import P from "../components/typography/p"
 
 
 const IndexPage = ({ data }) => (
@@ -39,26 +40,59 @@ const IndexPage = ({ data }) => (
     </Values>
 
     <Map>
-      <SideBySide
-        headerThree="Our Story"
-        headerTwo="Sharing our love of the farm with you"
-        paragraph="Today, we have farms and facilities across the U.S. and distribution partners who help us to get all of our produce and beverages straight from the farm, to you."
-        src={data.map.childImageSharp.fluid}
-        alt="Sarah Frey sitting in a pumpkin field"
-      />
-    </Map>
+      <Wrapper className="wrapper">
+            <FlexItem>
+                <Copy>
+                    <H3>Our Story</H3>
+                    <H2>Sharing our love of the farm with you</H2>
+                    <P>Today, we have farms and facilities across the U.S. and distribution partners who help us to get all of our produce and beverages straight from the farm, to you.</P>
+                </Copy>
+            </FlexItem>
+            <FlexItem>
+                <Image
+                    fluid={data.map.childImageSharp.fluid}
+                    alt="Map of Frey Farms distribution chain"
+                />
+            </FlexItem>
+        </Wrapper>
+    </Map>  
   </Layout>
 )
 
+const Wrapper = styled.div`
+    position: relative;
+    @media (min-width: 900px) {
+        display: flex;
+        align-items: center;
+    }
+`
+const Copy = styled.div`
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    @media (max-width: 900px) {
+        margin: 2em auto;
+    }
+`
+
+const Image = styled(Img)`
+
+`
+const FlexItem = styled.div`
+    width: 100%;
+    @media (min-width: 900px) {
+        width: calc(100% / 2);
+    }
+`
 const Map = styled.div`
-  margin-top: 6em;
+  margin-top: 3em;
 `
 const Values = styled.div`
   position: relative;
   height: 80vh;
   @media (max-width: 899px) {
-    margin-top: 28em;
-    height: 60vh;
+    margin-top: 25em;
+    height: 40vh;
   }
 `
 const BackgroundImage = styled(Img)`
@@ -74,11 +108,11 @@ const ValueWrapper = styled.div`
   left: 50%;
   @media (max-width: 899px) {
     transform: translateX(-50%);
-    top: -25em;
+    top: -20em;
   }
   @media (min-width: 900px) {
-      width: 90%;
-      left: 40%;
+      width: 50%;
+      left: 43%;
       top: 10%;
       max-width: 600px;
     }

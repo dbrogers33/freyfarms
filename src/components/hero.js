@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from "styled-components";
-import * as PropTypes from "prop-types";
 import Headliner from "../components/typography/h1"
 import Img from "gatsby-image/withIEPolyfill"
 

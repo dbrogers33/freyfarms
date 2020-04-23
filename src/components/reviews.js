@@ -74,7 +74,7 @@ const NewButtonNext= styled(ButtonNext)`
 const Buttons = styled.div`
     position: absolute;
     top: 45%;
-    width: 110%;
+    width: 105%;
     z-index: 1;
     left: 0;
     transform: translate(-5%);
