@@ -15,7 +15,9 @@ const IndexPage = ({ data }) => {
   const news = data.allContentfulNews.edges
   return (
   <Layout>
-    <SEO title="Our Story" />
+    <SEO 
+      title="News | Read about Frey Farms in the press"
+    />
     <Hero headline="Fresh from the vine." heroImage={data.hero.childImageSharp.fluid} />
 
     <Container width="900px">
@@ -51,7 +53,7 @@ export const query = graphql`
 query {
   hero: file(relativePath: { eq: "hero-images/news-hero.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1500) {
+      fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }

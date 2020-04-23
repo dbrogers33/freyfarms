@@ -16,7 +16,9 @@ import P from "../components/typography/p"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Our Story" />
+    <SEO 
+      title="Our Story | Frey Farms"
+    />
     <Hero headline="family farm future." heroImage={data.hero.childImageSharp.fluid} />
     <About
       headerThree="Our Farms"

@@ -18,7 +18,9 @@ import Instagram from "../components/instagram"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO
+      title="Frey Farms | Home to watermelons, pumpkins, and Sara's Homegrown"
+    />
     <Hero headline="We believe all good things begin on the farm." heroImage={data.hero.childImageSharp.fluid} />
 
     {/* QUOTE SECTION */}
@@ -110,7 +112,7 @@ query {
   }
   sarah: file(relativePath: { eq: "sarah-frey.png" }) {
     childImageSharp {
-      fluid(maxWidth: 900) {
+      fluid(maxWidth: 900, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }

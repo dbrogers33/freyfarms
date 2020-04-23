@@ -9,7 +9,9 @@ import SideBySide from "../components/side-by-side"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Our Story" />
+    <SEO
+      title="Our Products | Frey Farms | Sarah's Homegrown and Tsamma Juice"
+    />
     <Hero headline="sharing our love of the farm with you." heroImage={data.hero.childImageSharp.fluid} />
     
     <Products>
