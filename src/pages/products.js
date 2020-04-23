@@ -41,7 +41,9 @@ const IndexPage = ({ data }) => (
         and to the best practices to create leading watermelon products. Each bottle of Tsamma® has the taste of a juicy watermelon and is packed with immune boosting nutrients. Citrulline is naturally found in watermelon and improves blood flow, allowing your body to absorb nutrients and hydrate faster."
         src={data.tsamma.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
-      />
+      >
+      <ExternalLink href="http://tsammajuice.com" target="_blank">Visit TsammaJuice.com</ExternalLink>
+      </SideBySide>
     </ProductWrapper>
     </Products>
 
@@ -52,6 +54,21 @@ const IndexPage = ({ data }) => (
 
 const Products = styled.div`
   
+`
+const ExternalLink = styled.a`
+    text-transform: uppercase;
+    font-family: 'Cervo Neue';
+    color: #0F5800;
+    font-weight: 800;
+    font-size: 18px;
+    margin: .1em 0;
+    text-decoration: none;
+    & :hover {
+      text-decoration: underline;
+    }
+    @media (min-width: 800px) {
+        font-size: 20px;
+    }
 `
 
 const ProductWrapper = styled.section`
