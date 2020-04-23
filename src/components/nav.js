@@ -29,7 +29,7 @@ export default () => (
                     <StyledLink to="/">Home</StyledLink>
                     <StyledLink to="/products">Products</StyledLink>
                     <StyledLink to="/our-story">Our Story</StyledLink>
-                    <StyledLink to="/contact-us">The Growing Season</StyledLink>
+                    <ExternalLink href="https://thegrowingseason.green" target="_blank">The Growing Season</ExternalLink>
                     <StyledLink to="/news">News</StyledLink>
                 </DesktopMenu>
             </NavBar>
@@ -57,6 +57,21 @@ const DesktopMenu = styled.nav`
     }
 `
 const StyledLink = styled(props => <Link {...props} />) `
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0 20px;
+    font-family: 'Brandon Grotesque Medium';
+    font-size: 16px;
+    transition: .2s ease;
+    letter-spacing: 0.1em;
+    :hover {
+        border-bottom: solid 2px #FFF;
+        cursor: pointer;
+    }
+`
+const ExternalLink = styled.a`
     color: white;
     text-decoration: none;
     text-transform: uppercase;

@@ -7,25 +7,25 @@ const MobileMenu = () => {
     return (
         <Sidebar>
         <Menu right>
-        <StyledLink className="menu-item" to="/">
-          Home
-        </StyledLink>
-  
-        <StyledLink className="menu-item" to="/products">
-          Products
-        </StyledLink>
-  
-        <StyledLink className="menu-item" to="/our-story">
-          Our Story
-        </StyledLink>
-  
-        <StyledLink className="menu-item" to="/">
-          The Growing Season
-        </StyledLink>
+          <StyledLink className="menu-item" to="/">
+            Home
+          </StyledLink>
+    
+          <StyledLink className="menu-item" to="/products">
+            Products
+          </StyledLink>
+    
+          <StyledLink className="menu-item" to="/our-story">
+            Our Story
+          </StyledLink>
+    
+          <a href="https://thegrowingseason.green" target="_blank" className="menu-item">
+            The Growing Season
+          </a>
 
-        <StyledLink className="menu-item" to="/news">
-          News
-        </StyledLink>
+          <StyledLink className="menu-item" to="/news">
+            News
+          </StyledLink>
 
       </Menu>
       </Sidebar>
@@ -35,6 +35,8 @@ const MobileMenu = () => {
 
 const StyledLink = styled(props => <Link {...props} />) `
 `;
+
+
 
 const Sidebar = styled.div`
 @media (min-width: 800px) {
