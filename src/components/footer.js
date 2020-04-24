@@ -2,6 +2,7 @@ import React from 'react'
 import styled from "styled-components";
 
 import {  Link } from 'gatsby'
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -35,7 +36,8 @@ const Footer = () => {
                 </Grid>
                 <BottomSection>
                     <Social>
-                        <p>©2020, Frey Farms, LLC. All Rights Reserved.</p>
+                        <a href="https://facebook.com/freyfarms" target="_blank"><FaFacebookF /></a>
+                        <a href="https://www.instagram.com/freyfarms/" target="_blank"><FaInstagram /></a>
                     </Social>
                     <CopyWrite>
                         ©2020, Frey Farms, LLC. All Rights Reserved.
@@ -78,11 +80,16 @@ const BottomSection = styled.div`
 `
 const Social = styled.div`
     float: left;
+    & > * {
+        color: white;
+        & > * {
+            padding: .75em .25em;
+        }
+    }
 `
 const CopyWrite = styled.p`
     font-family: 'Brandon Grotesque Regular';
     color: white; 
-    
     @media (min-width: 900px) {
         float: right;
     }
