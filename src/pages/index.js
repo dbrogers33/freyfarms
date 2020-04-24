@@ -108,35 +108,35 @@ query {
   hero: file(relativePath: { eq: "hero-images/home-hero.png" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
   sarah: file(relativePath: { eq: "sarah-frey.png" }) {
     childImageSharp {
       fluid(maxWidth: 800, quality: 100) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
   produce: file(relativePath: { eq: "Produce.png" }) {
     childImageSharp {
       fluid(maxWidth: 450) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
   beverages: file(relativePath: { eq: "Beverage.png" }) {
     childImageSharp {
       fluid(maxWidth: 450) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
   tsamma: file(relativePath: { eq: "Tsamma.png" }) {
     childImageSharp {
       fluid(maxWidth: 450) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
