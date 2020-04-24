@@ -128,28 +128,28 @@ export const query = graphql`
 query {
   hero: file(relativePath: { eq: "hero-images/story-hero.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1500) {
+      fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
   family: file(relativePath: { eq: "family.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1500) {
+      fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
   background: file(relativePath: { eq: "sarah-our-story.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1500) {
+      fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
   map: file(relativePath: { eq: "map.png" }) {
     childImageSharp {
-      fluid(maxWidth: 900) {
+      fluid(maxWidth: 900, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }

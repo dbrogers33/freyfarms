@@ -15,35 +15,35 @@ export default () => (
         query {
             background: file(relativePath: { eq: "book-cover.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 700) {
+                    fluid(maxWidth: 700, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                       }
                 }
             }
             amazon: file(relativePath: { eq: "book-preorder-logos/amazon.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 150) {
+                    fluid(maxWidth: 150, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                       }
                 }
             }
             walmart: file(relativePath: { eq: "book-preorder-logos/walmart.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 150) {
+                    fluid(maxWidth: 150, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                       }
                 }
             }
             barnes: file(relativePath: { eq: "book-preorder-logos/barnes-and-noble.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 150) {
+                    fluid(maxWidth: 150, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                       }
                 }
             }
             penguin: file(relativePath: { eq: "book-preorder-logos/penguin-random-house.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 150) {
+                    fluid(maxWidth: 150, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                       }
                 }
