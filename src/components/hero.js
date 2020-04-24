@@ -17,6 +17,7 @@ const HeroSection = ({ heroImage, headline }) => {
     );
 };
 
+// Checkout macbook sizing
 const Hero = styled.section`
     position: relative;
     
