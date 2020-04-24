@@ -21,8 +21,8 @@ const IndexPage = ({ data }) => (
     <SEO
       title="Frey Farms | Home to watermelons, pumpkins, and Sara's Homegrown"
       description="It is our vision to bring our love of the farm to all families. Whether it is one of our farm grown pumpkins, watermelons, or one of our beverages juiced from our produce, we want you to enjoy the very best."
-      image="/og-images/OG-Homepage.png"
-    />
+      image=""
+  />
     <Hero headline="We believe all good things begin on the farm." heroImage={data.hero.childImageSharp.fluid} />
 
     {/* QUOTE SECTION */}

@@ -39,8 +39,7 @@ function SEO({ description, lang, meta, title, image }) {
           content: metaDescription,
         },
         {
-          name: `og:image`,
-          content: {image},
+          property: 'og:image', content: '/og-images/OG-Hompage.png'
         },
         {
           property: `og:title`,
