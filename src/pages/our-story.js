@@ -18,6 +18,7 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO 
       title="Our Story | Frey Farms"
+      description="Founded in 1992 by Sarah Frey, Frey Farms is a family business headquartered near Orchardville, Illinois. Sarah started the business as a simple produce delivery route that quickly grew, and her brothers soon came home to help her."
     />
     <Hero headline="family farm future." heroImage={data.hero.childImageSharp.fluid} />
     <About

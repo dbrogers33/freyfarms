@@ -17,6 +17,7 @@ const IndexPage = ({ data }) => {
   <Layout>
     <SEO 
       title="News | Read about Frey Farms in the press"
+      description="We're making news in the beverage and produce world. Read where other people have mentioned us and our inatitve."
     />
     <Hero headline="Fresh from the vine." heroImage={data.hero.childImageSharp.fluid} />
 
