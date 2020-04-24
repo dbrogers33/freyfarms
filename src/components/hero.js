@@ -19,9 +19,9 @@ const HeroSection = ({ heroImage, headline }) => {
 
 const Hero = styled.section`
     position: relative;
-    height: 70vh;
-    @media (min-width: 800px) {
-        height: 90vh;
+    
+    @media (max-width: 800px) {
+        height: 70vh;
     }
 `
 const Tagline = styled(Headliner)`
