@@ -7,77 +7,111 @@ const Footer = () => {
     return (
         <FooterWrapper>
             <FooterSection>
-                <Column>
-                    <StyledLink to="/">Home</StyledLink>
-                    <StyledLink to="/products">Products</StyledLink>
-                </Column>
-                <Column>
-                    <StyledLink to="/our-heritage">Heritage</StyledLink>
-                    <StyledLink to="/contact-us">The Growing Season</StyledLink>
-                    <StyledLink to="/press">Press</StyledLink>
-                </Column>
-                
-                <Column>
-                    <FooterItem>Sales@freyfarms.com</FooterItem>
-                    <FooterItem>555-555-5555</FooterItem>
-                </Column>
-
-                <Column>
-                    <FooterItem>111 County Highway 15</FooterItem>
-                    <FooterItem>Suite a</FooterItem>
-                    <FooterItem>Keenes, Il 62851</FooterItem>
-                </Column>
+                <Grid>
+                    <div>
+                        <Heading>Products</Heading>
+                        <StyledLink to="/products">Produce</StyledLink>
+                        <StyledLink to="/products">Beverages</StyledLink>
+                        <StyledLink to="/products">Tsamma Watermelon Juice</StyledLink>
+                    </div>
+                    <div>
+                        <Heading>Company</Heading>
+                        <StyledLink to="/our-story">Our Story</StyledLink>
+                        <StyledLink to="/news">News</StyledLink>
+                        <StyledLink to="/">The Growing Season</StyledLink>
+                    </div>
+                    <div> 
+                        
+                    </div>
+                    <div>
+                        <Paragraph>info@freyfarms.com</Paragraph>
+                        <Paragraph>618-835-2536</Paragraph>
+                    </div>
+                    <div>
+                        <Paragraph>111 County Hwy 15</Paragraph>
+                        <Paragraph>Suite A</Paragraph>
+                        <Paragraph>Keenes, IL 62851</Paragraph>
+                    </div>
+                </Grid>
+                <BottomSection>
+                    <Social>
+                        <p>©2020, Frey Farms, LLC. All Rights Reserved.</p>
+                    </Social>
+                    <CopyWrite>
+                        ©2020, Frey Farms, LLC. All Rights Reserved.
+                    </CopyWrite>
+                </BottomSection>
             </FooterSection>
-            <CopyWrite>Frey Farms, LLC</CopyWrite>
         </FooterWrapper>
     );
 };
 
 const FooterWrapper = styled.div`
     background: #095129;
-    padding-bottom: 1em;
+    padding-bottom: 1.5em;
+    padding-top: 2em;
 `
 const FooterSection = styled.footer`
-    padding: 2em;
+    width: 95%;
+    margin: 0 auto;
+`
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
     @media (min-width: 900px) {
-        display: flex;
+        grid-template-columns: 200px 200px 1fr 200px 200px;
     }
 `
-const Column = styled.div`
-    margin: 1em 0;
-     @media (min-width: 900px) {
-        width: calc(100% / 4);
-     }
+const BottomSection = styled.div`
+    border-top: white solid 2px;
+    margin-top: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    @media (min-width: 900px) {
+        display: inline-block;
+        width: 100%;
+    }
+    
+`
+const Social = styled.div`
+    float: left;
+`
+const CopyWrite = styled.p`
+    font-family: 'Brandon Grotesque Regular';
+    color: white; 
+    
+    @media (min-width: 900px) {
+        float: right;
+    }
+`
+const Paragraph = styled.p`
+    color: white;
+    text-decoration: none;
+    padding: 0;
+    margin: .5em 0;
+    font-family: 'Brandon Grotesque Regular';
+    font-size: 16px;
+`
+const Heading = styled.p`
+    color: white;
+    text-decoration: none;
+    padding: 0;
+    margin: .5em 0;
+    font-family: 'Brandon Grotesque Medium';
+    font-size: 20px;
 `
 const StyledLink = styled(props => <Link {...props} />) `
     color: white;
     text-decoration: none;
-    text-transform: uppercase;
     padding: 0;
-    margin: 0 20px;
-    font-family: 'Brandon Grotesque Medium';
-    font-size: 14px;
+    margin: .5em 0;
+    font-family: 'Brandon Grotesque Regular';
+    font-size: 16px;
     display: block;
 `
-const FooterItem = styled.p`
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 0;
-    margin: 0 20px;
-    font-family: 'Brandon Grotesque Medium';
-    font-size: 14px;
-`
-const CopyWrite = styled.p`
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 0;
-    margin: 0 20px;
-    font-family: 'Brandon Grotesque Medium';
-    font-size: 14px;
-    display: block;
-    text-align: center;
-`
+
 
 export default Footer;
