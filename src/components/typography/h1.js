@@ -19,7 +19,7 @@ h1.defaultProps = {
 };
 
 const H1 = styled.h1`
-    font-family: 'Cervo Neue';
+    font-family: 'Cervo Neue', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
     color: ${props => props.color};
     font-weight: 800;
