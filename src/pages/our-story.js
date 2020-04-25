@@ -135,7 +135,7 @@ query {
   }
   family: file(relativePath: { eq: "family.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1500, quality: 100) {
+      fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
@@ -149,7 +149,7 @@ query {
   }
   map: file(relativePath: { eq: "map.png" }) {
     childImageSharp {
-      fluid(maxWidth: 900, quality: 100) {
+      fluid(maxWidth: 850, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }

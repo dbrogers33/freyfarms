@@ -64,8 +64,7 @@ export default () => (
                         <H3>Sarah's Book</H3>
                         <H2>Sharing our love of the farm with you.</H2>
                         <P>Sarah Frey has been described by the New York Times as “the Pumpkin Queen of America”. She sells more pumpkins than any other producer in the United States. Her family business, Frey Farms, plants thousands of acres of fruits and vegetables in Florida, Georgia, Missouri, Arkansas, Illinois, Indiana, and West Virginia. With a mission to end food waste in the fresh produce industry, the family makes natural food products and beverages from imperfect or “ugly fruit”. Inspired by her humble beginnings and early life on the farm, she continues to create opportunities for those living and working in rural communities. Frey lives in Southern Illinois and is raising her two sons, William and Luke, on the same family farm where she grew up.</P>
-                        
-                    
+
                     <PreOrderLinks>
                         <PreOrder href="https://www.walmart.com/ip/The-Growing-Season-How-I-Saved-an-American-Farm-and-Built-a-New-Life-9780593129395/375289573" target="_blank">
                             <Img
