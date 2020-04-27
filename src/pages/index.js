@@ -121,21 +121,21 @@ query {
   }
   produce: file(relativePath: { eq: "Produce.png" }) {
     childImageSharp {
-      fluid(maxWidth: 450) {
+      fluid(maxWidth: 450, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
   beverages: file(relativePath: { eq: "Beverage.png" }) {
     childImageSharp {
-      fluid(maxWidth: 450) {
+      fluid(maxWidth: 450, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
   tsamma: file(relativePath: { eq: "Tsamma.png" }) {
     childImageSharp {
-      fluid(maxWidth: 450) {
+      fluid(maxWidth: 450, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }

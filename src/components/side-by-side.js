@@ -14,7 +14,7 @@ export default ({ headerThree, headerTwo, paragraph, alt, src, children, reverse
         query {
             background: file(relativePath: { eq: "fruit-bg.png" }) {
                 childImageSharp {
-                  fluid(maxWidth: 1500) {
+                  fluid(maxWidth: 1500, quality: 100) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
