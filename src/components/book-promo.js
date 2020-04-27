@@ -88,7 +88,7 @@ export default () => (
                         </PreOrder>
                     </PreOrderLinks>
 
-                    <Button as="a" href="https://thegrowingseason.green" buttonLabel="Learn More" />
+                    <ExternalButton href="https://thegrowingseason.green">Learn More</ExternalButton>
                     </Copy>
                 </FlexItem>
                
@@ -138,12 +138,32 @@ const PreOrder = styled.a`
     filter: grayscale(100%);
     opacity: 60%;
     transition: ease .2s;
-    width: calc(100% / 2)
-;    & :hover {
+    width: calc(100% / 2);
+        & :hover {
         opacity: 100%;
         -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
         filter: grayscale(0%);
     }
     
+`
+const ExternalButton = styled.a`
+    border-radius: 5px;
+    background: #095129;
+    padding: 1em 2.25em;
+    color: white;
+    display: inline-block;
+    font-family: 'Brandon Grotesque';
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: .1em;
+    text-align: ${props => props.textAlign};
+    transition: .15s ease;
+    font-weight: 500;
+    &:hover {
+        background: #292825;
+        box-shadow: 0px 4px 7px rgba(33,32,30, .27);
+        margin: -.1em 0 .1em 0;
+    }
 `
 
