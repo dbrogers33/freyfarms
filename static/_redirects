@@ -1,0 +1,7 @@
+# Redirects
+
+/sarahs-homegrown/  /products
+/sarahs-homegrown/*  /products
+/press/     /news
+/contact/   /
+
