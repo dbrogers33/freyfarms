@@ -133,7 +133,7 @@ query {
       }
     }
   }
-  family: file(relativePath: { eq: "family.png" }) {
+  family: file(relativePath: { eq: "family.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
