@@ -10,7 +10,7 @@ import P from "../components/typography/p"
 const Instagram = () => {
     const data = useStaticQuery(graphql`
         query {
-            allInstaNode(limit: 8, filter: {mediaType: {eq: "GraphImage"}}) {
+            allInstaNode(limit: 8) {
                 edges {
                     node {
                         localFile {
