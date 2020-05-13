@@ -6,6 +6,7 @@ module.exports = {
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     siteUrl: `https://freyfarms.com`,
+    mapbox_api_key: process.env.GATSBY_MAPBOX_API_KEY,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
