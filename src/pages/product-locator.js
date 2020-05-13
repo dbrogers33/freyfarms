@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 // Needed for Store Locator
 import { render } from 'react-dom'
-import { Planes }from '../components/map'
+import { Map }from '../components/map'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => (
     <Hero headline="Find Sarah's Homegrown Products near you.." heroImage={data.hero.childImageSharp.fluid} />
 
     <Contianer>
-        <Planes center={[39.0742, 21.8243]} zoom={2}/>
+        <Map center={[39.0742, 21.8243]} zoom={2}/>
     </Contianer>
 
   </Layout>

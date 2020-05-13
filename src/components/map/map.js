@@ -30,14 +30,14 @@ export const Map = ({ center, zoom }) => {
 
     const map = new mapboxgl.Map({
       container: map_node.current,
-      style: `mapbox://styles/mapbox/dark-v10`,
+      style: `mapbox://styles/denhamrogers33/cka46op5t13kc1jl9bhaf7her`,
       center: center,
       zoom: zoom,
     })
     map_ref.current = map
     map_ref.current = map
 
-    map.addControl(new mapboxgl.NavigationControl(), "top-right")
+    map.addControl(new mapboxgl.NavigationControl(), "bottom-left")
 
     map.on("load", () => {
       console.log("map onload")
