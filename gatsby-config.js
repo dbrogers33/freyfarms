@@ -82,8 +82,24 @@ module.exports = {
         // should be an object or a function that is executed in the browser
         // Defaults to null
         defaultDataLayer: { platform: "gatsby" },
-  
       },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+          apiKey: process.env.AIRTABLE_API_KEY,
+          tables: [
+              {
+                  baseId: process.env.AIRTABLE_BASE_ID,
+                  tableName: 'Stores',
+                  tableView: 'Grid view',
+                  // Fix: Airtable doesn't deliver empty columns: https://github.com/jbolda/gatsby-source-airtable/issues/47
+                  defaultValues: {
+                      Is_hidden: false
+                  }
+              }
+          ]
+      }
     },
   ],
 }
