@@ -53,10 +53,26 @@ export const Planes = ({ center, zoom }) => {
     map_ref.current = map
     map_ref.current = map
 
-    map.addControl(new mapboxgl.NavigationControl(), "top-right")
+    map.addControl(new mapboxgl.NavigationControl(), "bottom-left")
 
     map.on("load", () => {
       console.log("map onload")
+
+      // Initialize the geolocate control.
+      var geolocate = new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      });
+      // Add the control to the map.
+      map.addControl(geolocate);
+      // Set an event listener that fires
+      // when a geolocate event occurs.
+      geolocate.on('geolocate', function() {
+        console.log('A geolocate event has occurred.')
+      });
+
 
       // get data from OpenSky API
       // https://opensky-network.org/apidoc/rest.html
@@ -187,6 +203,8 @@ export const Planes = ({ center, zoom }) => {
       // layers.forEach(layer => {
       //   map.addLayer(layer)
       // })
+
+      
     })
 
     return () => {
@@ -212,6 +230,6 @@ Planes.propTypes = {
 }
 
 Planes.defaultProps = {
-  center: [133.7751, -25.2744],
-  zoom: 4,
+  center: [38.3381, 88.6431],
+  zoom: 9,
 }
