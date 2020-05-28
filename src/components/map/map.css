@@ -9,7 +9,7 @@
   border: none;
   outline: none;
   box-sizing: border-box;
-  font-family: Tungsten,Impact;
+  font-family: 'Cervo Neue',Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   height: 100%;
@@ -24,6 +24,75 @@
   font-size: 2rem;
   text-align: left;
 }
-  .mapboxgl-ctrl-geocoder {
+
+.mapboxgl-ctrl-geocoder {
   min-width: 100%;
+  display: flex;
+}
+
+
+
+.mapboxgl-ctrl-geocoder--icon-loading {
+  display: none;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Cervo Neue',Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  border-bottom: 0.3rem solid transparent;
+  border-top: 0.3rem solid transparent;
+  transition: border-bottom-color 0.3s ease;
+  border-radius: 0;
+  backface-visibility: hidden;
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: left;
+}
+
+.suggestions {
+  list-style-type: none;
+  font-size: 1rem;
+}
+
+.suggestions-wrapper {
+ 
+}
+
+.suggestions > li {
+  padding: 1em;
+}
+
+.suggestions > li:hover {
+  cursor: pointer;
+  border-left: 2px solid green;
+}
+
+.mapboxgl-ctrl-geocoder--icon-search {
+  width: 100px;
+  height: 40px;
+}
+
+.mapboxgl-ctrl-geocoder--button {
+  margin: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  transition: background-color 0.3s ease;
+  height: 100%;
+  cursor: pointer;
+  display: inline-block;
+  background-color: #3141EB;
+  border: 0.25rem solid #3141EB;
+  width: 3rem;
+  padding: 0;
 }

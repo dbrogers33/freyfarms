@@ -76,8 +76,10 @@ export const Map = ({ center, zoom }) => {
 
     var geocoder = new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
+      // limit results to Australia
+      countries: 'us',
       mapboxgl: mapboxgl
-      });
+    });
        
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
