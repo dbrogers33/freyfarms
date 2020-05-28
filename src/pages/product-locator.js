@@ -1,7 +1,7 @@
 import React from "react"
 
 // Needed for Store Locator
-import { Map }from '../components/map'
+import { Map } from '../components/map'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"

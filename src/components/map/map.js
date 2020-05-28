@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react"
 import PropTypes from "prop-types"
 import mapboxgl from "mapbox-gl"
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
 import { useStaticQuery, graphql } from "gatsby"
 import GeoJSON from "geojson"
 import gjv from "geojson-validation"
@@ -73,6 +74,13 @@ export const Map = ({ center, zoom }) => {
 
     map.addControl(new mapboxgl.NavigationControl(), "bottom-left")
 
+    var geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+      });
+       
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
     map.on("load", () => {
       console.log("map onload")
 
@@ -139,7 +147,7 @@ export const Map = ({ center, zoom }) => {
           },
         })
           
-
+        
         
 
         // map.addSource("point", {
@@ -187,6 +195,7 @@ export const Map = ({ center, zoom }) => {
       }}
     >
       <div className="mapbox" ref={map_node}></div>
+      <div id="geocoder" className="geocoder"></div>
     </div>
   )
 }
