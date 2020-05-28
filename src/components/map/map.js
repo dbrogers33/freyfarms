@@ -190,12 +190,12 @@ export const Map = ({ center, zoom }) => {
   return (
     <div
       style={{
-        background: `#343332`,
         marginBottom: `1.45rem`,
       }}
     >
-      <div className="mapbox" ref={map_node}></div>
       <div id="geocoder" className="geocoder"></div>
+      <div className="mapbox" ref={map_node}></div>
+      
     </div>
   )
 }
