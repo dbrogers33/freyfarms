@@ -30,12 +30,15 @@ export const Map = ({ center, zoom }) => {
         edges {
           node {
             data {
-              lat
-              lon
-              title
-              description
+              City
+              Latidtude
+              Longitude
+              Phone
+              State
+              Store_Name
+              Street_Address
+              Zip
               type
-              features_type
               Is_hidden
             }
           }
@@ -109,10 +112,10 @@ export const Map = ({ center, zoom }) => {
       // storing graphql data from airtable
       let locations = plane_img.allAirtable.edges
       .map(location => {
-        if (location.node.data.lat && location.node.data.lon) {
+        if (location.node.data.Latidtude && location.node.data.Longitude) {
           return {
-            latitude: Number(location.node.data.lon),
-            longitude: Number(location.node.data.lat),
+            latitude: Number(location.node.data.Latidtude),
+            longitude: Number(location.node.data.Longitude),
           }
         } else {
           return null
@@ -196,8 +199,10 @@ export const Map = ({ center, zoom }) => {
       }}
     >
       <div id="geocoder" className="geocoder"></div>
-      <div className="mapbox" ref={map_node}></div>
-      
+      <div className="mapWrapper">
+        <div className='sidebar pad2'>Listing</div>
+        <div className="map pad2" id="map" ref={map_node}></div>
+      </div>
     </div>
   )
 }

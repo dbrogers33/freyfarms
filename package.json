@@ -28,6 +28,7 @@
     "geojson": "^0.5.0",
     "geojson-validation": "^1.0.1",
     "mapbox-gl": "^1.10.0",
+    "netlify-cli": "^2.52.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "pure-react-carousel": "^1.27.0",
