@@ -5,6 +5,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
 import { useStaticQuery, graphql } from "gatsby"
 import GeoJSON from "geojson"
 import gjv from "geojson-validation"
+import turf from "@turf/distance"
 
 import "mapbox-gl/dist/mapbox-gl.css"
 import { siteMetadata } from "../../../gatsby-config"
@@ -49,16 +50,16 @@ export const Map = ({ center, zoom }) => {
   console.log("plane_img ", plane_img)
   console.log("plane_img ", plane_img.image.childImageSharp.fluid.base64)
 
-  
+
   // --------- MAPS LOCATIONS AND ADDS TO SIDEBAR -------------
   function buildLocationList(data) {
-    data.features.forEach(function(store, i){
+    data.features.forEach(function (store, i) {
       /**
        * Create a shortcut for `store.properties`,
        * which will be used several times below.
       **/
       var prop = store.properties;
-  
+
       /* Add a new listing section to the sidebar. */
       var listings = document.getElementById('listings');
       var listing = listings.appendChild(document.createElement('div'));
@@ -66,20 +67,21 @@ export const Map = ({ center, zoom }) => {
       listing.id = "listing-" + prop.id;
       /* Assign the `item` class to each listing for styling. */
       listing.className = 'item';
-  
+
       /* Add the link to the individual listing created above. */
       var link = listing.appendChild(document.createElement('a'));
       link.href = '#';
       link.className = 'title';
       link.id = "link-" + prop.id;
       link.innerHTML = prop.address;
-  
+
       /* Add details to the individual listing. */
       var details = listing.appendChild(document.createElement('div'));
       details.innerHTML = prop.city;
       if (prop.phone) {
         details.innerHTML += ' · ' + prop.phone;
       }
+
     });
   }
 
@@ -110,19 +112,28 @@ export const Map = ({ center, zoom }) => {
     map.addControl(new mapboxgl.NavigationControl(), "bottom-right")
 
     // --------- LIMITS SEARCH RESULTS TO U.S.A. -------------
-    var geocoder = new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      // limit results to Australia
-      countries: 'us',
-      mapboxgl: mapboxgl
-    });
+    // var geocoder = new MapboxGeocoder({
+    //   accessToken: mapboxgl.accessToken,
+    //   // limit results to Australia
+    //   countries: 'us',
+    //   mapboxgl: mapboxgl
+    // });
 
-    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+    // document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+    var geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken, // Set the access token
+      mapboxgl: mapboxgl, // Set the mapbox-gl instance
+      marker: true, // Use the geocoder's default marker style
+      countries: 'us' // Set the bounding box coordinates
+    });
+    
+    map.addControl(geocoder, 'top-left');
 
     map.on("load", () => {
       console.log("map onload")
 
-      
+
 
       // --------- ADDS GET CURRENT LOCATION BUTTON -------------
       var geolocate = new mapboxgl.GeolocateControl({
@@ -193,7 +204,29 @@ export const Map = ({ center, zoom }) => {
           },
         })
 
+        geocoder.on('result', function (ev) {
+          var searchResult = ev.result.geometry;
+          // Code for the next step will go here
+          var options = { units: 'miles' };
+          productMarkers.features.forEach(function (store) {
+            Object.defineProperty(store.properties, 'distance', {
+              value: turf.distance(searchResult, store.geometry, options),
+              writable: true,
+              enumerable: true,
+              configurable: true
+            });
+          });
 
+          productMarkers.features.sort(function(a, b) {
+            if (a.properties.distance > b.properties.distance) {
+              return 1;
+            }
+            if (a.properties.distance < b.properties.distance) {
+              return -1;
+            }
+            return 0; // a must be equal to b
+          });
+        });
 
 
         // map.addSource("point", {
@@ -241,7 +274,7 @@ export const Map = ({ center, zoom }) => {
         marginBottom: `1.45rem`,
       }}
     >
-      <div id="geocoder" className="geocoder"></div>
+      {/* <div id="geocoder" className="geocoder"></div> */}
       <div className="mapWrapper">
         <div className='sidebar pad2'>
           <div class='sidebar'>
