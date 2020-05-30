@@ -49,7 +49,39 @@ export const Map = ({ center, zoom }) => {
   console.log("plane_img ", plane_img)
   console.log("plane_img ", plane_img.image.childImageSharp.fluid.base64)
 
-  // console.log(plane_img.allAirtable.edges)
+  
+  // --------- MAPS LOCATIONS AND ADDS TO SIDEBAR -------------
+  function buildLocationList(data) {
+    data.features.forEach(function(store, i){
+      /**
+       * Create a shortcut for `store.properties`,
+       * which will be used several times below.
+      **/
+      var prop = store.properties;
+  
+      /* Add a new listing section to the sidebar. */
+      var listings = document.getElementById('listings');
+      var listing = listings.appendChild(document.createElement('div'));
+      /* Assign a unique `id` to the listing. */
+      listing.id = "listing-" + prop.id;
+      /* Assign the `item` class to each listing for styling. */
+      listing.className = 'item';
+  
+      /* Add the link to the individual listing created above. */
+      var link = listing.appendChild(document.createElement('a'));
+      link.href = '#';
+      link.className = 'title';
+      link.id = "link-" + prop.id;
+      link.innerHTML = prop.address;
+  
+      /* Add details to the individual listing. */
+      var details = listing.appendChild(document.createElement('div'));
+      details.innerHTML = prop.city;
+      if (prop.phone) {
+        details.innerHTML += ' · ' + prop.phone;
+      }
+    });
+  }
 
   useEffect(() => {
     if (!mapbox_api_key) {
@@ -63,7 +95,7 @@ export const Map = ({ center, zoom }) => {
       return null
     }
 
-    // Token must be set before constructing map
+    // --------- TOKEN MUST BE SET IN GATSBY-CONFIG SITEMETA -------------
     mapboxgl.accessToken = mapbox_api_key
 
     const map = new mapboxgl.Map({
@@ -75,24 +107,27 @@ export const Map = ({ center, zoom }) => {
     map_ref.current = map
     map_ref.current = map
 
-    map.addControl(new mapboxgl.NavigationControl(), "bottom-left")
+    map.addControl(new mapboxgl.NavigationControl(), "bottom-right")
 
+    // --------- LIMITS SEARCH RESULTS TO U.S.A. -------------
     var geocoder = new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
       // limit results to Australia
       countries: 'us',
       mapboxgl: mapboxgl
     });
-       
+
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
     map.on("load", () => {
       console.log("map onload")
 
-      // Initialize the geolocate control.
+      
+
+      // --------- ADDS GET CURRENT LOCATION BUTTON -------------
       var geolocate = new mapboxgl.GeolocateControl({
         positionOptions: {
-            enableHighAccuracy: true
+          enableHighAccuracy: true
         },
         trackUserLocation: true
       });
@@ -100,7 +135,7 @@ export const Map = ({ center, zoom }) => {
       map.addControl(geolocate);
       // Set an event listener that fires
       // when a geolocate event occurs.
-      geolocate.on('geolocate', function() {
+      geolocate.on('geolocate', function () {
         console.log('A geolocate event has occurred.')
       });
 
@@ -108,28 +143,34 @@ export const Map = ({ center, zoom }) => {
       // --------- NEW WAY OF DOING THINGS -------------
       let geolocations = {}
       geolocations.type = "FeatureCollection";
-      
-      // storing graphql data from airtable
+
+      // --------- TRANSFORMING DATA FROM AIRTABLE TO CONVERT INTO GEOJSON -------------
       let locations = plane_img.allAirtable.edges
-      .map(location => {
-        if (location.node.data.Latidtude && location.node.data.Longitude) {
-          return {
-            latitude: Number(location.node.data.Latidtude),
-            longitude: Number(location.node.data.Longitude),
+        .map((location, key) => {
+          if (location.node.data.Latidtude && location.node.data.Longitude) {
+            return {
+              latitude: Number(location.node.data.Latidtude),
+              longitude: Number(location.node.data.Longitude),
+              city: location.node.data.City,
+              state: location.node.data.State,
+              address: location.node.data.Street_Address,
+              name: location.node.data.Store_Name,
+              zip: location.node.data.Zip,
+              phone: location.node.data.Phone,
+              id: key
+            }
+          } else {
+            return null
           }
-        } else {
-          return null
-        }
-      })
-      .filter(location => location)
-      // console.log("locations ", locations)
+        })
+        .filter(location => location)
 
-     let productMarkers = GeoJSON.parse(locations, {Point: ['latitude', 'longitude']});
+      let productMarkers = GeoJSON.parse(locations, { Point: ['latitude', 'longitude'], include: ['city', 'state', 'address', 'name', 'zip', 'phone', 'id'] });
 
-      console.log(JSON.stringify(productMarkers))
+      console.log(productMarkers)
 
 
-      map.loadImage(plane_img.image.childImageSharp.fluid.base64, function(
+      map.loadImage(plane_img.image.childImageSharp.fluid.base64, function (
         error,
         image
       ) {
@@ -140,7 +181,7 @@ export const Map = ({ center, zoom }) => {
           type: "geojson",
           data: productMarkers,
         })
-        
+
         map.addLayer({
           id: "planes-flying",
           type: "symbol",
@@ -151,9 +192,9 @@ export const Map = ({ center, zoom }) => {
             "icon-allow-overlap": true,
           },
         })
-          
-        
-        
+
+
+
 
         // map.addSource("point", {
         //   type: "geojson",
@@ -183,7 +224,9 @@ export const Map = ({ center, zoom }) => {
 
       const trace = gjv.isFeatureCollection(productMarkers, true)
       console.log(trace)
-    
+
+      // --------- ADDS LOCATION LISTINGS TO SIDEBAR -------------
+      buildLocationList(productMarkers);
 
     })
 
@@ -200,7 +243,14 @@ export const Map = ({ center, zoom }) => {
     >
       <div id="geocoder" className="geocoder"></div>
       <div className="mapWrapper">
-        <div className='sidebar pad2'>Listing</div>
+        <div className='sidebar pad2'>
+          <div class='sidebar'>
+            <div class='heading'>
+              <h1>Our locations</h1>
+            </div>
+            <div id='listings' class='listings'></div>
+          </div>
+        </div>
         <div className="map pad2" id="map" ref={map_node}></div>
       </div>
     </div>
