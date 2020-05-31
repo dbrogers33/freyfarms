@@ -81,6 +81,10 @@ export const Map = ({ center, zoom }) => {
       if (prop.phone) {
         details.innerHTML += ' · ' + prop.phone;
       }
+      if (prop.distance) {
+        var roundedDistance = Math.round(prop.distance*100)/100;
+        details.innerHTML += '<p><strong>' + roundedDistance + ' miles away</strong></p>';
+      }
 
     });
   }
@@ -332,7 +336,7 @@ export const Map = ({ center, zoom }) => {
         <div className='sidebar pad2'>
           <div class='sidebar'>
             <div class='heading'>
-              <h1>Our locations</h1>
+              <h1 className="header">Our locations</h1>
             </div>
             <div id='listings' class='listings'></div>
           </div>
