@@ -193,8 +193,8 @@ export const Map = ({ center, zoom }) => {
         map.addImage("plane", image)
 
         map.addSource("planes-data", {
-          type: "geojson",
-          data: productMarkers,
+        	type: "geojson",
+        	data: productMarkers,
         })
 
         map.addLayer({
@@ -315,7 +315,7 @@ export const Map = ({ center, zoom }) => {
         [sortedLons[0], sortedLats[0]],
         [sortedLons[1], sortedLats[1]]
       ];
-    }
+	}
 
 
     })
