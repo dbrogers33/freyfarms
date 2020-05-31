@@ -5,7 +5,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
 import { useStaticQuery, graphql } from "gatsby"
 import GeoJSON from "geojson"
 import gjv from "geojson-validation"
-import turf from "@turf/distance"
+import distance from "@turf/distance"
 
 import "mapbox-gl/dist/mapbox-gl.css"
 import { siteMetadata } from "../../../gatsby-config"
@@ -77,7 +77,7 @@ export const Map = ({ center, zoom }) => {
 
       /* Add details to the individual listing. */
       var details = listing.appendChild(document.createElement('div'));
-      details.innerHTML = prop.city;
+      details.innerHTML = prop.city + ", " + prop.state;
       if (prop.phone) {
         details.innerHTML += ' · ' + prop.phone;
       }
@@ -204,30 +204,7 @@ export const Map = ({ center, zoom }) => {
           },
         })
 
-        geocoder.on('result', function (ev) {
-          var searchResult = ev.result.geometry;
-          // Code for the next step will go here
-          var options = { units: 'miles' };
-          productMarkers.features.forEach(function (store) {
-            Object.defineProperty(store.properties, 'distance', {
-              value: turf.distance(searchResult, store.geometry, options),
-              writable: true,
-              enumerable: true,
-              configurable: true
-            });
-          });
-
-          productMarkers.features.sort(function(a, b) {
-            if (a.properties.distance > b.properties.distance) {
-              return 1;
-            }
-            if (a.properties.distance < b.properties.distance) {
-              return -1;
-            }
-            return 0; // a must be equal to b
-          });
-        });
-
+        
 
         // map.addSource("point", {
         //   type: "geojson",
@@ -260,6 +237,82 @@ export const Map = ({ center, zoom }) => {
 
       // --------- ADDS LOCATION LISTINGS TO SIDEBAR -------------
       buildLocationList(productMarkers);
+
+      geocoder.on('result', function (ev) {
+        var searchResult = ev.result.geometry;
+        // Code for the next step will go here
+        var options = { units: 'miles' };
+        productMarkers.features.forEach(function (store) {
+          Object.defineProperty(store.properties, 'distance', {
+            value: distance(searchResult, store.geometry, options),
+            writable: true,
+            enumerable: true,
+            configurable: true
+          });
+        });
+
+        productMarkers.features.sort(function(a, b) {
+          if (a.properties.distance > b.properties.distance) {
+            return 1;
+          }
+          if (a.properties.distance < b.properties.distance) {
+            return -1;
+          }
+          return 0; // a must be equal to b
+        });
+
+        /**
+           * Rebuild the listings:
+           * Remove the existing listings and build the location
+           * list again using the newly sorted stores.
+          */
+         var listings = document.getElementById('listings');
+         while (listings.firstChild) {
+           listings.removeChild(listings.firstChild);
+         }
+         buildLocationList(productMarkers);
+
+         /** Highlight the listing for the closest store. */
+         var activeListing = document.getElementById('listing-' + productMarkers.features[0].properties.id);
+         activeListing.classList.add('active');
+
+         /**
+          * Adjust the map camera:
+          * Get a bbox that contains both the geocoder result and
+          * the closest store. Fit the bounds to that bbox.
+         */
+         var bbox = getBbox(productMarkers, 0, searchResult);
+         map.fitBounds(bbox, {
+           padding: 100
+         });
+      });
+
+
+        /**
+       * Using the coordinates (lng, lat) for
+       * (1) the search result and
+       * (2) the closest store
+       * construct a bbox that will contain both points
+      */
+     function getBbox(sortedStores, storeIdentifier, searchResult) {
+      var lats = [sortedStores.features[storeIdentifier].geometry.coordinates[1], searchResult.coordinates[1]]
+      var lons = [sortedStores.features[storeIdentifier].geometry.coordinates[0], searchResult.coordinates[0]]
+      var sortedLons = lons.sort(function(a,b){
+          if (a > b) { return 1; }
+          if (a.distance < b.distance) { return -1; }
+          return 0;
+        });
+      var sortedLats = lats.sort(function(a,b){
+          if (a > b) { return 1; }
+          if (a.distance < b.distance) { return -1; }
+          return 0;
+        });
+      return [
+        [sortedLons[0], sortedLats[0]],
+        [sortedLons[1], sortedLats[1]]
+      ];
+    }
+
 
     })
 
