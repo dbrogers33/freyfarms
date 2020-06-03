@@ -53,8 +53,8 @@ module.exports = {
       resolve: `gatsby-source-instagram`,
       options: {
         username: `freyfarms`,
-        access_token: "EAAHZAzLwSXsMBAB8pnMlohAzTjm9ZCompDrot26VQzKQ0JOCLliEyQlEpmIZCCsUmrLGVptcSZBSl8Lg6fUfDJbLZC4kEEXr1J9QmMFgUXzMOKr7LnNx6jSee5ch0VeFpwTzFWHyNoeyF0EoJt1wrXxLrgv5ZBZBXIZD",
-        instagram_id: "582045936003224",
+        access_token: "EAAHZAzLwSXsMBAEgzQiyvlZBweeZAc0jsEEs74EzDE3kru6vCUp11WfV04SuPEhuxFsBoJwMr20ZCNO0KREKHv2pZC5xS6UMViZAWOt5b1Y5QGZCCoqZCHFSBjBnMXHKizST5ZAUELOWKL5CMgIkphHdvdePXktcyVZBkZD",
+        instagram_id: "520948328586947",
         paginate: 100,
         maxPosts: 1000,
       },

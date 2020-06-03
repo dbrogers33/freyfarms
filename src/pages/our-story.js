@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components";
 import Img from "gatsby-image/withIEPolyfill"
+import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
