@@ -14,11 +14,11 @@ const Instagram = () => {
                 edges {
                     node {
                         localFile {
-                          childImageSharp {
-                            fluid(maxWidth: 350, quality: 100) {
-                                ...GatsbyImageSharpFluid_withWebp
+                            childImageSharp {
+                                fluid(maxWidth: 350, quality: 100) {
+                                    ...GatsbyImageSharpFluid_withWebp
+                                }
                             }
-                          }
                         }
                       }
                 }
@@ -32,26 +32,26 @@ const Instagram = () => {
         <Container>
             <H2 textAlign="center">Follow Us @freyfarms</H2>
             <Grid>
-            {posts.map((post, key) => (
-                <div key={key}>
-                    <a as="a" href="https://instagram.com/freyfarms" target="_blank" rel="noopener noreferrer">
-                        <Card>
-                            <Absolute>
-                                <CenterText>
-                                    <P color="#fff" textAlign="center">View on Instagram</P>
-                                </CenterText>
-                            </Absolute>
-                            <Image
-                                fluid={post.node.localFile.childImageSharp.fluid}
-                                objectPosition='50% 100%'
-                                alt="instagram image from @FreyFarms"
-                            />
-                        </Card>
-                    </a>
-                </div>
-            ))}
+                {posts.map((post, key) => (
+                    <div key={key}>
+                        <a as="a" href="https://instagram.com/freyfarms" target="_blank" rel="noopener noreferrer">
+                            <Card>
+                                <Absolute>
+                                    <CenterText>
+                                        <P color="#fff" textAlign="center">View on Instagram</P>
+                                    </CenterText>
+                                </Absolute>
+                                <Image
+                                    fluid={post.node.localFile.childImageSharp.fluid}
+                                    objectPosition='50% 100%'
+                                    alt="instagram image from @FreyFarms"
+                                />
+                            </Card>
+                        </a>
+                    </div>
+                ))}
             </Grid>
-            
+
         </Container>
     )
 }
