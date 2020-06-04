@@ -51,7 +51,20 @@ export const Map = ({ center, zoom }) => {
   console.log("plane_img ", plane_img.image.childImageSharp.fluid.base64)
 
 
-  // --------- MAPS LOCATIONS AND ADDS TO SIDEBAR -------------
+
+  useEffect(() => {
+    if (!mapbox_api_key) {
+      console.error(
+        "Mapbox `mapbox_api_key` is required in gatsby-config.js siteMetadata"
+      )
+    }
+
+    if (!(typeof window !== "undefined" && window)) {
+      console.error("No window")
+      return null
+    }
+
+    // --------- MAPS LOCATIONS AND ADDS TO SIDEBAR -------------
   function buildLocationList(data) {
     data.features.forEach(function (store, i) {
       /**
@@ -86,19 +99,53 @@ export const Map = ({ center, zoom }) => {
         details.innerHTML += '<p><strong>' + roundedDistance + ' miles away</strong></p>';
       }
 
-    });
-  }
-
-  useEffect(() => {
-    if (!mapbox_api_key) {
-      console.error(
-        "Mapbox `mapbox_api_key` is required in gatsby-config.js siteMetadata"
-      )
+      /**
+           * Listen to the element and when it is clicked, do four things:
+           * 1. Update the `currentFeature` to the store associated with the clicked link
+           * 2. Fly to the point
+           * 3. Close all other popups and display popup for clicked store
+           * 4. Highlight listing in sidebar (and remove highlight for all other listings)
+          **/
+         link.addEventListener('click', function(e){
+          for (var i=0; i < data.features.length; i++) {
+            if (this.id === "link-" + data.features[i].properties.id) {
+              var clickedListing = data.features[i];
+              flyToStore(clickedListing);
+              createPopUp(clickedListing);
+            }
+          }
+          var activeItem = document.getElementsByClassName('active');
+          if (activeItem[0]) {
+            activeItem[0].classList.remove('active');
+          }
+          this.parentNode.classList.add('active');
+        });
+      });
     }
 
-    if (!(typeof window !== "undefined" && window)) {
-      console.error("No window")
-      return null
+    /**
+     * Use Mapbox GL JS's `flyTo` to move the camera smoothly
+     * a given center point.
+    **/
+    function flyToStore(currentFeature) {
+      map.flyTo({
+          center: currentFeature.geometry.coordinates,
+          zoom: 15
+        });
+    }
+
+    /**
+     * Create a Mapbox GL JS `Popup`.
+    **/
+    function createPopUp(currentFeature) {
+      var popUps = document.getElementsByClassName('mapboxgl-popup');
+      if (popUps[0]) popUps[0].remove();
+
+      var popup = new mapboxgl.Popup({closeOnClick: false})
+        .setLngLat(currentFeature.geometry.coordinates)
+        .setHTML('<h3>Sweetgreen</h3>' +
+          '<h4>' + currentFeature.properties.address + '</h4>')
+        .addTo(map);
     }
 
     // --------- TOKEN MUST BE SET IN GATSBY-CONFIG SITEMETA -------------
@@ -377,7 +424,7 @@ export const Map = ({ center, zoom }) => {
 
         var popup = new mapboxgl.Popup({closeOnClick: false})
           .setLngLat(currentFeature.geometry.coordinates)
-          .setHTML('<h3>Sweetgreen</h3>' +
+          .setHTML('<h3>' + currentFeature.properties.name + '</h3>' +
             '<h4>' + currentFeature.properties.address + '</h4>')
           .addTo(map);
       }
