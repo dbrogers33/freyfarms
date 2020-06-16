@@ -41,6 +41,7 @@ export const Map = ({ center, zoom }) => {
               Zip
               type
               Is_hidden
+              Slug
             }
           }
         }
@@ -83,7 +84,7 @@ export const Map = ({ center, zoom }) => {
 
       /* Add the link to the individual listing created above. */
       var link = listing.appendChild(document.createElement('a'));
-      link.href = '#';
+      link.href = "/locations/" + prop.slug;
       link.className = 'title';
       link.id = "link-" + prop.id;
       link.innerHTML = prop.address;
@@ -219,6 +220,7 @@ export const Map = ({ center, zoom }) => {
               name: location.node.data.Store_Name,
               zip: location.node.data.Zip,
               phone: location.node.data.Phone,
+              slug: location.node.data.Slug,
               id: key
             }
           } else {
@@ -227,7 +229,7 @@ export const Map = ({ center, zoom }) => {
         })
         .filter(location => location)
 
-      let productMarkers = GeoJSON.parse(locations, { Point: ['latitude', 'longitude'], include: ['city', 'state', 'address', 'name', 'zip', 'phone', 'id'] });
+      let productMarkers = GeoJSON.parse(locations, { Point: ['latitude', 'longitude'], include: ['city', 'state', 'address', 'name', 'zip', 'phone', 'id', 'slug'] });
 
       console.log(productMarkers)
 
