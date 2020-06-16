@@ -34,3 +34,48 @@ exports.onCreateWebpackConfig = ({ actions, stage, loaders }) => {
 
   actions.setWebpackConfig(config)
 }
+
+// Creating pages for each location out of airtable
+exports.createPages = ({ graphql, actions }) => {
+
+  const { createPage } = actions
+  return new Promise(async resolve => {
+
+    const result = await graphql(`
+        {
+        allAirtable {
+          edges {
+            node {
+              recordId
+              data {
+                City
+                Latidtude
+                Longitude
+                Phone
+                State
+                Store_Name
+                Street_Address
+                Zip
+                type
+                Is_hidden
+                Slug
+              }
+            }
+          }
+        }
+      }
+    `)
+    // For each path, create page and choose a template.
+    // values in context Object are available in that page's query
+    result.data.allAirtable.edges.forEach(({ node }) => {
+      createPage({
+        path: `/locations/${node.data.Slug}`,
+        component: path.resolve(`./src/templates/location.js`),
+        context: {
+          recordId: node.recordId,
+        },
+      })
+    });
+    resolve()
+  })
+}
