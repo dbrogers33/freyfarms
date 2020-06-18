@@ -11,7 +11,7 @@ const HeroSection = ({ heroImage, headline }) => {
             </Absolute>
             <Image
                 fluid={heroImage}
-                objectPosition='50% 100%'
+                objectPosition='50% 50%'
             />
         </Hero>
     );
@@ -20,7 +20,6 @@ const HeroSection = ({ heroImage, headline }) => {
 // Checkout macbook sizing
 const Hero = styled.section`
     position: relative;
-    
     @media (max-width: 800px) {
         height: 70vh;
     }
@@ -45,7 +44,7 @@ const Absolute = styled.div`
 `
 const Image = styled(Img)`
     position: absolute;
-    height: 100%;
+    height: 100vh;
 `
 
 export default HeroSection;

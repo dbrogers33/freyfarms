@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components";
-import { graphql } from 'gatsby'
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -34,7 +34,9 @@ const IndexPage = ({ data }) => (
         paragraph="Sarah's Homegrown™ is an innovative line of fresh beverages, sourced from the farm. Available in agua frescas, teas, and lemonades, Sarah's Homegrown™ bottles up farm fresh goodness. Our delicious flavors include Strawberry Lemonade, Mango, Watermelon, Lime Mint, and Pineapple Coconut."
         src={data.beverages.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
-      />
+      >
+        <StyledLink to="/locations">Find a Store Near You</StyledLink>
+      </SideBySide>
     </ProductWrapper>
     
     <ProductWrapper>
@@ -60,6 +62,21 @@ const Products = styled.div`
   
 `
 const ExternalLink = styled.a`
+    text-transform: uppercase;
+    font-family: 'Cervo Neue';
+    color: #0F5800;
+    font-weight: 800;
+    font-size: 18px;
+    margin: .1em 0;
+    text-decoration: none;
+    & :hover {
+      text-decoration: underline;
+    }
+    @media (min-width: 800px) {
+        font-size: 20px;
+    }
+`
+const StyledLink = styled(Link)`
     text-transform: uppercase;
     font-family: 'Cervo Neue';
     color: #0F5800;

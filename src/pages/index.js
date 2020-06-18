@@ -72,8 +72,8 @@ const IndexPage = ({ data }) => (
     </Products>
 
     <Book/>
-{/* 
-    <Instagram /> */}
+
+    {/* <Instagram /> */}
  
   </Layout>
 )
