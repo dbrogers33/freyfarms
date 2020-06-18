@@ -9,12 +9,7 @@ const path = require("path")
 
 // You can delete this file if you're not using it
 exports.onCreateWebpackConfig = ({ actions, stage, loaders }) => {
-  // actions.setWebpackConfig({
-  //   node: { fs: "empty" },
-  // })
-
   const config = {
-    node: { fs: "empty" },
     resolve: {
       modules: [path.resolve(__dirname, "src"), "node_modules"],
     },
