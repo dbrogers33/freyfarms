@@ -144,7 +144,7 @@ export const Map = ({ center, zoom }) => {
 
       var popup = new mapboxgl.Popup({closeOnClick: false})
         .setLngLat(currentFeature.geometry.coordinates)
-        .setHTML('<h3>Sweetgreen</h3>' +
+        .setHTML('<h3>' + currentFeature.properties.name + '</h3>' +
           '<h4>' + currentFeature.properties.address + '</h4>')
         .addTo(map);
     }

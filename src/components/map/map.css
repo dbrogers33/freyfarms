@@ -59,12 +59,12 @@
   padding: 20px 2px;
 }
 
-a {
+.listings > a {
   color:#404040;
-  text-decoration:none;
+  text-decoration: none;
 }
 
-a:hover {
+.listings > a:hover {
   color:#101010;
 }
 

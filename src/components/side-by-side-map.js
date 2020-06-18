@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import { StaticQuery, graphql } from 'gatsby'
+import { SingleMap, Planes } from '../components/map'
 
 import H2 from '../components/typography/h2'
 import H3 from '../components/typography/h3'
@@ -26,17 +27,13 @@ export default ({ headerThree, headerTwo, paragraph, alt, src, children, street,
             <Wrapper>
                 <ContainerFlex>
                 <FlexItem>
-                <Image
-                    fluid={src}
-                    alt={alt}
-                />
+                {/* <Planes /> */}
                 </FlexItem>
                 <FlexItem>
                     <Copy>
                         <H3>{headerThree}</H3>
                         <H2>{headerTwo}</H2>
-                        <P>{street}</P>
-                        <P>{city}</P>
+                        <P>{street}<br />{city}</P>
                         <P><a href={phone}>{phone}</a></P>
                         {children}
                     </Copy>

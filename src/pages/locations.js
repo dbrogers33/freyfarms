@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
 query {
-  hero: file(relativePath: { eq: "hero-images/products-hero.png" }) {
+  hero: file(relativePath: { eq: "hero-images/location.png" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
