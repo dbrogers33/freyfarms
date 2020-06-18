@@ -45,6 +45,9 @@ const Absolute = styled.div`
 const Image = styled(Img)`
     position: absolute;
     height: 100vh;
+    @media (max-width: 800px) {
+        height: 70vh;
+    }
 `
 
 export default HeroSection;
