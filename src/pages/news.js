@@ -56,7 +56,7 @@ query {
   hero: file(relativePath: { eq: "hero-images/news-hero.png" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
-        ...GatsbyImageSharpFluid_withWebp
+        ...GatsbyImageSharpFluid_withWebp_noBase64
       }
     }
   }
