@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => (
     <About
       headerThree="Our Farms"
       headerTwo="Who We Are"
-      paragraph="Founded in 1992 by Sarah Frey, Frey Farms is a family business headquartered near Orchardville, Illinois. Sarah started the business as a simple produce delivery route that quickly grew, and her brothers soon came home to help her. Today, Frey Farms grow fresh fruit and vegetables in seven states and distributes fresh beverages nationally. We are grounded in our family values and believe in creating opportunities for those living and working in rural communities. The Frey family is committed to farming with sustainable practices and in preserving natural resources for generations to come."
+      paragraph="Founded in 1992 by Sarah Frey, Frey Farms is a family business headquartered near Orchardville, Illinois. Sarah started the business as a simple produce delivery route that quickly grew, and her brothers soon came home to help her. Today, Frey Farms grows fresh fruit and vegetables in seven states and distributes fresh beverages nationally. We are grounded in our family values and believe in creating opportunities for those living and working in rural communities. The Frey family is committed to farming with sustainable practices and in preserving natural resources for generations to come."
       src={data.family.childImageSharp.fluid}
       alt="Sarah Frey sitting in a pumpkin field"
     />
