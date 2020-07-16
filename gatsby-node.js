@@ -65,6 +65,19 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `)
+
+    const products = await graphql(`
+    {
+      allContentfulBeverage {
+        edges {
+          node {
+            slug
+            id
+          }
+        }
+      }
+    }
+    `)
     // For each path, create page and choose a template.
     // values in context Object are available in that page's query
     result.data.allAirtable.edges.forEach(({ node }) => {
@@ -73,6 +86,18 @@ exports.createPages = ({ graphql, actions }) => {
         component: path.resolve(`./src/templates/location.js`),
         context: {
           recordId: node.recordId,
+        },
+      })
+    });
+
+    // For each path, create page and choose a template.
+    // values in context Object are available in that page's query
+    products.data.allContentfulBeverage.edges.forEach(({ node }) => {
+      createPage({
+        path: `/products/${node.slug}`,
+        component: path.resolve(`./src/templates/product.js`),
+        context: {
+          recordId: node.id,
         },
       })
     });
