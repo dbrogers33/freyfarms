@@ -94,10 +94,10 @@ exports.createPages = ({ graphql, actions }) => {
     // values in context Object are available in that page's query
     products.data.allContentfulBeverage.edges.forEach(({ node }) => {
       createPage({
-        path: `/products/${node.slug}`,
+        path: `/products/${node.slug}/`,
         component: path.resolve(`./src/templates/product.js`),
         context: {
-          recordId: node.id,
+          slug: node.slug,
         },
       })
     });

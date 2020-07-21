@@ -9,7 +9,7 @@ import { Link } from "gatsby";
 import SideBySide from '../components/side-by-side-map'
 
 export default ({ data }) => {
-
+  
   return (
     <Layout>
       <Hero headline={"Frey Farms Products in " + data.airtable.data.City + ", " + data.airtable.data.State } heroImage={data.hero.childImageSharp.fluid} />

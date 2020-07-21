@@ -9,7 +9,7 @@ import P from '../components/typography/p'
 import Img from "gatsby-image/withIEPolyfill"
 
 
-export default ({ headerThree, headerTwo, paragraph, alt, src, children, street, city, phone }) => (
+export default ({ headerThree, headerTwo, children, street, city, phone }) => (
     <StaticQuery
       query={graphql`
         query {
