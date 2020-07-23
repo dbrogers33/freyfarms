@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 
 import Hero from "../components/hero"
 import SideBySide from "../components/side-by-side"
+import Button from "../components/button"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -35,7 +36,7 @@ const IndexPage = ({ data }) => (
         src={data.beverages.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
-        <StyledLink to="/locations">Find a Store Near You</StyledLink>
+        <Button link="/products/beverages/" buttonLabel="View All Drinks" />
       </SideBySide>
     </ProductWrapper>
     

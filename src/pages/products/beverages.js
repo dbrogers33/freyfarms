@@ -44,21 +44,28 @@ const Grid = styled.div`
     column-gap: 1em;
     row-gap: 1em;
     justify-items: stretch;
+    grid-auto-rows: 1fr; 
     @media (min-width: 800px) {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 `
 const StyledLink = styled(Link)`
-  & > p {
-      color: green;
-  }
+    text-decoration: none;
+    transition: .2s ease;
+    p {
+        color: #095129;
+        text-decoration: none;
+        margin: .5em;
+    }
+    &:hover {
+        color: green;
+        text-decoration: underline;
+    }
 `
 
 const BeverageItem = styled.div`
     border: 1px solid #E5E5E5;
-    transition: .2s ease;
     &:hover {
-        color: #095129;
         cursor: pointer;
     }
 `

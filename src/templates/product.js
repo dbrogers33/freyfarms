@@ -24,19 +24,23 @@ export default ({ data }) => {
           <H3 textAlign="center">Taste the Best</H3>
           <H2 textAlign="center">{data.contentfulBeverage.headline.headline}</H2>
           <P textAlign="center">{data.contentfulBeverage.description.description}</P>
-          <StyledLink to="/locations/">Where to Buy</StyledLink>
+          <LinkWrapper>
+            <StyledLink to="/locations/">Where to Buy</StyledLink>
+            <StyledLink to="/locations/">Beverage Program</StyledLink>
+          </LinkWrapper>
         </Section>
 
         <Section>
-          <FlexBox>
+          <FlexBoxTwo>
             <Img fixed={data.sustainable.childImageSharp.fixed} />
             <Img fixed={data.gmo.childImageSharp.fixed} />
             <Img fixed={data.natural.childImageSharp.fixed} />
-          </FlexBox>
+          </FlexBoxTwo>
         </Section>
 
         <Section>
           <H3 textAlign="center">Nutrition</H3>
+          <Disclaimer>*Per 12oz Bottle</Disclaimer>
           <FlexBox>
             <div>
               <H2 textAlign="center">Calories</H2>
@@ -68,6 +72,18 @@ export default ({ data }) => {
 const Section = styled.section`
   margin: 5em 0;
 `
+const Disclaimer = styled.p`
+    font-family: 'Brandon Grotesque Regular';
+    font-size: 18px;
+    text-align: center;
+    font-display: auto;
+    margin-top: .1em;
+    color: #828282;
+`
+const LinkWrapper = styled.div`
+  width: auto;
+  text-align: center;
+`
 
 const StyledLink = styled(Link)`
     text-transform: uppercase;
@@ -75,10 +91,10 @@ const StyledLink = styled(Link)`
     color: #0F5800;
     font-weight: 800;
     font-size: 18px;
-    margin: .1em;
+    margin: .1em 1em;
     text-decoration: none;
     text-align: center;
-    display: block;
+    display: inline-block;
     & :hover {
       text-decoration: underline;
     }
@@ -93,6 +109,11 @@ const FlexBox = styled.div`
     justify-content: space-around;
     align-items: center;
   }
+`
+const FlexBoxTwo = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 `
 
 const Stat = styled.p`
