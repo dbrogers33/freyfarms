@@ -4,14 +4,10 @@ import styled from "styled-components";
 
 import Layout from "../../components/layout"
 import Hero from "../../components/hero"
-import P from "../../components/typography/p"
-import H2 from "../../components/typography/h2"
-import H3 from "../../components/typography/h3"
 import { Link } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 
 import Container from '../../components/container'
-import { node } from 'prop-types';
 
 export default ({ data }) => {
     const beverages = data.allContentfulBeverage.edges

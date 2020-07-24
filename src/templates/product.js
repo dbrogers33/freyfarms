@@ -12,7 +12,8 @@ import Img from "gatsby-image/withIEPolyfill"
 
 import Container from '../components/container'
 
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
+  console.log(pageContext)
   const ingredients = data.contentfulBeverage.ingredients.join(", ")
   return (
     <Layout>

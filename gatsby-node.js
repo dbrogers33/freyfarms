@@ -80,6 +80,7 @@ exports.createPages = ({ graphql, actions }) => {
     `)
     // For each path, create page and choose a template.
     // values in context Object are available in that page's query
+    
     result.data.allAirtable.edges.forEach(({ node }) => {
       createPage({
         path: `/locations/${node.data.Slug}`,
@@ -92,12 +93,15 @@ exports.createPages = ({ graphql, actions }) => {
 
     // For each path, create page and choose a template.
     // values in context Object are available in that page's query
-    products.data.allContentfulBeverage.edges.forEach(({ node }) => {
+    const posts = products.data.allContentfulBeverage.edges
+    posts.forEach(({ node }, index) => {
       createPage({
         path: `/products/beverages/${node.slug}/`,
         component: path.resolve(`./src/templates/product.js`),
         context: {
           slug: node.slug,
+          prev: index === 0 ? null : posts[index - 1].node,
+          next: index === (posts.length - 1) ? null : posts[index +1].node
         },
       })
     });
