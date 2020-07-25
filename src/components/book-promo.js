@@ -7,7 +7,6 @@ import H3 from '../components/typography/h3'
 import P from '../components/typography/p'
 import Img from "gatsby-image/withIEPolyfill"
 import Container from "../components/container"
-import Button from "../components/button"
 
 export default () => (
     <StaticQuery
