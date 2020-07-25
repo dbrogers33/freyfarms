@@ -73,6 +73,16 @@ exports.createPages = ({ graphql, actions }) => {
           node {
             slug
             id
+            flavor
+            heroImage {
+              localFile {
+                childImageSharp {
+                  fluid(quality: 100, maxWidth: 800) {
+                    srcSetWebp
+                  }
+                }
+              }
+            }
           }
         }
       }

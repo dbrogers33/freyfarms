@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import styled from "styled-components";
 
 import Layout from "../components/layout"
@@ -7,13 +7,16 @@ import Hero from "../components/hero"
 import P from "../components/typography/p"
 import H2 from "../components/typography/h2"
 import H3 from "../components/typography/h3"
-import { Link } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 
 import Container from '../components/container'
 
 export default ({ data, pageContext }) => {
-  console.log(pageContext)
+
+  const { next, prev } = pageContext
+
+  console.log(next)
+
   const ingredients = data.contentfulBeverage.ingredients.join(", ")
   return (
     <Layout>
@@ -66,9 +69,70 @@ export default ({ data, pageContext }) => {
         </Section>
 
       </Container>
+
+      <div>
+        <FlexBox>
+          {prev &&
+            <FlexItem>
+              <Link to={"/products/beverages/" + prev.slug}>
+                <Absolute>
+                  <H2 color="#fff">{prev.flavor}</H2>
+                </Absolute>
+                <Image
+                  fluid={prev.heroImage.localFile.childImageSharp.fluid}
+                  objectPosition='50% 50%'
+                />
+              </Link>
+            </FlexItem>
+          }
+          {next &&
+            <FlexItem>
+              <Link to={"/products/beverages/" + next.slug}>
+                <Absolute>
+                  <H2 color="#fff">{next.flavor}</H2>
+                </Absolute>
+                <Image
+                  fluid={next.heroImage.localFile.childImageSharp.fluid}
+                  objectPosition='50% 50%'
+                />
+              </Link>
+            </FlexItem>
+          }
+        </FlexBox>
+      </div>
+
     </Layout>
   )
 }
+
+const Image = styled(Img)`
+  height: 25em;
+  position: absolute;
+  transition: .2s ease;
+  &:hover {
+    opacity: .6;
+  }
+`
+const FlexItem = styled.div`
+  position: relative;
+  background: black;
+  @media (min-width: 500px) {
+    width: 50%;
+  }
+`
+
+const Absolute = styled.div`
+    position: absolute;
+    color: white;
+    bottom: 1em;
+    margin-left: 1em;
+    z-index: 10;
+    @media (min-width: 800px) {
+        bottom: 2em;
+        margin-left: 3em;
+        width: 40%;
+    }
+`
 
 const Section = styled.section`
   margin: 5em 0;
