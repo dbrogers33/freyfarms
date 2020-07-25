@@ -1,12 +1,13 @@
 import React from "react"
 import styled from "styled-components";
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import Hero from "../components/hero"
 import SideBySide from "../components/side-by-side"
+import Button from "../components/button"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -35,7 +36,7 @@ const IndexPage = ({ data }) => (
         src={data.beverages.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
-        <StyledLink to="/locations">Find a Store Near You</StyledLink>
+        <Button link="/products/beverages/" buttonLabel="View All Drinks" />
       </SideBySide>
     </ProductWrapper>
     
@@ -76,22 +77,6 @@ const ExternalLink = styled.a`
         font-size: 20px;
     }
 `
-const StyledLink = styled(Link)`
-    text-transform: uppercase;
-    font-family: 'Cervo Neue';
-    color: #0F5800;
-    font-weight: 800;
-    font-size: 18px;
-    margin: .1em 0;
-    text-decoration: none;
-    & :hover {
-      text-decoration: underline;
-    }
-    @media (min-width: 800px) {
-        font-size: 20px;
-    }
-`
-
 const ProductWrapper = styled.section`
   @media (min-width: 900px) {
     margin: 3em;

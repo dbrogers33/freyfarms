@@ -5,7 +5,7 @@ import H2 from "../components/typography/h2"
 import H3 from "../components/typography/h3"
 import P from "../components/typography/p"
 import Container from "../components/container"
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const Reviews = () => {

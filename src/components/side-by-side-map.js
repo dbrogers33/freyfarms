@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
 import { StaticQuery, graphql } from 'gatsby'
-import { SingleMap, Planes } from '../components/map'
 
 import H2 from '../components/typography/h2'
 import H3 from '../components/typography/h3'
@@ -9,7 +8,7 @@ import P from '../components/typography/p'
 import Img from "gatsby-image/withIEPolyfill"
 
 
-export default ({ headerThree, headerTwo, paragraph, alt, src, children, street, city, phone }) => (
+export default ({ headerThree, headerTwo, children, street, city, phone }) => (
     <StaticQuery
       query={graphql`
         query {
@@ -75,10 +74,6 @@ const Copy = styled.div`
     @media (max-width: 900px) {
         margin: 2em auto;
     }
-`
-
-const Image = styled(Img)`
-
 `
 const BackgroundImage = styled(Img)`
     height: 100%;

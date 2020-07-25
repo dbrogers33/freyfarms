@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 // Needed for Store Locator
 import { Map } from '../components/map'
