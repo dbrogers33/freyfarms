@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from "styled-components";
+import SEO from "../../components/seo"
 
 import Layout from "../../components/layout"
 import Hero from "../../components/hero"
@@ -13,6 +14,11 @@ export default ({ data }) => {
     const beverages = data.allContentfulBeverage.edges
     return (
         <Layout>
+            <SEO
+            title="Sarah's Homegrown Flavors | Frey Farms"
+            description="Taste the refreshing flavors of Sarah's Homegrown aqua frescas, teas, and lemonade. Made with real fresh ingredients that come straight from our farms."
+            />
+
             <Hero headline="All the flavors" heroImage={data.hero.childImageSharp.fluid} />
 
             <Container>

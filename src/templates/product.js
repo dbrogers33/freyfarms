@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from "styled-components";
+import SEO from "../components/seo"
 
 import Layout from "../components/layout"
 import Hero from "../components/hero"
@@ -20,6 +21,12 @@ export default ({ data, pageContext }) => {
   const ingredients = data.contentfulBeverage.ingredients.join(", ")
   return (
     <Layout>
+
+      <SEO
+        title={data.contentfulBeverage.flavor + ' | Sarah\'s Homegrown | Frey Farms'}
+        description={data.contentfulBeverage.description}
+      />
+
       <Hero headline={data.contentfulBeverage.flavor} heroImage={data.contentfulBeverage.heroImage.localFile.childImageSharp.fluid} />
 
       <Container width="900px">
