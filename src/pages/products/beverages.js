@@ -27,8 +27,8 @@ export default ({ data }) => {
                         {beverages.map((beverage, key) => (
                             <StyledLink to={'/products/beverages/' + beverage.node.slug}>
                                 <BeverageItem key={key}>
-                                    <Img fluid={beverage.node.studioImage.localFile.childImageSharp.fluid} />
-                                    <Img className="coverimage" style={{ width: '100%', height: 'auto', position: 'absolute', top:'0' }} fluid={beverage.node.hoverImage.localFile.childImageSharp.fluid} />
+                                    <Img fluid={beverage.node.hoverImage.localFile.childImageSharp.fluid} />
+                                    <Img className="coverimage" style={{ width: '100%', height: 'auto', position: 'absolute', top:'0' }} fluid={beverage.node.studioImage.localFile.childImageSharp.fluid} />
                                     <Label>{beverage.node.flavor}</Label>
                                 </BeverageItem>
                             </StyledLink>
