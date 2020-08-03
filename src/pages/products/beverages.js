@@ -27,7 +27,8 @@ export default ({ data }) => {
                         {beverages.map((beverage, key) => (
                             <StyledLink to={'/products/beverages/' + beverage.node.slug}>
                                 <BeverageItem key={key}>
-                                    <Img fluid={beverage.node.studioImage.localFile.childImageSharp.fluid} />
+                                    <Img fluid={beverage.node.hoverImage.localFile.childImageSharp.fluid} />
+                                    <Img className="coverimage" style={{ width: '100%', height: 'auto', position: 'absolute', top:'0' }} fluid={beverage.node.studioImage.localFile.childImageSharp.fluid} />
                                     <Label>{beverage.node.flavor}</Label>
                                 </BeverageItem>
                             </StyledLink>
@@ -39,6 +40,8 @@ export default ({ data }) => {
         </Layout>
     )
 }
+
+
 
 const Grid = styled.div`
     display: grid;
@@ -54,6 +57,8 @@ const Grid = styled.div`
 const StyledLink = styled(Link)`
     text-decoration: none;
     transition: .2s ease;
+    position: relative;
+    
     p {
         color: #095129;
         text-decoration: none;
@@ -62,11 +67,16 @@ const StyledLink = styled(Link)`
     &:hover {
         color: green;
         text-decoration: underline;
+        .coverimage {
+            opacity: 0;
+            transition: .4s ease;
+        }
     }
 `
 
 const BeverageItem = styled.div`
     border: 1px solid #E5E5E5;
+    position: inline-block;
     &:hover {
         cursor: pointer;
     }
@@ -100,6 +110,15 @@ export const pageQuery = graphql`
             slug
             flavor
             studioImage {
+                localFile {
+                    childImageSharp {
+                        fluid(maxWidth: 500, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp_noBase64
+                        }
+                    }
+                }
+            }
+            hoverImage {
                 localFile {
                     childImageSharp {
                         fluid(maxWidth: 500, quality: 100) {

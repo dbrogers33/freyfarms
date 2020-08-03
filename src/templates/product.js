@@ -116,6 +116,15 @@ const Image = styled(Img)`
   height: 25em;
   position: absolute;
   transition: .2s ease;
+  &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(0,0,0,0.48923319327731096) 2%, rgba(255,255,255,0) 39%, rgba(255,255,255,0) 78%, rgba(0,0,0,0.23713235294117652) 100%);
+  }
   &:hover {
     opacity: .6;
   }
@@ -126,6 +135,7 @@ const FlexItem = styled.div`
   @media (min-width: 500px) {
     width: 50%;
   }
+  
 `
 
 const Absolute = styled.div`
