@@ -36,8 +36,7 @@ export default ({ data, pageContext }) => {
           <H2 textAlign="center">{data.contentfulBeverage.headline.headline}</H2>
           <P textAlign="center">{data.contentfulBeverage.description.description}</P>
           <LinkWrapper>
-            <StyledLink to="/locations/">Where to Buy</StyledLink>
-            <StyledLink to="/locations/">Beverage Program</StyledLink>
+            <StyledLink to="/locations/">Custom Bubbler Beverage Program</StyledLink>
           </LinkWrapper>
         </Section>
 

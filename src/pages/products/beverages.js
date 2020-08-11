@@ -19,7 +19,7 @@ export default ({ data }) => {
             description="Taste the refreshing flavors of Sarah's Homegrown aqua frescas, teas, and lemonade. Made with real fresh ingredients that come straight from our farms."
             />
 
-            <Hero headline="All the flavors" heroImage={data.hero.childImageSharp.fluid} />
+            <Hero headline="Fresh frolm the Farm Beverages" heroImage={data.hero.childImageSharp.fluid} />
 
             <Container>
                 <Section>
@@ -97,7 +97,7 @@ const Label = styled.p`
 
 export const pageQuery = graphql`
   query {
-    hero: file(relativePath: { eq: "hero-images/single-locations.png" }) { 
+    hero: file(relativePath: { eq: "hero-images/beverages.png" }) { 
       childImageSharp {
         fluid(maxWidth: 1500, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
