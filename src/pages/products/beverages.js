@@ -19,7 +19,7 @@ export default ({ data }) => {
             description="Taste the refreshing flavors of Sarah's Homegrown aqua frescas, teas, and lemonade. Made with real fresh ingredients that come straight from our farms."
             />
 
-            <Hero headline="Fresh frolm the Farm Beverages" heroImage={data.hero.childImageSharp.fluid} />
+            <Hero headline="Fresh from the Farm Beverages" heroImage={data.hero.childImageSharp.fluid} />
 
             <Container>
                 <Section>
