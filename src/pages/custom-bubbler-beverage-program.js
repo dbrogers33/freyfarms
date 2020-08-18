@@ -128,31 +128,10 @@ const Button = styled.button`
 
 export const query = graphql`
 query {
-  hero: file(relativePath: { eq: "hero-images/story-hero.png" }) {
+  hero: file(relativePath: { eq: "hero-images/beverage-program.png" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp_noBase64
-      }
-    }
-  }
-  family: file(relativePath: { eq: "family.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 750, quality: 100) {
-        ...GatsbyImageSharpFluid_withWebp
-      }
-    }
-  }
-  background: file(relativePath: { eq: "sarah-our-story.png" }) {
-    childImageSharp {
-      fluid(maxWidth: 1500, quality: 100) {
-        ...GatsbyImageSharpFluid_withWebp
-      }
-    }
-  }
-  map: file(relativePath: { eq: "map.png" }) {
-    childImageSharp {
-      fluid(maxWidth: 850, quality: 100) {
-        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
