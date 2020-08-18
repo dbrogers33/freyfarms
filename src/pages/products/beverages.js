@@ -7,6 +7,7 @@ import Layout from "../../components/layout"
 import Hero from "../../components/hero"
 import { Link } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
+import H2 from "../../components/typography/h2"
 
 import Container from '../../components/container'
 
@@ -23,17 +24,50 @@ export default ({ data }) => {
 
             <Container>
                 <Section>
-                    <Grid>
-                        {beverages.map((beverage, key) => (
-                            <StyledLink to={'/products/beverages/' + beverage.node.slug}>
-                                <BeverageItem key={key}>
-                                    <Img fluid={beverage.node.hoverImage.localFile.childImageSharp.fluid} />
-                                    <Img className="coverimage" style={{ width: '100%', height: 'auto', position: 'absolute', top:'0' }} fluid={beverage.node.studioImage.localFile.childImageSharp.fluid} />
-                                    <Label>{beverage.node.flavor}</Label>
-                                </BeverageItem>
-                            </StyledLink>
-                        ))}
-                    </Grid>
+                    <H2>Aqua Frescas</H2>
+                    <Category>
+                        <Grid>
+                            {beverages.filter(beverage => beverage.node.category === "Aqua Fresca").map((fresca) => (
+                                <StyledLink to={'/products/beverages/' + fresca.node.slug}>
+                                    <BeverageItem>
+                                        <Img fluid={fresca.node.hoverImage.localFile.childImageSharp.fluid} />
+                                        <Img className="coverimage" style={{ width: '100%', height: 'auto', position: 'absolute', top:'0' }} fluid={fresca.node.studioImage.localFile.childImageSharp.fluid} />
+                                        <Label>{fresca.node.flavor}</Label>
+                                    </BeverageItem>
+                                </StyledLink>
+                            ))}
+                        </Grid>
+                    </Category>
+
+                    <Category>
+                    <H2>Teas</H2>
+                        <Grid>
+                            {beverages.filter(beverage => beverage.node.category === "Teas").map((tea) => (
+                                <StyledLink to={'/products/beverages/' + tea.node.slug}>
+                                    <BeverageItem>
+                                        <Img fluid={tea.node.hoverImage.localFile.childImageSharp.fluid} />
+                                        <Img className="coverimage" style={{ width: '100%', height: 'auto', position: 'absolute', top:'0' }} fluid={tea.node.studioImage.localFile.childImageSharp.fluid} />
+                                        <Label>{tea.node.flavor}</Label>
+                                    </BeverageItem>
+                                </StyledLink>
+                            ))}
+                        </Grid>
+                    </Category>
+
+                    <Category>
+                    <H2>Lemonades</H2>
+                        <Grid>
+                            {beverages.filter(beverage => beverage.node.category === "Lemonades").map((lemonade) => (
+                                <StyledLink to={'/products/beverages/' + lemonade.node.slug}>
+                                    <BeverageItem>
+                                        <Img fluid={lemonade.node.hoverImage.localFile.childImageSharp.fluid} />
+                                        <Img className="coverimage" style={{ width: '100%', height: 'auto', position: 'absolute', top:'0' }} fluid={lemonade.node.studioImage.localFile.childImageSharp.fluid} />
+                                        <Label>{lemonade.node.flavor}</Label>
+                                    </BeverageItem>
+                                </StyledLink>
+                            ))}
+                        </Grid>
+                    </Category>
                 </Section>
             </Container>
 
@@ -42,6 +76,9 @@ export default ({ data }) => {
 }
 
 
+const Category = styled.div`
+    margin: 2em 0;
+`
 
 const Grid = styled.div`
     display: grid;
@@ -109,6 +146,7 @@ export const pageQuery = graphql`
           node {
             slug
             flavor
+            category
             studioImage {
                 localFile {
                     childImageSharp {
