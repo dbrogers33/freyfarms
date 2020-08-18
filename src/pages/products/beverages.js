@@ -141,7 +141,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulBeverage {
+    allContentfulBeverage(sort: {order: ASC, fields: flavor}) {
         edges {
           node {
             slug

@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => (
       <P textAlign="center">We offer custom bubbler beverage solutions for our foodservice partners. Private label programs available.</P>
 
       <Container width="750px">
-        <H2 textAlign="center">Get more information on our custom bubbler program</H2>
+        <H2 textAlign="center">Let’s Create a Bubbler Lineup Together</H2>
       <NetlifyForm
         name='Custom Bubbler Program'
         honeyPot="bot-field"
@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => (
               <div>Your information was not sent. Please try again later.</div>
             }
             {success &&
-              <H3 style={{ margin: "3em 0" }}>Thank you for contacting us!</H3>
+              <H3 style={{ margin: "3em 0" }}>Someone from Our Team will Get in Touch with You Shortly!</H3>
             }
             {!loading && !success &&
               <Flex>
