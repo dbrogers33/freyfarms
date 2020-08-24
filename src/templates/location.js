@@ -15,7 +15,7 @@ export default ({ data }) => {
     <Layout>
       <SEO
         title={'Sarah\'s Homegrown near ' + data.airtable.data.city + ', ' + data.airtable.data.state + ' | Frey Farms'}
-        description="Taste the refreshing flavors of Sarah's Homegrown aqua frescas, teas, and lemonade. Made with real fresh ingredients that come straight from our farms."
+        description="Taste the refreshing flavors of Sarah's Homegrown agua frescas, teas, and lemonade. Made with real fresh ingredients that come straight from our farms."
       />
       <Hero headline={"Frey Farms Products in " + data.airtable.data.City + ", " + data.airtable.data.State} heroImage={data.hero.childImageSharp.fluid} />
       <SideBySide

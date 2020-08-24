@@ -24,7 +24,7 @@ export default ({ data }) => {
 
             <Container>
                 <Section>
-                    <H2>Aqua Frescas</H2>
+                    <H2>Agua Frescas</H2>
                     <Category>
                         <Grid>
                             {beverages.filter(beverage => beverage.node.category === "Aqua Fresca").map((fresca) => (
