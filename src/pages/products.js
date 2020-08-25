@@ -1,12 +1,13 @@
 import React from "react"
 import styled from "styled-components";
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import Hero from "../components/hero"
 import SideBySide from "../components/side-by-side"
+import Button from "../components/button"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -31,11 +32,11 @@ const IndexPage = ({ data }) => (
       <SideBySide
         headerThree="Sarah's Homegrown"
         headerTwo="Beverages"
-        paragraph="Sarah's Homegrown™ is an innovative line of fresh beverages, sourced from the farm. Available in agua frescas, teas, and lemonades, Sarah's Homegrown™ bottles up farm fresh goodness. Our delicious flavors include Strawberry Lemonade, Mango, Watermelon, Lime Mint, and Pineapple Coconut."
+        paragraph="We have a variety of flavors available and are always expanding our offerings. Learn more about our fresh from the farm beverages."
         src={data.beverages.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
-        <StyledLink to="/locations">Find a Store Near You</StyledLink>
+        <Button link="/products/beverages/" buttonLabel="Farm Fresh Beverages" />
       </SideBySide>
     </ProductWrapper>
     
@@ -76,22 +77,6 @@ const ExternalLink = styled.a`
         font-size: 20px;
     }
 `
-const StyledLink = styled(Link)`
-    text-transform: uppercase;
-    font-family: 'Cervo Neue';
-    color: #0F5800;
-    font-weight: 800;
-    font-size: 18px;
-    margin: .1em 0;
-    text-decoration: none;
-    & :hover {
-      text-decoration: underline;
-    }
-    @media (min-width: 800px) {
-        font-size: 20px;
-    }
-`
-
 const ProductWrapper = styled.section`
   @media (min-width: 900px) {
     margin: 3em;

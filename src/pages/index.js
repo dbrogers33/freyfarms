@@ -15,7 +15,6 @@ import SideBySide from '../components/side-by-side'
 import Button from "../components/button"
 import Card from "../components/hover-card"
 import Book from "../components/book-promo"
-import Instagram from "../components/instagram"
 
 const IndexPage = ({ data }) => (
   <Layout>

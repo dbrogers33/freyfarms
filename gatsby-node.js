@@ -65,14 +65,53 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `)
+
+    const products = await graphql(`
+    {
+      allContentfulBeverage(sort: {order: ASC, fields: [category, flavor]}) {
+        edges {
+          node {
+            slug
+            id
+            flavor
+            heroImage {
+              localFile {
+                childImageSharp {
+                  fluid(quality: 100, maxWidth: 800) {
+                    srcSetWebp
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    `)
     // For each path, create page and choose a template.
     // values in context Object are available in that page's query
+    
     result.data.allAirtable.edges.forEach(({ node }) => {
       createPage({
         path: `/locations/${node.data.Slug}`,
         component: path.resolve(`./src/templates/location.js`),
         context: {
           recordId: node.recordId,
+        },
+      })
+    });
+
+    // For each path, create page and choose a template.
+    // values in context Object are available in that page's query
+    const posts = products.data.allContentfulBeverage.edges
+    posts.forEach(({ node }, index) => {
+      createPage({
+        path: `/products/beverages/${node.slug}/`,
+        component: path.resolve(`./src/templates/product.js`),
+        context: {
+          slug: node.slug,
+          prev: index === 0 ? null : posts[index - 1].node,
+          next: index === (posts.length - 1) ? null : posts[index +1].node
         },
       })
     });

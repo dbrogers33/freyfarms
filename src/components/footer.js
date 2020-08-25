@@ -12,7 +12,7 @@ const Footer = () => {
                     <div>
                         <Heading>Products</Heading>
                         <StyledLink to="/products">Produce</StyledLink>
-                        <StyledLink to="/products">Beverages</StyledLink>
+                        <StyledLink to="/products/beverages/">Beverages</StyledLink>
                         <StyledLink to="/products">Tsamma Watermelon Juice</StyledLink>
                     </div>
                     <div>
@@ -36,8 +36,8 @@ const Footer = () => {
                 </Grid>
                 <BottomSection>
                     <Social>
-                        <a href="https://facebook.com/freyfarms" target="_blank"><FaFacebookF /></a>
-                        <a href="https://www.instagram.com/freyfarms/" target="_blank"><FaInstagram /></a>
+                        <a href="https://facebook.com/freyfarms" target="_blank" rel="noreferrer"><FaFacebookF aria-label="Facebook Icon"/></a>
+                        <a href="https://www.instagram.com/freyfarms/" target="_blank" rel="noreferrer"><FaInstagram aria-label="Instagram Icon"/></a>
                     </Social>
                     <CopyWrite>
                         ©2020, Frey Farms, LLC. All Rights Reserved.
