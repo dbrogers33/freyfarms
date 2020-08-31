@@ -68,7 +68,7 @@ exports.createPages = ({ graphql, actions }) => {
 
     const products = await graphql(`
     {
-      allContentfulBeverage {
+      allContentfulBeverage(sort: {order: ASC, fields: [category, flavor]}) {
         edges {
           node {
             slug

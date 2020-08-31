@@ -29,15 +29,14 @@ export default ({ data, pageContext }) => {
 
       <Hero headline={data.contentfulBeverage.flavor} heroImage={data.contentfulBeverage.heroImage.localFile.childImageSharp.fluid} />
 
-      <Container width="900px">
+      <Container width="1100px">
 
         <Section>
-          <H3 textAlign="center">Taste the Best</H3>
+          <H3 textAlign="center">Fresh from the Farm</H3>
           <H2 textAlign="center">{data.contentfulBeverage.headline.headline}</H2>
-          <P textAlign="center">{data.contentfulBeverage.description.description}</P>
+          {/* <P textAlign="center">{data.contentfulBeverage.description.description}</P> */}
           <LinkWrapper>
-            <StyledLink to="/locations/">Where to Buy</StyledLink>
-            <StyledLink to="/locations/">Beverage Program</StyledLink>
+            <StyledLink to="/custom-bubbler-beverage-program/">Custom Bubbler Beverage Program Available</StyledLink>
           </LinkWrapper>
         </Section>
 

@@ -32,11 +32,11 @@ const IndexPage = ({ data }) => (
       <SideBySide
         headerThree="Sarah's Homegrown"
         headerTwo="Beverages"
-        paragraph="Sarah's Homegrown™ is an innovative line of fresh beverages, sourced from the farm. Available in agua frescas, teas, and lemonades, Sarah's Homegrown™ bottles up farm fresh goodness. Our delicious flavors include Strawberry Lemonade, Mango, Watermelon, Lime Mint, and Pineapple Coconut."
+        paragraph="We have a variety of flavors available and are always expanding our offerings. Learn more about our fresh from the farm beverages."
         src={data.beverages.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
-        <Button link="/products/beverages/" buttonLabel="View All Drinks" />
+        <Button link="/products/beverages/" buttonLabel="Farm Fresh Beverages" />
       </SideBySide>
     </ProductWrapper>
     
