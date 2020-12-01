@@ -127,7 +127,7 @@ const ValueWrapper = styled.div`
 
 export const query = graphql`
 query {
-  hero: file(relativePath: { eq: "hero-images/story-hero.png" }) {
+  hero: file(relativePath: { eq: "hero-images/story-hero-2.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp_noBase64
