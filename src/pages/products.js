@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => (
         src={data.produce.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
-        <Button link="/products/produce/" buttonLabel="Farm Fresh Produce" />
+        <Button link="/" buttonLabel="What We Grow" />
       </SideBySide>
     </ProductWrapper>
     
