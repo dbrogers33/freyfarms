@@ -20,7 +20,7 @@ const Footer = () => {
                         <StyledLink to="/our-story">Our Story</StyledLink>
                         <StyledLink to="/news">News</StyledLink>
                         <StyledLink to="/">The Growing Season</StyledLink>
-                        <StyledLink to="/locations">Product Locator</StyledLink>
+                        <StyledLink to="/locations">Find Our Juice</StyledLink>
                     </div>
                     <div> 
                         
