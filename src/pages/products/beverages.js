@@ -8,6 +8,7 @@ import Hero from "../../components/hero"
 import { Link } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 import H2 from "../../components/typography/h2"
+import Button from "../../components/button"
 
 import Container from '../../components/container'
 
@@ -68,6 +69,13 @@ export default ({ data }) => {
                             ))}
                         </Grid>
                     </Category>
+
+                    <Category>
+                        <Locator>
+                            <H2>Looking for Sarah's Homegrown in stores? </H2>
+                            <Button link="/locations" buttonLabel="Find a Store" />
+                        </Locator>
+                    </Category>
                 </Section>
             </Container>
 
@@ -75,7 +83,17 @@ export default ({ data }) => {
     )
 }
 
-
+const Locator = styled.div`
+    border: solid green 1px;
+    padding: 2em;
+    margin: 6em 0;
+    @media (min-width: 800px) {
+        display: flex;
+        h2 {
+            margin-right: 2em;
+        }
+    }
+`
 const Category = styled.div`
     margin: 2em 0;
 `
