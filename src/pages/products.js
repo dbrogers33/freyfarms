@@ -25,7 +25,9 @@ const IndexPage = ({ data }) => (
         paragraph="From the very beginning, Frey Farms was focused on growing the best fruit and vegetables to distribute across the country. After 25 years in business, The Frey family still bases its business on produce, serving the nation’s largest retailers."
         src={data.produce.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
-      />
+      >
+        <Button link="/produce-guide.pdf" buttonLabel="Our Produce Guide" />
+      </SideBySide>
     </ProductWrapper>
     
     <ProductWrapper>
