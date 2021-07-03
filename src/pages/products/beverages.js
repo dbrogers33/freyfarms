@@ -40,7 +40,7 @@ export default ({ data }) => {
                         </Grid>
                     </Category>
 
-                    <Category>
+                    {/* <Category>
                     <H2>Teas</H2>
                         <Grid>
                             {beverages.filter(beverage => beverage.node.category === "Teas").map((tea) => (
@@ -68,7 +68,7 @@ export default ({ data }) => {
                                 </StyledLink>
                             ))}
                         </Grid>
-                    </Category>
+                    </Category> */}
 
                     <Category>
                         <Locator>
