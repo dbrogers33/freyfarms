@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => (
         src={data.beverages.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
-        <Button link="/products/beverages/" buttonLabel="Farm Fresh Beverages" />
+        <ExternalLink href="http://drinksarahs.com" target="_blank">Visit DrinkSarahs.com</ExternalLink>
       </SideBySide>
     </ProductWrapper>
     
