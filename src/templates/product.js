@@ -16,7 +16,6 @@
 
 //   const { next, prev } = pageContext
 
-//   console.log(next)
 
 //   const ingredients = data.contentfulBeverage.ingredients.join(", ")
 //   return (

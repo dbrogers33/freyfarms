@@ -26,8 +26,7 @@ export const Planes = ({ center, zoom }) => {
       }
     }
   `)
-  console.log("plane_img ", plane_img)
-  console.log("plane_img ", plane_img.image.childImageSharp.fluid.base64)
+
 
   useEffect(() => {
     if (!mapbox_api_key) {
@@ -56,7 +55,7 @@ export const Planes = ({ center, zoom }) => {
     map.addControl(new mapboxgl.NavigationControl(), "bottom-left")
 
     map.on("load", () => {
-      console.log("map onload")
+
 
       // Initialize the geolocate control.
       var geolocate = new mapboxgl.GeolocateControl({
@@ -70,7 +69,7 @@ export const Planes = ({ center, zoom }) => {
       // Set an event listener that fires
       // when a geolocate event occurs.
       geolocate.on('geolocate', function() {
-        console.log('A geolocate event has occurred.')
+
       });
 
 
@@ -79,8 +78,6 @@ export const Planes = ({ center, zoom }) => {
       fetch(`https://opensky-network.org/api/states/all`)
         .then(response => response.json()) // parse JSON from request
         .then(resData => {
-          console.log("resData ", resData)
-          console.log("resData ", resData.states)
 
           let geo_planes = resData.states
             .map(item => {
@@ -105,7 +102,7 @@ export const Planes = ({ center, zoom }) => {
               }
             })
             .filter(item => item)
-          console.log("geo_planes ", geo_planes)
+
 
           map.loadImage(plane_img.image.childImageSharp.fluid.base64, function(
             error,
@@ -149,7 +146,6 @@ export const Planes = ({ center, zoom }) => {
 
             // handle user click
             map.on("click", `planes-flying`, function(e) {
-              console.log("e.features", e.features)
               let properties = e.features[0].properties
 
               let html = `<div class="mapbox__popup_wrapper">
