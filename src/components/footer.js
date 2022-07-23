@@ -12,7 +12,7 @@ const Footer = () => {
                     <div>
                         <Heading>Products</Heading>
                         <StyledLink to="/products">Produce</StyledLink>
-                        <StyledLink to="/products/beverages/">Beverages</StyledLink>
+                        <StyledLink to="/products">Beverages</StyledLink>
                         <StyledLink to="/products">Tsamma Watermelon Juice</StyledLink>
                     </div>
                     <div>
