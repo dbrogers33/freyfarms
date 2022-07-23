@@ -48,8 +48,7 @@ export const Map = ({ center, zoom }) => {
       }
     }
   `)
-  console.log("plane_img ", plane_img)
-  console.log("plane_img ", plane_img.image.childImageSharp.fluid.base64)
+
 
 
 
@@ -183,7 +182,7 @@ export const Map = ({ center, zoom }) => {
     map.addControl(geocoder, 'top-left');
 
     map.on("load", () => {
-      console.log("map onload")
+    
 
 
 
@@ -199,7 +198,6 @@ export const Map = ({ center, zoom }) => {
       // Set an event listener that fires
       // when a geolocate event occurs.
       geolocate.on('geolocate', function () {
-        console.log('A geolocate event has occurred.')
       });
 
 
@@ -231,7 +229,7 @@ export const Map = ({ center, zoom }) => {
 
       let productMarkers = GeoJSON.parse(locations, { Point: ['latitude', 'longitude'], include: ['city', 'state', 'address', 'name', 'zip', 'phone', 'id', 'slug'] });
 
-      console.log(productMarkers)
+
 
 
       map.loadImage(plane_img.image.childImageSharp.fluid.base64, function (
@@ -286,7 +284,7 @@ export const Map = ({ center, zoom }) => {
       })
 
       const trace = gjv.isFeatureCollection(productMarkers, true)
-      console.log(trace)
+
 
       // --------- ADDS LOCATION LISTINGS TO SIDEBAR -------------
 	  buildLocationList(productMarkers);
