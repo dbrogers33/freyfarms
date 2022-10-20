@@ -39,6 +39,7 @@ const IndexPage = ({ data }) => (
         alt="Sarah's Homegrown Produce'"
       >
         <ExternalLink href="http://drinksarahs.com" target="_blank">Visit DrinkSarahs.com</ExternalLink>
+        <Button link="/tsamma-shg-sellsheets.pdf" buttonLabel="View Our Spec Sheet" />
       </SideBySide>
     </ProductWrapper>
     
@@ -52,6 +53,7 @@ const IndexPage = ({ data }) => (
         alt="Sarah's Homegrown Produce'"
       >
       <ExternalLink href="http://tsammajuice.com" target="_blank">Visit TsammaJuice.com</ExternalLink>
+      <Button link="/tsamma-shg-sellsheets.pdf" buttonLabel="View Our Spec Sheet" />
       </SideBySide>
     </ProductWrapper>
     </Products>
