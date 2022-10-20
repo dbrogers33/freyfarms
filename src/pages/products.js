@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => (
         src={data.beverages.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
-        <ExternalLink href="http://drinksarahs.com" target="_blank">Visit DrinkSarahs.com</ExternalLink>
+        <ExternalLink href="http://drinksarahs.com" target="_blank">Visit DrinkSarahs.com</ExternalLink><br /><br />
         <Button link="/tsamma-shg-sellsheets.pdf" buttonLabel="View Our Spec Sheet" />
       </SideBySide>
     </ProductWrapper>
@@ -52,7 +52,7 @@ const IndexPage = ({ data }) => (
         src={data.tsamma.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
-      <ExternalLink href="http://tsammajuice.com" target="_blank">Visit TsammaJuice.com</ExternalLink>
+      <ExternalLink href="http://tsammajuice.com" target="_blank">Visit TsammaJuice.com</ExternalLink><br /><br />
       <Button link="/tsamma-shg-sellsheets.pdf" buttonLabel="View Our Spec Sheet" />
       </SideBySide>
     </ProductWrapper>
