@@ -9,7 +9,7 @@
     "@turf/distance": "^6.0.1",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
-    "gatsby": "^2.20.12",
+    "gatsby": "^4.25.7",
     "gatsby-cli": "^2.12.88",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-google-tagmanager": "^2.2.3",
