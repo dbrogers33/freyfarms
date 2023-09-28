@@ -26,11 +26,19 @@ export default () => (
             <NavBar>
                 <Link to="/"><Logo fixed={data.logo.childImageSharp.fixed}/></Link>
                 <DesktopMenu>
-                    <StyledLink to="/">Home</StyledLink>
-                    <StyledLink to="/products">Products</StyledLink>
-                    <StyledLink to="/our-story">Our Story</StyledLink>
-                    <ExternalLink href="https://thegrowingseason.green" target="_blank">The Growing Season</ExternalLink>
-                    <StyledLink to="/news">News</StyledLink>
+                    <ul>
+                        <li><StyledLink to="/">Home</StyledLink></li>
+                        <li><StyledLink to="/products" aria-haspopup="true">Products</StyledLink>
+                            <ul className="dropdown" aria-label="submenu">
+                                <li className="dropdown-item"><StyledLink to="/products">Our Brands</StyledLink></li>
+                                <li className="dropdown-item"><StyledLink to="/produce-guide.pdf">Produce Guide</StyledLink></li>
+                                <li className="dropdown-item"><StyledLink to="/tsamma-shg-sellsheets.pdf">Beverage Spec Sheets</StyledLink></li>
+                            </ul>
+                        </li>
+                        <li><StyledLink to="/our-story">Our Story</StyledLink></li>
+                        <li><ExternalLink href="https://thegrowingseason.green" target="_blank">The Growing Season</ExternalLink></li>
+                        <li><StyledLink to="/news">News</StyledLink></li>
+                    </ul>
                 </DesktopMenu>
             </NavBar>
             <MobileMenu />
@@ -44,6 +52,65 @@ const NavBar = styled.div`
     z-index: 2;
     display: flex;
     align-items: center;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+      }
+      
+      li {
+        color: #fff;
+        display: block;
+        float: left;
+        padding: 1rem;
+        position: relative;
+        text-decoration: none;
+        transition-duration: 0.5s;
+      }
+        
+      li a {
+        color: #fff;
+      }
+      
+      li:hover,
+      li:focus-within {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      
+      li:focus-within a {
+        outline: none;
+      }
+      
+      ul li ul {
+        background: rgba(2, 2, 2, 0.35);
+        visibility: hidden;
+        opacity: 0;
+        min-width: 5rem;
+        position: absolute;
+        transition: all 0.5s ease;
+        margin-top: 1rem;
+        left: 0;
+        display: none;
+        li a {
+            font-size: 12px;
+        }
+      }
+      
+      ul li:hover > ul,
+      ul li:focus-within > ul,
+      ul li ul:hover,
+      ul li ul:focus {
+         visibility: visible;
+         opacity: 1;
+         display: block;
+      }
+      
+      ul li ul li {
+        clear: both;
+        width: 100%;
+      }
 `
 const Logo = styled(Img)`
     margin: 0 2em 0 2em;
@@ -61,7 +128,7 @@ const StyledLink = styled(props => <Link {...props} />) `
     text-decoration: none;
     text-transform: uppercase;
     padding: 0;
-    margin: 0 20px;
+    margin: 0 0px;
     font-family: 'Brandon Grotesque Medium';
     font-size: 16px;
     transition: .2s ease;
@@ -76,7 +143,7 @@ const ExternalLink = styled.a`
     text-decoration: none;
     text-transform: uppercase;
     padding: 0;
-    margin: 0 20px;
+    margin: 0 0px;
     font-family: 'Brandon Grotesque Medium';
     font-size: 16px;
     transition: .2s ease;
