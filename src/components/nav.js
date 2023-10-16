@@ -31,8 +31,8 @@ export default () => (
                         <li><StyledLink to="/products" aria-haspopup="true">Products</StyledLink>
                             <ul className="dropdown" aria-label="submenu">
                                 <li className="dropdown-item"><StyledLink to="/products">Our Brands</StyledLink></li>
-                                <li className="dropdown-item"><StyledLink to="/produce-guide.pdf">Produce Guide</StyledLink></li>
-                                <li className="dropdown-item"><StyledLink to="/tsamma-shg-sellsheets.pdf">Beverage Spec Sheets</StyledLink></li>
+                                <li className="dropdown-item"><ExternalLink href="https://freyfarms.com/produce-guide.pdf" target="_blank" >Produce Guide</ExternalLink></li>
+                                <li className="dropdown-item"><ExternalLink href="https://freyfarms.com/tsamma-shg-sellsheets.pdf" target="_blank" >Beverage Spec Sheets</ExternalLink></li>
                             </ul>
                         </li>
                         <li><StyledLink to="/our-story">Our Story</StyledLink></li>
