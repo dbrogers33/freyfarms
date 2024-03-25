@@ -28,14 +28,16 @@ export default () => (
                 <DesktopMenu>
                     <ul>
                         <li><StyledLink to="/">Home</StyledLink></li>
-                        <li><StyledLink to="/products" aria-haspopup="true">Products</StyledLink>
+                        <li><StyledLink to="/our-story">Our Story</StyledLink></li>
+                        <li><StyledLink to="/products" aria-haspopup="true">What We Grow</StyledLink>
                             <ul className="dropdown" aria-label="submenu">
-                                <li className="dropdown-item"><StyledLink to="/products">Our Brands</StyledLink></li>
+                                <li className="dropdown-item"><StyledLink to="/products">Produce</StyledLink></li>
+                                <li className="dropdown-item"><StyledLink to="/products">The Heirloom Stacker</StyledLink></li>
+                                <li className="dropdown-item"><StyledLink to="/products">Candy Corn</StyledLink></li>
                                 <li className="dropdown-item"><ExternalLink href="https://freyfarms.com/produce-guide.pdf" target="_blank" >Produce Guide</ExternalLink></li>
                                 <li className="dropdown-item"><ExternalLink href="https://freyfarms.com/tsamma-shg-sellsheets.pdf" target="_blank" >Beverage Spec Sheets</ExternalLink></li>
                             </ul>
                         </li>
-                        <li><StyledLink to="/our-story">Our Story</StyledLink></li>
                         <li><ExternalLink href="https://thegrowingseason.green" target="_blank">The Growing Season</ExternalLink></li>
                         <li><StyledLink to="/news">News</StyledLink></li>
                     </ul>
