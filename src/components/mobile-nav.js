@@ -10,13 +10,13 @@ const MobileMenu = () => {
           <StyledLink className="menu-item" to="/">
             Home
           </StyledLink>
-    
-          <StyledLink className="menu-item" to="/products">
-            Products
-          </StyledLink>
-    
+
           <StyledLink className="menu-item" to="/our-story">
             Our Story
+          </StyledLink>
+    
+          <StyledLink className="menu-item" to="/products">
+            What We Grow
           </StyledLink>
     
           <a href="https://thegrowingseason.green" target="_blank" rel="noopener noreferrer" className="menu-item">

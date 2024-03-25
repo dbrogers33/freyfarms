@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 // Needed for Store Locator
-import { Map } from '../components/map'
+// import { Map } from '../components/map'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => (
     <Hero headline="Find Sarah's Homegrown Products near you.." heroImage={data.hero.childImageSharp.fluid} />
 
     <Container>
-        <Map center={[-88.641331, 38.337483]} zoom={5}/>
+        {/* <Map center={[-88.641331, 38.337483]} zoom={5}/> */}
     </Container>
 
   </Layout>
