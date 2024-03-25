@@ -34,8 +34,8 @@ export default () => (
                                 <li className="dropdown-item"><StyledLink to="/products">Produce</StyledLink></li>
                                 <li className="dropdown-item"><StyledLink to="/products">The Heirloom Stacker</StyledLink></li>
                                 <li className="dropdown-item"><StyledLink to="/products">Candy Corn</StyledLink></li>
-                                <li className="dropdown-item"><ExternalLink href="https://freyfarms.com/produce-guide.pdf" target="_blank" >Produce Guide</ExternalLink></li>
-                                <li className="dropdown-item"><ExternalLink href="https://freyfarms.com/tsamma-shg-sellsheets.pdf" target="_blank" >Beverage Spec Sheets</ExternalLink></li>
+                                <li className="dropdown-item"><ExternalLink href="https://freyfarms.com/produce-guide.pdf" target="_blank" >Sales Guide</ExternalLink></li>
+                                <li className="dropdown-item"><ExternalLink href="https://freyfarms.com/tsamma-shg-sellsheets.pdf" target="_blank" >Beverages</ExternalLink></li>
                             </ul>
                         </li>
                         <li><ExternalLink href="https://thegrowingseason.green" target="_blank">The Growing Season</ExternalLink></li>
