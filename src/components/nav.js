@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { StaticQuery, graphql, Link } from 'gatsby'
 import Img from "gatsby-image/withIEPolyfill"
 import MobileMenu from '../components/mobile-nav'
+import NewMobileNav from '../components/new-mobile-nav'
 
 
 export default () => (
@@ -23,7 +24,7 @@ export default () => (
       `}
       render={data => (
         <div>
-            <NavBar>
+            {/* <NavBar>
                 <Link to="/"><Logo fixed={data.logo.childImageSharp.fixed}/></Link>
                 <DesktopMenu>
                     <ul>
@@ -42,8 +43,9 @@ export default () => (
                         <li><StyledLink to="/news">News</StyledLink></li>
                     </ul>
                 </DesktopMenu>
-            </NavBar>
-            <MobileMenu />
+            </NavBar> */}
+            {/* <MobileMenu /> */}
+            <NewMobileNav />
         </div>
       )}
     />
