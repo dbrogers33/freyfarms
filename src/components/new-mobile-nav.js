@@ -11,28 +11,38 @@ const navigationData = [
   {
     id: 2,
     label: 'About',
+    link: '/our-story'
+  },
+  {
+    id: 3,
+    label: 'What We Grow',
     children: [
-      {
-        id: 3,
-        label: 'Mission',
-        link: '/about/mission'
-      },
-      {
-        id: 4,
-        label: 'Vision',
-        link: '/about/vision'
-      }
-    ]
+        {
+            id: 4,
+            label: 'Produce',
+            link: '/produce'
+        },
+        {
+            id: 5,
+            label: 'The Heirloom Stacker',
+            link: '/the-heirloom-stacker'
+        },
+        {
+            id: 6,
+            label: 'Beverages',
+            link: '/beverages'
+        }
+      ]
   },
   {
-    id: 5,
-    label: 'Services',
-    link: '/services'
+    id: 7,
+    label: 'The Growing Season',
+    link: 'https://thegrowingseason.green/'
   },
   {
-    id: 6,
-    label: 'Contact',
-    link: '/contact'
+    id: 8,
+    label: 'News',
+    link: '/news'
   }
 ];
 
@@ -53,31 +63,33 @@ const MobileNavigation = () => {
     };
   
     return (
-      <MobileNav className={`mobile-navigation ${isOpen ? 'open' : ''}`}>
-        <div className="mobile-navigation-header">
-          <div className="hamburger-menu" onClick={toggleMenu}>
-            <div className={isOpen ? "bar bar1 open" : "bar bar1"}></div>
-            <div className={isOpen ? "bar bar2 open" : "bar bar2"}></div>
-            <div className={isOpen ? "bar bar3 open" : "bar bar3"}></div>
-          </div>
-          <h3>Menu</h3>
+      <MobileNav>
+        <div className={`mobile-navigation ${isOpen ? 'open' : ''}`}>
+      <div className="mobile-navigation-header">
+        <div className="hamburger-menu" onClick={toggleMenu}>
+          <div className={isOpen ? "bar bar1 open" : "bar bar1"}></div>
+          <div className={isOpen ? "bar bar2 open" : "bar bar2"}></div>
+          <div className={isOpen ? "bar bar3 open" : "bar bar3"}></div>
         </div>
-        <div className="navigation-menu">
-          {navigationData.map(item => (
-            <React.Fragment key={item.id}>
-              <div className="menu-item" onClick={() => item.children && handleItemClick(item.id)}>
-                <a href={item.link}>{item.label}</a>
-                {item.children && (
-                  <div className={`sub-menu ${expandedItems.includes(item.id) ? 'expanded' : ''}`}>
-                    {item.children.map(child => (
-                      <a key={child.id} href={child.link}>{child.label}</a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </React.Fragment>
-          ))}
-        </div>
+        <h3>Menu</h3>
+      </div>
+      <div className="navigation-menu">
+        {navigationData.map(item => (
+          <React.Fragment key={item.id}>
+            <div className="menu-item" onClick={() => item.children && handleItemClick(item.id)}>
+              <a href={item.link}>{item.label}</a>
+              {item.children && (
+                <div className={`sub-menu ${expandedItems.includes(item.id) ? 'expanded' : ''}`}>
+                  {item.children.map(child => (
+                    <a key={child.id} href={child.link}>{child.label}</a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </React.Fragment>
+        ))}
+      </div>
+    </div>
       </MobileNav>
     );
   };
@@ -168,7 +180,6 @@ const MobileNav = styled.div`
   .sub-menu a {
     color: #666;
   }
-  
   
 `
 
