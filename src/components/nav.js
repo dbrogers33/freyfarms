@@ -27,10 +27,11 @@ export default () => (
                 <Link to="/"><Logo fixed={data.logo.childImageSharp.fixed}/></Link>
                 <DesktopMenu>
                     <StyledLink to="/">Home</StyledLink>
-                    <StyledLink to="/products">Products</StyledLink>
                     <StyledLink to="/our-story">Our Story</StyledLink>
-                    <ExternalLink href="https://thegrowingseason.green" target="_blank">The Growing Season</ExternalLink>
+                    <StyledLink to="/produce">Produce</StyledLink>
+                    <StyledLink to="/beverages">Beverages</StyledLink>
                     <StyledLink to="/news">News</StyledLink>
+                    <ExternalLink href="https://thegrowingseason.green" target="_blank">The Growing Season</ExternalLink>
                 </DesktopMenu>
             </NavBar>
             <MobileMenu />

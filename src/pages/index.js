@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => (
       description="It is our vision to bring our love of the farm to all families. Whether it is one of our farm grown pumpkins, watermelons, or one of our beverages juiced from our produce, we want you to enjoy the very best."
       image=""
   />
-    <Hero headline="We believe all good things begin on the farm." heroImage={data.hero.childImageSharp.fluid} />
+    <Hero headline="Family. Farm. Future." heroImage={data.hero.childImageSharp.fluid} />
 
     {/* QUOTE SECTION */}
     <Quote>
