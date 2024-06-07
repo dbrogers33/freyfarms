@@ -26,21 +26,21 @@ const IndexPage = ({ data }) => (
     <Hero headline="Family. Farm. Future." heroImage={data.hero.childImageSharp.fluid} />
 
     {/* QUOTE SECTION */}
-    <Quote>
+    {/* <Quote>
       <Container>
         <Header2 color="white" textAlign="center">A NOTE FROM OUR FOUNDING FARMER</Header2>
         <P color="white" textAlign="center">“I grew up on a small family farm where nothing was ever wasted and food was simple and delicious. Every growing season yielded different crops and we’re proud to bring that produce to market today. Some of my of fondest memories are of trying to figure what to do with the imperfect or “ugly fruit”. This led to my vision of using all of what we grow and creating farm fresh beverages for families. Our family works hard to provide you with the freshest produce and products, made with all natural ingredients while keeping with the tradition of conserving and protecting the land we love.”</P>
         <H3 textAlign="center" color="white">-Sarah Frey</H3>
         <P textAlign="center" color="white">Founding Farmer</P>
       </Container>
-    </Quote>
+    </Quote> */}
 
     {/* ABOUT SECTION */}
     <SideBySide
       reverse="row-reverse"
-      headerThree="Our Story"
-      headerTwo="Sharing our love of the farm with you"
-      paragraph="It is our vision to bring our love of the farm to all families. Whether it is one of our farm grown pumpkins, watermelons, or one of our beverages juiced from our produce, we want you to enjoy the very best. We hope you can kick back, relax and share in our love for delicious fruits and vegetables, Sarah’s Homegrown™ agua frescas, and Tsamma® watermelon juice."
+      headerThree=""
+      headerTwo="A Note from Our Founding Farmer"
+      paragraph="“I grew up on a small family farm where nothing was ever wasted and food was simple and delicious. Every growing season yielded different crops and we’re proud to bring that produce to market today. Some of my of fondest memories are of trying to figure what to do with the imperfect or “ugly fruit”. This led to my vision of using all of what we grow and creating farm fresh beverages for families. Our family works hard to provide you with the freshest produce and products, made with all natural ingredients while keeping with the tradition of conserving and protecting the land we love.”"
       src={data.sarah.childImageSharp.fluid}
       alt="Sarah Frey sitting in a pumpkin field"
     >
