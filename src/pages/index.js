@@ -70,7 +70,7 @@ const IndexPage = ({ data }) => (
       </Container>
     </Products>
 
-    <Book/>
+    {/* <Book/> */}
 
     {/* <Instagram /> */}
  
