@@ -58,6 +58,7 @@ const Wrapper = styled.div`
         flex-direction: ${props => props.reverse || "row"};
     }
 `
+
 const Copy = styled.div`
     width: 90%;
     max-width: 500px;
@@ -68,7 +69,7 @@ const Copy = styled.div`
 `
 
 const Image = styled(Img)`
-
+    margin: 3rem;
 `
 const BackgroundImage = styled(Img)`
     height: 100%;
