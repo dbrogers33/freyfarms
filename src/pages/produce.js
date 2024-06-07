@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => (
       title="Our Products | Frey Farms | Sarah's Homegrown and Tsamma Juice"
       description="Whether it is one of our farm grown pumpkins, watermelons, or one of our beverages juiced from our produce, we want you to enjoy the very best."
     />
-    <Hero headline="sharing our love of the farm with you." heroImage={data.hero.childImageSharp.fluid} />
+    <Hero headline="Grow. Pack. Ship." heroImage={data.hero.childImageSharp.fluid} />
     
     <Products>
     <ProductWrapper>
