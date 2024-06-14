@@ -13,6 +13,7 @@ import ValueSlider from "../components/reviews"
 import H2 from "../components/typography/h2"
 import H3 from "../components/typography/h3"
 import P from "../components/typography/p"
+import SideBySide from "../components/side-by-side";
 
 
 const IndexPage = ({ data }) => (
@@ -22,15 +23,35 @@ const IndexPage = ({ data }) => (
       description="Founded in 1992 by Sarah Frey, Frey Farms is a family business headquartered near Orchardville, Illinois. Sarah started the business as a simple produce delivery route that quickly grew, and her brothers soon came home to help her."
     />
     <Hero headline="Woman Owned. Family Operated." heroImage={data.hero.childImageSharp.fluid} />
-    <About
+    {/* <About
       headerThree="Our Farms"
       headerTwo="Who We Are"
       paragraph="Founded in 1992 by Sarah Frey, Frey Farms is a family business headquartered near Orchardville, Illinois. Sarah started the business as a simple produce delivery route that quickly grew, and her brothers soon came home to help her. Today, Frey Farms grows fresh fruit and vegetables in seven states and distributes fresh beverages nationally. We are grounded in our family values and believe in creating opportunities for those living and working in rural communities. The Frey family is committed to farming with sustainable practices and in preserving natural resources for generations to come."
       src={data.family.childImageSharp.fluid}
       alt="Sarah Frey sitting in a pumpkin field"
-    />
+    /> */}
+
+      <SideBySide
+        reverse="row-reverse"
+        headerThree=""
+        headerTwo="OUR FAMILY"
+        paragraph="Woman owned and family operated since 1992, Sarah Frey and her family are leading growers, shippers and marketers of fresh produce and beverages. Frey Farms began on a small farm in Southern Illinois. Today their production capabilities have expanded into multi-state farming regions with national distribution, ensuring a continuous supply of American-grown fruit. Sarah and her brothers take pride in working at the various locations and actively participating in the communities where they farm."
+        src={data.family.childImageSharp.fluid}
+        alt="Sarah Frey passes a watermelon"
+      >
+      </SideBySide>
+
+      <SideBySide
+        headerThree=""
+        headerTwo="OUR FUTURE"
+        paragraph="Frey Farms was founded on the strong bonds of family and continues to thrive today by focusing on our roots and mission. Our love of the land and passion for preserving it for future generations drives sustainable farming initiatives."
+        src={data.map.childImageSharp.fluid}
+        alt="Sarah's Homegrown Produce'"
+      >
+      </SideBySide>   
+
     
-    <Values>
+    {/* <Values>
  
       <ValueWrapper>
         <ValueSlider />
@@ -59,7 +80,7 @@ const IndexPage = ({ data }) => (
                 />
             </FlexItem>
         </Wrapper>
-    </Map>  
+    </Map>   */}
   </Layout>
 )
 
@@ -127,14 +148,14 @@ const ValueWrapper = styled.div`
 
 export const query = graphql`
 query {
-  hero: file(relativePath: { eq: "hero-images/story-hero-2.jpg" }) {
+  hero: file(relativePath: { eq: "hero-images/story-hero-3.JPG" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp_noBase64
       }
     }
   }
-  family: file(relativePath: { eq: "family.jpg" }) {
+  family: file(relativePath: { eq: "our-family.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
@@ -148,7 +169,7 @@ query {
       }
     }
   }
-  map: file(relativePath: { eq: "map.png" }) {
+  map: file(relativePath: { eq: "hero-images/story-hero-2.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 850, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
