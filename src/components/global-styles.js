@@ -37,6 +37,25 @@ const globalStyles = createGlobalStyle`
         url("/fonts/Handelson-Three.woff") format("woff");
         font-display: fallback;
   }
+  
+/* src/components/masonry.css */
+.masonry-grid {
+  display: flex;
+  margin-left: -30px; /* adjust according to your margin */
+  width: auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.masonry-grid_column {
+  padding-left: 30px; /* adjust according to your margin */
+  background-clip: padding-box;
+}
+
+.masonry-grid_column > div {
+  margin-bottom: 30px; /* adjust the spacing between images */
+}
+
 
   `
 
