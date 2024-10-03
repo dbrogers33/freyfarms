@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import NetlifyForm from 'react-netlify-form'
 
 import Hero from "../components/hero"
 import Container from "../components/container"
@@ -26,6 +25,10 @@ const IndexPage = ({ data }) => (
 
     <Container>
 
+      <Padding>
+      <H2 textAlign="center">Tag Us on Instagram <ExternalLink href="https://www.instagram.com/freyfarms/">@freyfarms</ExternalLink></H2>
+      </Padding>
+
       <Gallery />
 
     </Container>
@@ -33,6 +36,13 @@ const IndexPage = ({ data }) => (
   </Layout>
 )
 
+const ExternalLink = styled.a`
+  color: #0F5800;
+`
+
+const Padding = styled.div`
+  margin: 3em 0;
+`
 
 
 export const query = graphql`
