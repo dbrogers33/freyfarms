@@ -1,0 +1,6 @@
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
+  
+  [plugins.inputs]
+  # Add exclusion patterns
+  exclude = [".cache/adapters/node_modules/.bin/semver"]
