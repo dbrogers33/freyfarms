@@ -8,14 +8,12 @@ module.exports = {
     siteUrl: `https://freyfarms.com`,
     mapbox_api_key: process.env.GATSBY_MAPBOX_API_KEY,
   },
-  adapters: [
-    {
-      resolve: 'gatsby-adapter-netlify',
-      options: {
-        // You can leave this empty or add custom options
-      },
+  adapter: {
+    resolve: 'gatsby-adapter-netlify',
+    options: {
+      // Optional: add any custom Netlify adapter options here
     },
-  ],
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
