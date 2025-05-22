@@ -12,6 +12,7 @@
     "embla-carousel-autoplay": "^8.3.0",
     "embla-carousel-react": "^8.3.0",
     "gatsby": "^5.12.4",
+    "gatsby-adapter-netlify": "^1.2.0",
     "gatsby-cli": "^5.12.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-google-tagmanager": "^5.12.0",
