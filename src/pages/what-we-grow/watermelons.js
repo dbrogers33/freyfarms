@@ -15,41 +15,36 @@ const IndexPage = ({ data }) => (
       title="Watermelons | Frey Farms | Sarah's Homegrown and Tsamma Juice"
       description="Whether it is one of our farm grown pumpkins, watermelons, or one of our beverages juiced from our produce, we want you to enjoy the very best."
     />
-    <Hero headline="sharing our love of the farm with you." heroImage={data.hero.childImageSharp.fluid} />
+    <Hero headline="Watermelons" heroImage={data.hero.childImageSharp.fluid} />
     
     <Products>
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Seedless and Seeded"
-        paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        src={data.produce.childImageSharp.fluid}
-        alt="Sarah's Homegrown Produce'"
+        paragraph="We grow both seedless and seeded varieties throughout the Southeast and Midwestern regions of the US. We control the entire process from planting and harvesting to processing, packing and shipping. Our season kicks off every April in South Florida. We continue the Florida season in Central and Northern Florida before moving into Georgia in June. Our peak Summer melons are grown in Poseyville, Indiana which is some of the best watermelon soil in the country."
+        src={data.seedlessAndSeeded.childImageSharp.fluid}
+        alt="Seedless and Seeded Watermelons'"
       >
-        <Button link="/produce-guide.pdf" buttonLabel="Our Produce Guide" />
       </SideBySide>
     </ProductWrapper>
     
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Yellow Meat"
-        paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        src={data.beverages.childImageSharp.fluid}
-        alt="Sarah's Homegrown Produce'"
+        paragraph="Yellow meat melons have a crisp and juicy texture, same as red flesh. The obvious difference is the yellow flesh but the flavor also tends to be a little sweeter, often described with a honey-like sweetness. Yellow watermelons contain beta carotene while red melons contain lycopene."
+        src={data.yellowMelons.childImageSharp.fluid}
+        alt="Yellow Meat Watermelons"
       >
-        <ExternalLink href="http://drinksarahs.com" target="_blank">Visit DrinkSarahs.com</ExternalLink><br /><br />
-        <Button link="/tsamma-shg-sellsheets.pdf" buttonLabel="View Our Spec Sheet" />
       </SideBySide>
     </ProductWrapper>
     
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Melon Babies"
-        paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        src={data.tsamma.childImageSharp.fluid}
-        alt="Sarah's Homegrown Produce'"
+        paragraph="We introduced Melon Babies ® in 2002 as a convenient alternative to larger, seedless and seeded melons. Packed with sweet flavor, great for snacking, travel and smaller households."
+        src={data.melonBabies.childImageSharp.fluid}
+        alt="Melon Babies"
       >
-      <ExternalLink href="http://tsammajuice.com" target="_blank">Visit TsammaJuice.com</ExternalLink><br /><br />
-      <Button link="/tsamma-shg-sellsheets.pdf" buttonLabel="View Our Spec Sheet" />
       </SideBySide>
     </ProductWrapper>
     </Products>
@@ -89,28 +84,28 @@ const ProductWrapper = styled.section`
 
 export const query = graphql`
 query {
-  hero: file(relativePath: { eq: "hero-images/products-hero.png" }) {
+  hero: file(relativePath: { eq: "hero-images/watermelons.jpeg" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp_noBase64
       }
     }
   }
-  produce: file(relativePath: { eq: "products/produce.png" }) {
+  seedlessAndSeeded: file(relativePath: { eq: "products/seedless-and-seeded.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
-  beverages: file(relativePath: { eq: "products/beverages.png" }) {
+  yellowMelons: file(relativePath: { eq: "products/yellow-melons.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
-  tsamma: file(relativePath: { eq: "products/tsamma.png" }) {
+  melonBabies: file(relativePath: { eq: "products/melon-babies.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp

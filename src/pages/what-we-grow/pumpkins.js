@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => (
       title="Pumpkins | Frey Farms | Sarah's Homegrown and Tsamma Juice"
       description="Whether it is one of our farm grown pumpkins, watermelons, or one of our beverages juiced from our produce, we want you to enjoy the very best."
     />
-    <Hero headline="sharing our love of the farm with you." heroImage={data.hero.childImageSharp.fluid} />
+    <Hero headline="Watermelons" heroImage={data.hero.childImageSharp.fluid} />
     
     <Products>
     <ProductWrapper>
@@ -125,7 +125,7 @@ const ProductWrapper = styled.section`
 
 export const query = graphql`
 query {
-  hero: file(relativePath: { eq: "hero-images/products-hero.png" }) {
+  hero: file(relativePath: { eq: "hero-images/watermelons.png" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp_noBase64
