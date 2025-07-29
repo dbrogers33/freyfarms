@@ -15,17 +15,16 @@ const IndexPage = ({ data }) => (
       title="Sweet Corn | Frey Farms | Sarah's Homegrown and Tsamma Juice"
       description="Whether it is one of our farm grown pumpkins, watermelons, or one of our beverages juiced from our produce, we want you to enjoy the very best."
     />
-    <Hero headline="sharing our love of the farm with you." heroImage={data.hero.childImageSharp.fluid} />
+    <Hero headline="Sweet Corn" heroImage={data.hero.childImageSharp.fluid} />
     
     <Products>
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
-        headerTwo="Sweet Corn"
-        paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        src={data.produce.childImageSharp.fluid}
+        headerTwo="Bi-Color Sweet Corn"
+        paragraph="We grow bi-color sweet corn in Bascom, Florida May through August. Bi-color corn has more complexity due to the combination of colors. The sweetness and quality of our corn is directly related to the optimal timing of planting, harvesting and shipping, while maintaining a cool temperature. Frey ensures our corn moves quickly from the fields to our hydrocooler, and with very little time or heat exposure to retail distribution centers."
+        src={data.sweetCorn.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
-        <Button link="/produce-guide.pdf" buttonLabel="Our Produce Guide" />
       </SideBySide>
     </ProductWrapper>
     
@@ -66,7 +65,7 @@ const ProductWrapper = styled.section`
 
 export const query = graphql`
 query {
-  hero: file(relativePath: { eq: "hero-images/products-hero.png" }) {
+  hero: file(relativePath: { eq: "hero-images/sweet-corn.JPG" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -87,7 +86,7 @@ query {
       }
     }
   }
-  tsamma: file(relativePath: { eq: "products/tsamma.png" }) {
+  sweetCorn: file(relativePath: { eq: "products/sweet-corn.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
