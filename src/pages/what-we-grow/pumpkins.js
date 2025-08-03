@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => (
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Jack O' Lanterns"
-        paragraph="Our Jack O Lanterns, also known as carving pumpkins, are grown across thousands of acres in Illinois and Indiana. We ship various sizes of Jacks across the US, from 10 pounds to 25 pounds. “Pumpkins make people happy, and that matters.” Sarah Frey, Founding Farmer."
+        paragraph="Our Jack O Lanterns, also known as carving pumpkins, are grown across thousands of acres in Illinois and Indiana. We ship various sizes of Jacks across the US, from one pound up to 75 pounds. “Pumpkins make people happy, and that matters.” Sarah Frey, Founding Farmer."
         src={data.jackLatern.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => (
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Autumn Couleur"
-        paragraph="In 2004, we trademarked a custom mix of unique, heirloom pumpkins as Autumn Couleur ®. This fall mix consists of 13 seed varieties sourced all over the world. Known for their beautiful color, texture and shapes to decorate, but widely known across the world as a delicious-superfood. The New York Times said it best, “America’s Pumpkin Queen has a request, cook and don’t just carve”."
+        paragraph="The Fall season is known for beautiful colors and decorating with pumpkins. For the Heirloom Stacker, we chose five beautiful varieties from the Autumn Couleur mix - with one requirement, they are all easily stackable. Thank you to the many Pinterest and Instagram Moms who inspired us with your front porch topiaries. Please share and tag your creative ideas @freyfarms"
         src={data.autumnCouleur.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
@@ -50,8 +50,18 @@ const IndexPage = ({ data }) => (
 
      <ProductWrapper>
       <SideBySide reverse="row-reverse"
-        headerTwo="White & Pies"
-        paragraph="White pumpkins and pie pumpkins are two staples to our Fall program. We love seeing the creativity with white pumpkins, from metallic spray to unique carving and candles. Pie pumpkins are edible but in our professional opinion, you’re better off using these little guys for decor."
+        headerTwo="Pie Pumpkins"
+        paragraph="Pie pumpkins are a Fall decor staple. They are 6 to 8 inches in diameter and very hardy, with a long shelf life. The perfect size to decorate and also used to bake."
+        src={data.piePumpkins.childImageSharp.fluid}
+        alt="Sarah's Homegrown Produce'"
+      >
+      </SideBySide>
+    </ProductWrapper>
+
+    <ProductWrapper>
+      <SideBySide reverse="row-reverse"
+        headerTwo="White Pumpkins"
+        paragraph="Whites are considered a premium pumpkin - the perfect addition to your Fall decor. We love seeing creativity with white pumpkins, from metallic spray to unique carving and candles. "
         src={data.whitePie.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
@@ -61,7 +71,7 @@ const IndexPage = ({ data }) => (
      <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Mini Pumpkins & Decortive Gourds"
-        paragraph="Our mini pumpkins and decorative gourds are shipped in either 3-6 count mesh bags, display ready cases and bulk bins. The white, orange, tiger stripes and bright colored gourds are the perfect addition to your tablescape, fence posts and lining front porch steps."
+        paragraph="Our mini pumpkins and decorative gourds are shipped in 3-6 count mesh bags, display ready cases and bulk bins. The white, orange, tiger stripes and bright colored gourds are the perfect addition to your tablescape, fence posts and lining front porch steps."
         src={data.miniPumpkins.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
@@ -71,7 +81,7 @@ const IndexPage = ({ data }) => (
      <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Candy Corn"
-        paragraph="We introduced this festive and fun pumpkin to the market in 2023. Known for it’s fiery colors and long shelf life, the Candy Corn grows into a very consistent size of approximately 10-14 pounds. We’ve had many people ask if it’s sweet like Candy Corn and would recommend decorating versus cooking."
+        paragraph="We introduced this festive and fun pumpkin to the market in 2023. Known for it’s fiery colors and long shelf life, the Candy Corn grows into a very consistent size of approximately 10-14 pounds. We’ve had many people ask if it’s sweet like Candy Corn and would recommend decorating versus cooking. The flavor is mild, not sweet as the name might suggest."
         src={data.candyCorn.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
@@ -159,7 +169,14 @@ query {
       }
     }
   }
-  whitePie: file(relativePath: { eq: "products/white-pie.jpg" }) {
+  whitePie: file(relativePath: { eq: "products/white-pumpkins.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  piePumpkins: file(relativePath: { eq: "products/pie-pumpkins.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
