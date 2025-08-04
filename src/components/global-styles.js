@@ -56,6 +56,9 @@ const globalStyles = createGlobalStyle`
   margin-bottom: 30px; /* adjust the spacing between images */
 }
 
+a {
+  color: #095129;
+}
 
   `
 

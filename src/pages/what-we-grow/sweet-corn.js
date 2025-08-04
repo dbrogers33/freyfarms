@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => (
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Bi-Color Sweet Corn"
-        paragraph="We grow bi-color sweet corn in in Florida May through November. Bi-color corn has more complexity due to the combination of colors. The sweetness and quality of our corn is directly related to the optimal timing of planting, harvesting and shipping, while maintaining a cool temperature. Frey ensures our corn moves quickly from the fields to our hydrocooler, and with very little time or heat exposure to retail distribution centers."
+        paragraph="We grow bi-color sweet corn in in Florida May through November. Bi-color corn has more flavor complexity due to the combination of colors. The sweetness and quality of our corn is directly related to the optimal timing of planting, harvesting and shipping, while maintaining a cool temperature. Frey ensures our corn moves quickly from the fields to our hydrocooler, and with very little time or heat exposure to retail distribution centers."
         src={data.sweetCorn.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >

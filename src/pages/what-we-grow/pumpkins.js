@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => (
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Jack O' Lanterns"
-        paragraph="Our Jack O Lanterns, also known as carving pumpkins, are grown across thousands of acres in Illinois and Indiana. We ship various sizes of Jacks across the US, from one pound up to 75 pounds. “Pumpkins make people happy, and that matters.” Sarah Frey, Founding Farmer."
+        paragraph="Our Jack O' Lanterns, also known as carving pumpkins, are grown across thousands of acres in Illinois and Indiana. We ship various sizes of Jacks across the US, from one pound up to 75 pounds. “Pumpkins make people happy, and that matters.” Sarah Frey, Founding Farmer."
         src={data.jackLatern.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >
@@ -31,7 +31,14 @@ const IndexPage = ({ data }) => (
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Autumn Couleur"
-        paragraph="The Fall season is known for beautiful colors and decorating with pumpkins. For the Heirloom Stacker, we chose five beautiful varieties from the Autumn Couleur mix - with one requirement, they are all easily stackable. Thank you to the many Pinterest and Instagram Moms who inspired us with your front porch topiaries. Please share and tag your creative ideas @freyfarms"
+        paragraph={
+    <>
+      In 2004, we trademarked a custom mix of unique, heirloom pumpkins as Autumn Couleur ®. This fall mix consists of 13 seed varieties sourced all over the world. Known for their beautiful color, texture and shapes to decorate, but widely known across the world as a delicious superfood. The New York Times said it best,&nbsp;
+      <a href="https://www.nytimes.com/2016/10/12/dining/pumpkin-farmer-sarah-frey-farms.html" target="_blank" rel="noopener noreferrer">
+        “America’s Pumpkin Queen has a request, cook and don’t just carve”.
+      </a>
+    </>
+  }
         src={data.autumnCouleur.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
       >

@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => (
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Yellow Meat"
-        paragraph="Our growing season and regions align with red seeded and seedless. Yellow meat melons have a crisp and juicy texture, same as red flesh. The obvious difference is the yellow flesh but the flavor also tends to be a little sweeter, often described with a honey-like sweetness. Yellow watermelons contain beta carotene while red melons contain lycopene."
+        paragraph="The growing season and regions for yellow meat melons are the same as our red seeded and seedless. Yellow meat melons have a crisp and juicy texture, same as red flesh. The obvious difference is the yellow flesh but the flavor also tends to be a little sweeter, often described with a honey-like sweetness. Yellow watermelons contain beta carotene while red melons contain lycopene."
         src={data.yellowMelons.childImageSharp.fluid}
         alt="Yellow Meat Watermelons"
       >
