@@ -9,12 +9,12 @@ const Footer = () => {
         <FooterWrapper>
             <FooterSection>
                 <Grid>
-                    <div>
+                    {/* <div>
                         <Heading>Products</Heading>
                         <StyledLink to="/products">Produce</StyledLink>
                         <StyledLink to="/products">Beverages</StyledLink>
                         <StyledLink to="/products">Tsamma Watermelon Juice</StyledLink>
-                    </div>
+                    </div> */}
                     <div>
                         <Heading>Company</Heading>
                         <StyledLink to="/our-story">Our Story</StyledLink>
