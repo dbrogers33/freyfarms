@@ -89,7 +89,7 @@ const NavigationBar = ({ logoData }) => {
       path: '/',
       dropdown: [
         { label: 'Tsamma Watermelon Juice', path: 'https://tsammajuice.com/', external: true },
-        { label: 'Sarah\'s Homegrown Aqua Frescas', path: 'https://www.sarahshomegrown.com/', external: true }
+        { label: 'Sarah\'s Homegrown Agua Frescas', path: 'https://www.sarahshomegrown.com/', external: true }
       ]
     },
     { 
