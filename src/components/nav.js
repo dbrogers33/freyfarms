@@ -98,6 +98,11 @@ const NavigationBar = ({ logoData }) => {
       dropdown: null
     },
     { 
+      label: 'Recipes', 
+      path: '/recipes',
+      dropdown: null
+    },
+    { 
       label: 'News', 
       path: '/news',
       dropdown: null
