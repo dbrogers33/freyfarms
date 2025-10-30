@@ -8,9 +8,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import GlobalStyle from '../components/global-styles'
-import Navbar from '../components/nav'
-import Footer from '../components/footer'
+import GlobalStyle from './global-styles'
+import Navbar from './nav'
+import Footer from './footer'
 
 const Layout = ({ children }) => {
 
