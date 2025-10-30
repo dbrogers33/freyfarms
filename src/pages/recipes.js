@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => (
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo={<H2>Buckskin Soup</H2>}
-        paragraph={<P>A traditional Native American soup made with Frey Farms watermelon rind, corn, beans, and squash. This hearty soup is perfect for chilly days and is a great way to use up leftover watermelon rind.</P>}
+        paragraph={<P>A cozy fall favorite, Buckskin Pumpkin Soup is a rich, velvety blend of roasted pumpkin, butter, and cream, lightly seasoned with cumin, salt, and pepper. Each bowl delivers warm, earthy flavors and smooth texture, finished with a dollop of sour cream for a creamy, comforting touch. Perfect for crisp evenings or festive holiday meals.</P>}
         src={data.seedlessAndSeeded.childImageSharp.fluid}
         alt="Seedless and Seeded Watermelons'"
       >
@@ -38,23 +38,62 @@ const IndexPage = ({ data }) => (
     
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
-        headerTwo="Yellow Meat"
-        paragraph="The growing season and regions for yellow meat melons are the same as our red seeded and seedless. Yellow meat melons have a crisp and juicy texture, same as red flesh. The obvious difference is the yellow flesh but the flavor also tends to be a little sweeter, often described with a honey-like sweetness. Yellow watermelons contain beta carotene while red melons contain lycopene."
-        src={data.yellowMelons.childImageSharp.fluid}
-        alt="Yellow Meat Watermelons"
+        headerTwo={<H2>Fairytale Stuffing</H2>}
+        paragraph={<P>This Cinderella Pumpkin Stuffing recipe puts a cozy, seasonal twist on a classic favorite. Tender roasted pumpkin pieces are folded into buttery StoveTop stuffing made with a savory blend of chicken broth and spices. The result is a warm, flavorful side dish that balances sweet pumpkin with savory comfort—perfect for holiday gatherings or a hearty fall meal.</P>}
+        src={data.seedlessAndSeeded.childImageSharp.fluid}
+        alt="Seedless and Seeded Watermelons'"
       >
+        <Button
+          link="/recipes/fairytale-stuffing"
+          buttonLabel="View Recipe"
+        />
       </SideBySide>
     </ProductWrapper>
-    
+
+     <ProductWrapper>
+      <SideBySide reverse="row-reverse"
+        headerTwo={<H2>Honeynut Feta Boats</H2>}
+        paragraph={<P>These Honeynut Squash Ricotta Boats are a cozy, elegant side dish that’s both savory and slightly sweet. Roasted honeynut squash halves are filled with a creamy ricotta mixture seasoned with paprika, garlic, and onion powder, then warmed to perfection and topped with crunchy walnuts. A drizzle of olive oil and hint of cinnamon bring a touch of autumn comfort to every bite.</P>}
+        src={data.seedlessAndSeeded.childImageSharp.fluid}
+        alt="Seedless and Seeded Watermelons'"
+      >
+        <Button
+          link="/recipes/honeynut-feta-boats"
+          buttonLabel="View Recipe"
+        />
+      </SideBySide>
+    </ProductWrapper>
+
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
-        headerTwo="Melon Babies"
-        paragraph="We introduced Melon Babies ® in 2002 as a convenient alternative to larger, seedless and seeded melons. Packed with sweet flavor, great for snacking, travel and smaller households."
-        src={data.melonBabies.childImageSharp.fluid}
-        alt="Melon Babies"
+        headerTwo={<H2>Seasoned Cinderella</H2>}
+        paragraph={<P>Seasoned Cinderella Cubes are a flavorful and rustic side dish that highlights the natural sweetness of Cinderella pumpkin. Cubed pumpkin is tossed with melted butter, caramelized onions, garlic, and a blend of smoky paprika and earthy cumin, then finished with a sprinkle of fresh herbs. The result is a warm, savory, and slightly sweet dish that pairs beautifully with roasted meats or holiday favorites.</P>}
+        src={data.seedlessAndSeeded.childImageSharp.fluid}
+        alt="Seedless and Seeded Watermelons'"
       >
+        <Button
+          link="/recipes/seasoned-cinderella"
+          buttonLabel="View Recipe"
+        />
       </SideBySide>
     </ProductWrapper>
+
+    <ProductWrapper>
+      <SideBySide reverse="row-reverse"
+        headerTwo={<H2>Sweet Sliced Cushaw</H2>}
+        paragraph={<P> Sweet Sliced Cushaw is a simple and nostalgic Southern-style side dish that highlights the natural sweetness of cushaw squash. Thinly sliced pieces are brushed with melted butter, sprinkled with brown sugar and cinnamon, and roasted until tender and caramelized. The result is a golden, fragrant dish that’s equal parts cozy dessert and comforting vegetable bake—perfect for fall gatherings or holiday meals.</P>}
+        src={data.seedlessAndSeeded.childImageSharp.fluid}
+        alt="Seedless and Seeded Watermelons'"
+      >
+        <Button
+          link="/recipes/sweet-sliced-cushaw"
+          buttonLabel="View Recipe"
+        />
+      </SideBySide>
+    </ProductWrapper>
+
+
+   
     </Products>
 
   </Layout>
