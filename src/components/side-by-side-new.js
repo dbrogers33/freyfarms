@@ -4,17 +4,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import Slider from 'react-slick'
 import Img from 'gatsby-image/withIEPolyfill'
 
-/**
- * Enhanced version: allows rich HTML markup in text content (H2, H3, paragraph areas)
- *
- * Props
- * - headerThree, headerTwo, paragraph: string (can contain HTML)
- * - images: Array<{ fluid: GatsbyFluidObject, alt?: string }>
- * - alt, src: fallback image support
- * - reverse: boolean (layout flip)
- * - children: ReactNode
- */
-
 const SectionWithSlider = ({
   headerThree,
   headerTwo,
@@ -25,7 +14,6 @@ const SectionWithSlider = ({
   children,
   reverse,
 }) => (
-
   <StaticQuery
     query={graphql`
       query SectionWithSliderBackgroundQueryHTML {
@@ -44,17 +32,16 @@ const SectionWithSlider = ({
           {Array.isArray(images) && images.length > 0 ? (
             <SliderShell>
               <StyledSlider
-                dots
-                arrows
-                infinite
+                dots={false}
+                arrows={true}
+                infinite={true}
                 speed={500}
                 slidesToShow={1}
                 slidesToScroll={1}
                 adaptiveHeight={false}
                 autoplay={false}
-                responsive={[
-                  { breakpoint: 900, settings: { arrows: false } },
-                ]}
+                nextArrow={<Arrow direction="next" />}
+                prevArrow={<Arrow direction="prev" />}
               >
                 {images.map((img, idx) => (
                   <Slide key={idx}>
@@ -94,18 +81,32 @@ const SectionWithSlider = ({
 
 export default SectionWithSlider
 
-// Helper to accept either JSX/React nodes OR HTML strings
+// Custom arrow component used by react-slick
+const ArrowButton = styled.button`
+  all: unset;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  cursor: pointer;
+`;
+
+const Arrow = ({ className, onClick, direction }) => (
+  <ArrowButton className={className} onClick={onClick} aria-label={direction === 'next' ? 'Next slide' : 'Previous slide'}>
+    <span style={{fontSize: '28px', lineHeight: 1}}>{direction === 'next' ? '›' : '‹'}</span>
+  </ArrowButton>
+);
+
 function renderRich(content) {
   if (content == null) return null;
-  // If it's already a valid React node (element, array of elements, string without HTML), return as-is
   if (React.isValidElement(content) || Array.isArray(content)) return content;
-  // If you pass a function that returns JSX (render prop style)
   if (typeof content === 'function') return content();
-  // If it's a string, treat as HTML string so you can include <ul>, <ol>, <em>, etc.
   if (typeof content === 'string') {
     return <div dangerouslySetInnerHTML={{ __html: content }} />;
   }
-  // Fallback: render whatever it is
   return content;
 }
 
@@ -162,20 +163,38 @@ const SingleImage = styled(Img)`
 const SliderShell = styled.div`
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  @supports not (aspect-ratio: 16 / 9) {
-    padding-top: 56.25%;
-    .slick-slider, .slick-list, .slick-track, .slick-slide > div { height: 100%; }
-  }
+  height: 100%;
 `
 
 const StyledSlider = styled(Slider)`
   height: 100%;
-  .slick-list { height: 100%; border-radius: 16px; overflow: hidden; }
-  .slick-track { display: flex; }
-  .slick-slide { display: flex; align-items: stretch; }
-  .slick-dots li button:before { font-size: 10px; }
-  .slick-prev, .slick-next { z-index: 2; }
+  .slick-list { height: 100%; overflow: hidden; }
+  .slick-track { display: flex; height: 100%; }
+  .slick-slide { display: flex; align-items: stretch; height: 100%; }
+
+  /* Hide dots explicitly just in case */
+  .slick-dots { display: none !important; }
+
+  /* Overlay arrows */
+  .slick-prev, .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    border: none;
+    outline: none;
+    z-index: 3;
+    cursor: pointer;
+  }
+  .slick-prev { left: 12px; }
+  .slick-next { right: 12px; }
+  .slick-prev::before, .slick-next::before { display: none; }
 `
 
 const Slide = styled.div`
@@ -186,4 +205,5 @@ const Slide = styled.div`
 const SlideImage = styled(Img)`
   width: 100%;
   height: 100%;
+  object-fit: cover;
 `

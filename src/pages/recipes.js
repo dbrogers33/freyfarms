@@ -26,7 +26,10 @@ const IndexPage = ({ data }) => (
       <SideBySide reverse="row-reverse"
         headerTwo={<H2>Buckskin Soup</H2>}
         paragraph={<P>A cozy fall favorite, Buckskin Pumpkin Soup is a rich, velvety blend of roasted pumpkin, butter, and cream, lightly seasoned with cumin, salt, and pepper. Each bowl delivers warm, earthy flavors and smooth texture, finished with a dollop of sour cream for a creamy, comforting touch. Perfect for crisp evenings or festive holiday meals.</P>}
-        src={data.seedlessAndSeeded.childImageSharp.fluid}
+        images={[
+          { fluid: data.buckskinOne.childImageSharp.fluid },
+          { fluid: data.buckskinTwo.childImageSharp.fluid},
+        ]}
         alt="Seedless and Seeded Watermelons'"
       >
         <Button
@@ -139,6 +142,27 @@ query {
     }
   }
   seedlessAndSeeded: file(relativePath: { eq: "products/seedless-and-seeded.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  buckskinOne: file(relativePath: { eq: "recipes/buckskin/buckskin-1.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  buckskinOne: file(relativePath: { eq: "recipes/buckskin/buckskin-1.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  buckskinTwo: file(relativePath: { eq: "recipes/buckskin/buckskin-2.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
