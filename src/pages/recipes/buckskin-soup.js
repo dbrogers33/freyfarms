@@ -20,6 +20,7 @@ const IndexPage  = ({ data }) => (
     <Hero headline="Buckskin Soup" heroImage={data.hero.childImageSharp.fluid} />
 
     <Container width="900px">
+      <Article>
       <H2>Ingredients</H2>
         <ul>
           <li>One medium to large buckskin pumpkin</li>
@@ -50,7 +51,7 @@ const IndexPage  = ({ data }) => (
           <li>Stir in pumpkin purée and heavy cream. Reduce heat to medium-low. Simmer, uncovered, for ~30 minutes, stirring occasionally.</li>
           <li>Ladle soup into bowls and garnish with a dollop of sour cream.</li>
         </ol>
-
+      </Article>
     </Container>
 
   </Layout>
@@ -58,10 +59,6 @@ const IndexPage  = ({ data }) => (
 
 const Article = styled.div`
   padding: 2em 0;
-  border-bottom: 1px solid #E5E5E5;
-  &:last-child {
-    border-bottom: none;
-  }
 `
 const StyledLink = styled.a`
   display: inline;
