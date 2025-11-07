@@ -64,7 +64,7 @@ const StyledLink = styled.a`
 
 export const query = graphql`
 query {
-  hero: file(relativePath: { eq: "hero-images/news-hero.png" }) {
+  hero: file(relativePath: { eq: "hero-images/recipes/seasoned-cinderella.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp_noBase64
