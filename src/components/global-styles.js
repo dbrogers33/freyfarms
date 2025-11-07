@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import 'normalize.css'
+
 
 const globalStyles = createGlobalStyle`
 
