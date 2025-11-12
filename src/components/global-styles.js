@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import 'normalize.css'
+
 
 const globalStyles = createGlobalStyle`
 
@@ -58,6 +58,18 @@ const globalStyles = createGlobalStyle`
 
 a {
   color: #095129;
+}
+
+ul, ol {
+    font-family: 'Brandon Grotesque Regular';
+    color: ${props => props.color};
+    font-size: 20px;
+    text-align: ${props => props.textAlign};
+    font-display: auto;
+    line-height: 1.5em;
+    @media (min-width: 1400px) {
+        font-size: 22px;
+    }
 }
 
   `
