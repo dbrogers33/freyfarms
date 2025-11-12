@@ -77,7 +77,7 @@ const IndexPage = ({ data }) => (
 
      <ProductWrapper>
       <SideBySide reverse="row-reverse"
-        headerTwo={<H2>Marla's Pumpkin Rolls</H2>}
+        headerTwo={<H2>Marla's Epic Pumpkin Rolls</H2>}
         paragraph={<P>Soft, fluffy, and perfectly spiced — these pumpkin cinnamon rolls take the classic comfort of a cinnamon roll and elevate it with rich pumpkin flavor in every layer. The pumpkin purée adds moisture and warmth to the dough, while the spiced filling creates a cozy, aromatic sweetness. Finished with a smooth vanilla icing that melts over the warm rolls, they’re an irresistible fall favorite that’s just as perfect for holiday mornings as they are for everyday indulgence.</P>}
         images={[{ fluid: data.pumpkinrolls.childImageSharp.fluid }]}
         alt="Seedless and Seeded Watermelons'"
