@@ -59,7 +59,7 @@ const IndexPage = ({ data }) => (
 
      <ProductWrapper>
       <SideBySide reverse="row-reverse"
-        headerTwo={<H2>Honeynut Feta Boats</H2>}
+        headerTwo={<H2>Honeynut Ricotta Boats</H2>}
         paragraph={<P>These Honeynut Squash Ricotta Boats are a cozy, elegant side dish that’s both savory and slightly sweet. Roasted honeynut squash halves are filled with a creamy ricotta mixture seasoned with paprika, garlic, and onion powder, then warmed to perfection and topped with crunchy walnuts. A drizzle of olive oil and hint of cinnamon bring a touch of autumn comfort to every bite.</P>}
         images={[
           { fluid: data.fetaBoatOne.childImageSharp.fluid },
@@ -69,7 +69,7 @@ const IndexPage = ({ data }) => (
         alt="Seedless and Seeded Watermelons'"
       >
         <Button
-          link="/recipes/honeynut-feta-boats"
+          link="/recipes/honeynut-ricotta-boats"
           buttonLabel="View Recipe"
         />
       </SideBySide>

@@ -14,10 +14,10 @@ import Container from "../../components/container"
 const IndexPage  = ({ data }) => (
   <Layout>
     <SEO 
-      title="Honeynut Feta Boats Recipe | Frey Farms"
-      description="A delicious recipe for Honeynut Feta Boats made with fresh ingredients from Frey Farms."
+      title="Honeynut Ricotta Boats Recipe | Frey Farms"
+      description="A delicious recipe for Honeynut Ricotta Boats made with fresh ingredients from Frey Farms."
     />
-    <Hero headline="Honeynut Feta Boats" heroImage={data.hero.childImageSharp.fluid} />
+    <Hero headline="Honeynut Ricotta Boats" heroImage={data.hero.childImageSharp.fluid} />
 
     <Container width="900px">
       <Article>
