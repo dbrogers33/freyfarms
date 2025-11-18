@@ -92,7 +92,7 @@ const IndexPage = ({ data }) => (
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo={<H2>Seasoned Cinderella</H2>}
-        paragraph={<P>Seasoned Cinderella Cubes are a flavorful and rustic side dish that highlights the natural sweetness of Cinderella pumpkin. Cubed pumpkin is tossed with melted butter, caramelized onions, garlic, and a blend of smoky paprika and earthy cumin, then finished with a sprinkle of fresh herbs. The result is a warm, savory, and slightly sweet dish that pairs beautifully with roasted meats or holiday favorites.</P>}
+        paragraph={<P>Seasoned Cinderella cubes are a flavorful and rustic side dish that highlights the natural sweetness of Cinderella pumpkin. Cubed pumpkin is tossed with melted butter, caramelized onions, garlic, and a blend of smoky paprika and earthy cumin, then finished with a sprinkle of fresh herbs. The result is a warm, savory, and slightly sweet dish that pairs beautifully with roasted meats or holiday favorites.</P>}
         images={[{ fluid: data.seasonedCinderella.childImageSharp.fluid }]}
         alt="Seedless and Seeded Watermelons'"
       >

@@ -23,7 +23,7 @@ const IndexPage  = ({ data }) => (
       <Article>
        <H2>Ingredients</H2>
   <ul>
-    <li>1 Cinderella pumpkin</li>
+    <li>1 Fairytale pumpkin</li>
     <li>Olive oil (or oil of choice)</li>
     <li>&frac34; cup water</li>
     <li>&frac34; cup chicken broth</li>
@@ -34,7 +34,7 @@ const IndexPage  = ({ data }) => (
   <H2>Directions</H2>
   <ol>
     <li>Preheat oven to 350&deg; F.</li>
-    <li>Wash the Cinderella pumpkin and remove all seeds and stringy flesh.</li>
+    <li>Wash the Fairytale pumpkin and remove all seeds and stringy flesh.</li>
     <li>Cut pumpkin into small pieces (about quarter- to nickel-sized).</li>
     <li>Brush or spray pumpkin pieces with oil of choice (olive, avocado, coconut, etc.).</li>
     <li>Bake the pumpkin pieces for 30&ndash;45 minutes, until fork-tender.</li>
