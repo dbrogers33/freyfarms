@@ -47,6 +47,8 @@ const IndexPage = ({ data }) => (
           { fluid: data.fairytaleStuffingOne.childImageSharp.fluid },
           { fluid: data.fairytaleStuffingTwo.childImageSharp.fluid },
           { fluid: data.fairytaleStuffingThree.childImageSharp.fluid },
+          { fluid: data.fairytaleStuffingFour.childImageSharp.fluid },
+          { fluid: data.fairytaleStuffingFive.childImageSharp.fluid },
         ]}
         alt="Seedless and Seeded Watermelons'"
       >
@@ -93,7 +95,10 @@ const IndexPage = ({ data }) => (
       <SideBySide reverse="row-reverse"
         headerTwo={<H2>Seasoned Cinderella</H2>}
         paragraph={<P>Seasoned Cinderella cubes are a flavorful and rustic side dish that highlights the natural sweetness of Cinderella pumpkin. Cubed pumpkin is tossed with melted butter, caramelized onions, garlic, and a blend of smoky paprika and earthy cumin, then finished with a sprinkle of fresh herbs. The result is a warm, savory, and slightly sweet dish that pairs beautifully with roasted meats or holiday favorites.</P>}
-        images={[{ fluid: data.seasonedCinderella.childImageSharp.fluid }]}
+        images={[
+          { fluid: data.seasonedCinderella.childImageSharp.fluid },
+          { fluid: data.seasonedCinderellaTwo.childImageSharp.fluid },
+        ]}
         alt="Seedless and Seeded Watermelons'"
       >
         <Button
@@ -107,7 +112,10 @@ const IndexPage = ({ data }) => (
       <SideBySide reverse="row-reverse"
         headerTwo={<H2>Sweet Sliced Cushaw</H2>}
         paragraph={<P> Sweet Sliced Cushaw is a simple and nostalgic Southern-style side dish that highlights the natural sweetness of cushaw squash. Thinly sliced pieces are brushed with melted butter, sprinkled with brown sugar and cinnamon, and roasted until tender and caramelized. The result is a golden, fragrant dish that’s equal parts cozy dessert and comforting vegetable bake—perfect for fall gatherings or holiday meals.</P>}
-        images={[{ fluid: data.slicedCushaw.childImageSharp.fluid }]}
+        images={[
+          { fluid: data.slicedCushaw.childImageSharp.fluid },
+          { fluid: data.slicedCushawTwo.childImageSharp.fluid }
+        ]}  
         alt="Seedless and Seeded Watermelons'"
       >
         <Button
@@ -240,7 +248,21 @@ query {
       }
     } 
   }
+  seasonedCinderellaTwo: file(relativePath: { eq: "recipes/seasoned-cinderella/cinderella_pumpkin.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    } 
+  }
   slicedCushaw: file(relativePath: { eq: "recipes/sliced-cushaw/slicde-cushaw.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    } 
+  }
+  slicedCushawTwo: file(relativePath: { eq: "recipes/sliced-cushaw/cushaw_squash.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
