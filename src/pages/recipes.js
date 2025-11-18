@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => (
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo={<H2>Fairytale Stuffing</H2>}
-        paragraph={<P>This Cinderella Pumpkin Stuffing recipe puts a cozy, seasonal twist on a classic favorite. Tender roasted pumpkin pieces are folded into buttery StoveTop stuffing made with a savory blend of chicken broth and spices. The result is a warm, flavorful side dish that balances sweet pumpkin with savory comfort—perfect for holiday gatherings or a hearty fall meal.</P>}
+        paragraph={<P>This Fairytale Pumpkin Stuffing recipe puts a cozy, seasonal twist on a classic favorite. Tender roasted pumpkin pieces are folded into buttery StoveTop stuffing made with a savory blend of chicken broth and spices. The result is a warm, flavorful side dish that balances sweet pumpkin with savory comfort—perfect for holiday gatherings or a hearty fall meal.</P>}
         images={[
           { fluid: data.fairytaleStuffingOne.childImageSharp.fluid },
           { fluid: data.fairytaleStuffingTwo.childImageSharp.fluid },
@@ -206,6 +206,20 @@ query {
     } 
   }
   fairytaleStuffingThree: file(relativePath: { eq: "recipes/fairytale-stuffing/fairytale-stuffing-three.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    } 
+  }
+  fairytaleStuffingFour: file(relativePath: { eq: "recipes/fairytale-stuffing/fairytale_pumpkin.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    } 
+  }
+  fairytaleStuffingFive: file(relativePath: { eq: "recipes/fairytale-stuffing/fairytale_pumpkin_two.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
