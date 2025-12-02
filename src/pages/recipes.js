@@ -67,6 +67,7 @@ const IndexPage = ({ data }) => (
           { fluid: data.fetaBoatOne.childImageSharp.fluid },
           { fluid: data.fetaBoatTwo.childImageSharp.fluid },
           { fluid: data.fetaBoatThree.childImageSharp.fluid },
+          { fluid: data.fetaBoatFour.childImageSharp.fluid },
         ]}
         alt="Seedless and Seeded Watermelons'"
       >
@@ -284,6 +285,13 @@ query {
     } 
   }
   fetaBoatThree: file(relativePath: { eq: "recipes/feta-boat/feta-boat-three.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    } 
+  }
+  fetaBoatFour: file(relativePath: { eq: "recipes/feta-boat/feta-boat-four.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
