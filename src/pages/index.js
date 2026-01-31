@@ -23,11 +23,11 @@ const IndexPage = ({ data }) => (
       description="It is our vision to bring our love of the farm to all families. Whether it is one of our farm grown pumpkins, watermelons, or one of our beverages juiced from our produce, we want you to enjoy the very best."
       image=""
   />
-    <Hero headline="Happy Harvest" heroImage={data.hero.childImageSharp.fluid} >
-    <Button
+    <Hero headline="All Good Things Begin On The Farm" heroImage={data.hero.childImageSharp.fluid} >
+    {/* <Button
         link="/recipes"
         buttonLabel="Recipes Here"
-      />
+      /> */}
      </Hero>
 
     {/* QUOTE SECTION */}
@@ -110,7 +110,7 @@ const CardWrapper = styled.div`
 
 export const query = graphql`
 query {
-  hero: file(relativePath: { eq: "hero-images/recipe_hero_home.jpg" }) {
+  hero: file(relativePath: { eq: "hero-images/home-hero-two.jpeg" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp_noBase64
