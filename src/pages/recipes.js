@@ -126,6 +126,24 @@ const IndexPage = ({ data }) => (
       </SideBySide>
     </ProductWrapper>
 
+    <ProductWrapper>
+      <SideBySide reverse="row-reverse"
+        headerTwo={<H2>Watermelon Feta & Sweet Corn Salad</H2>}
+        paragraph={<P> A bright, summer-fresh salad that hits all the right notes—sweet, salty, and zesty. Juicy watermelon and grilled sweet corn are tossed with creamy feta, crisp red onion, and fresh mint, then finished with a light lime-garlic dressing. It’s quick to make, incredibly refreshing, and perfect for cookouts, potlucks, or an easy warm-weather side.</P>}
+        images={[
+          { fluid: data.fetaWatermelon.childImageSharp.fluid },
+          { fluid: data.fetaWatermelonTwo.childImageSharp.fluid },
+          { fluid: data.fetaWatermelonThree.childImageSharp.fluid }
+        ]}  
+        alt="Seedless and Seeded Watermelons'"
+      >
+        <Button
+          link="/recipes/watermelon-sweet-corn-feta"
+          buttonLabel="View Recipe"
+        />
+      </SideBySide>
+    </ProductWrapper>
+
 
    
     </Products>
@@ -306,6 +324,27 @@ query {
     }
   }
   melonBabies: file(relativePath: { eq: "products/melon-babies.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  fetaWatermelon: file(relativePath: { eq: "recipes/watermelon-feta/watermelon-feta-1.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  fetaWatermelonTwo: file(relativePath: { eq: "recipes/watermelon-feta/watermelon-feta-2.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  fetaWatermelonThree: file(relativePath: { eq: "recipes/watermelon-feta/watermelon-feta-3.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
