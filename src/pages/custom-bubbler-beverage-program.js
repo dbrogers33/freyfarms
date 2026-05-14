@@ -1,10 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components";
-import { graphql } from 'gatsby'
+import { graphql } from ‘gatsby’
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import NetlifyForm from 'react-netlify-form'
 
 import Hero from "../components/hero"
 import Container from "../components/container"
@@ -14,7 +13,44 @@ import H3 from "../components/typography/h3"
 import P from "../components/typography/p"
 
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data }) => {
+  const [status, setStatus] = useState("idle")
+  const [errorMsg, setErrorMsg] = useState("")
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setStatus("loading")
+    setErrorMsg("")
+
+    const form = e.target
+    const payload = {
+      name: form.Name.value,
+      phone: form.Phone.value,
+      email: form.Email.value,
+      company: form.Company.value,
+      message: form.message.value,
+    }
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}))
+        throw new Error(body.error || "Something went wrong. Please try again.")
+      }
+
+      setStatus("success")
+    } catch (err) {
+      setErrorMsg(err.message)
+      setStatus("error")
+    }
+  }
+
+  return (
   <Layout>
     <SEO
       title="Our Story | Frey Farms"
@@ -27,41 +63,40 @@ const IndexPage = ({ data }) => (
 
       <Container width="750px">
         <H2 textAlign="center">Let’s Create a Bubbler Lineup Together</H2>
-      <NetlifyForm
-        name='Custom Bubbler Program'
-        honeyPot="bot-field"
-      >
-        {({ loading, error, success }) => (
-          <div>
-            {loading &&
-              <div>Loading...</div>
-            }
-            {error &&
-              <div>Your information was not sent. Please try again later.</div>
-            }
-            {success &&
-              <H3 style={{ margin: "3em 0" }}>Someone from Our Team will Get in Touch with You Shortly!</H3>
-            }
-            {!loading && !success &&
-              <Flex>
-                <Input type='text' name='Name' placeholder="Your Name" required />
-                <Input type='tel' name='Phone' placeholder="Your phone number" required />
-                <Input type="text" name="Email" placeholder="Your email" required />
-                <Input type="text" name="Companyu" placeholder="Company name" required />
-                <Textarea name='message' rows="4" placeholder="Enter your message here..."></Textarea>
-                <Input type="hidden" name='bot-field' />
-                <Button type="submit">Request Information</Button>
-              </Flex>
-            }
-          </div>
+        {status === "success" ? (
+          <H3 style={{ margin: "3em 0" }}>Someone from Our Team will Get in Touch with You Shortly!</H3>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <Flex>
+              {status === "error" && <ErrorMessage>{errorMsg}</ErrorMessage>}
+              <Input type=’text’ name=’Name’ placeholder="Your Name" required />
+              <Input type=’tel’ name=’Phone’ placeholder="Your phone number" required />
+              <Input type="email" name="Email" placeholder="Your email" required />
+              <Input type="text" name="Company" placeholder="Company name" required />
+              <Textarea name=’message’ rows="4" placeholder="Enter your message here..."></Textarea>
+              <Button type="submit" disabled={status === "loading"}>
+                {status === "loading" ? "Sending..." : "Request Information"}
+              </Button>
+            </Flex>
+          </form>
         )}
-      </NetlifyForm>
       </Container>
     </Container>
 
   </Layout>
-)
+  )
+}
 
+
+const ErrorMessage = styled.div`
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  padding: 0.75em 1em;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  font-family: 'Brandon Grotesque Regular';
+`
 
 const Flex = styled.div`
   display: grid;
@@ -123,6 +158,10 @@ const Button = styled.button`
   &:hover {
     background: #292825;
     box-shadow: 0px 4px 7px rgba(33,32,30, .27);
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `
 

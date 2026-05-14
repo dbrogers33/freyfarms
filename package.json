@@ -9,6 +9,7 @@
     "@turf/distance": "^6.0.1",
     "ajv": "^8.17.1",
     "ajv-keywords": "^5.1.0",
+    "axios": "^1.16.1",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
     "embla-carousel-autoplay": "^8.3.0",
