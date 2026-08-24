@@ -120,7 +120,7 @@ const IndexPage = ({ data }) => (
         headerTwo="Honeynut Squash"
         paragraph="Honeynut squash is a petite winter squash known for its naturally sweet, rich flavor and smooth, creamy texture. A smaller cousin of butternut squash, its deep orange flesh becomes beautifully caramelized when roasted, bringing out warm, nutty notes. Its thin, edible skin and concentrated sweetness make it as easy to prepare as it is delicious."
         src={data.honeynutSquash.childImageSharp.fluid}
-        alt="Sarah's Homegrown Honeynut Squash in a two pound mesh bag"
+        alt="Sarah's Homegrown Honeynut Squash in a two pound resealable bag"
       >
         <Button link="/recipes/honeynut-ricotta-boats" buttonLabel="View Recipe" />
       </SideBySide>
@@ -248,27 +248,21 @@ query {
       }
     }
   }
-  # TODO: swap in the final Baby Ghosts & Goblins photo from Frey_2026_Assets and
-  # rename the file to "products/baby-ghosts-goblins.jpg". The current file is a
-  # stand-in (mini pumpkins) so the build stays green until the real asset lands.
-  babyGhostsGoblins: file(relativePath: { eq: "products/PLACEHOLDER-baby-ghosts-goblins.jpg" }) {
+  babyGhostsGoblins: file(relativePath: { eq: "products/baby-ghosts-goblins.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
-  honeynutSquash: file(relativePath: { eq: "recipes/feta-boat/feta-boat-four.jpg" }) {
+  honeynutSquash: file(relativePath: { eq: "products/honeynut-squash.png" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
-  # TODO: swap in the final Pumpkin Pie Mix jar photo from Frey_2026_Assets and
-  # rename the file to "products/pumpkin-pie-mix.jpg". The current file is a
-  # stand-in (heirloom pumpkins) so the build stays green until the real asset lands.
-  pumpkinPieMix: file(relativePath: { eq: "products/PLACEHOLDER-pumpkin-pie-mix.jpg" }) {
+  pumpkinPieMix: file(relativePath: { eq: "products/pumpkin-pie-mix.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
