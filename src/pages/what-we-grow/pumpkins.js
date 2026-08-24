@@ -50,7 +50,7 @@ const IndexPage = ({ data }) => (
         headerTwo="Heirloom Stacker"
         paragraph="The Fall season is known for beautiful colors and decorating with pumpkins. Thank you to the many Pinterest and Instagram Moms who inspired us with your front porch topiaries. We chose five beautiful varieties from the Autumn Couleur mix - with one requirement, they are all easily stackable."
         src={data.heirloomStacker.childImageSharp.fluid}
-        alt="Sarah's Homegrown Produce'"
+        alt="Sarah's Homegrown Heirloom Stacker display bin filled with heirloom pumpkins"
       >
       </SideBySide>
     </ProductWrapper>
@@ -199,7 +199,7 @@ query {
       }
     }
   }
-  heirloomStacker: file(relativePath: { eq: "products/heirloom-2.jpg" }) {
+  heirloomStacker: file(relativePath: { eq: "products/heirloom-stacker-2026.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
