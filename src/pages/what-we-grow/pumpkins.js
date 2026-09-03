@@ -126,7 +126,7 @@ const IndexPage = ({ data }) => (
       </SideBySide>
     </ProductWrapper>
 
-    <ProductWrapper>
+    <ProductWrapper id="pumpkin-pie-mix">
       <SideBySide reverse="row-reverse"
         headerTwo="Pumpkin Pie Mix"
         paragraph={
@@ -167,6 +167,8 @@ const ExternalLink = styled.a`
     }
 `
 const ProductWrapper = styled.section`
+  scroll-margin-top: 100px;
+
   @media (min-width: 900px) {
     margin: 3em;
     box-shadow: 10px 4px 34px rgba(0, 0, 0, 0.15);
