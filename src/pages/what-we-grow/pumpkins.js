@@ -137,7 +137,7 @@ const IndexPage = ({ data }) => (
     </>
   }
         src={data.pumpkinPieMix.childImageSharp.fluid}
-        alt="Sarah's Homegrown Farm-to-Jar Heirloom Pumpkin Pie Mix"
+        alt="Three jars of Sarah's Homegrown Farm-to-Jar Heirloom Pumpkin Pie Mix showing the front, back and nutrition labels, beside a baked pumpkin pie"
       >
       </SideBySide>
     </ProductWrapper>
