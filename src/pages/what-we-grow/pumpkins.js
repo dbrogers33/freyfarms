@@ -118,7 +118,7 @@ const IndexPage = ({ data }) => (
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
         headerTwo="Honeynut Squash"
-        paragraph="Honeynut squash is a petite winter squash known for its naturally sweet, rich flavor and smooth, creamy texture. A smaller cousin of butternut squash, its deep orange flesh becomes beautifully caramelized when roasted, bringing out warm, nutty notes. Its thin, edible skin and concentrated sweetness make it as easy to prepare as it is delicious."
+        paragraph="Honeynut squash is a petite, extra-sweet winter squash with a smooth, creamy texture. Richer than butternut, its flesh caramelizes when roasted to highlight warm, nutty notes. The skin is uniquely edible and thin, making preparation effortless."
         src={data.honeynutSquash.childImageSharp.fluid}
         alt="Sarah's Homegrown Honeynut Squash in a two pound resealable bag"
       >
