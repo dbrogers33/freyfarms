@@ -50,7 +50,7 @@ const IndexPage = ({ data }) => (
         headerTwo="Heirloom Stacker"
         paragraph="The Fall season is known for beautiful colors and decorating with pumpkins. Thank you to the many Pinterest and Instagram Moms who inspired us with your front porch topiaries. We chose five beautiful varieties from the Autumn Couleur mix - with one requirement, they are all easily stackable."
         src={data.heirloomStacker.childImageSharp.fluid}
-        alt="Sarah's Homegrown Produce'"
+        alt="Sarah's Homegrown Heirloom Stacker display bin filled with heirloom pumpkins"
       >
       </SideBySide>
     </ProductWrapper>
@@ -87,6 +87,16 @@ const IndexPage = ({ data }) => (
 
      <ProductWrapper>
       <SideBySide reverse="row-reverse"
+        headerTwo="Baby Ghosts & Goblins"
+        paragraph="Black and white is always in style - from fashion to home decor. Bring this timeless trend to the table with our Baby Ghosts & Goblins. Layer them into tablescapes, centerpieces, place settings and seasonal displays for a chic, modern twist on fall decor."
+        src={data.babyGhostsGoblins.childImageSharp.fluid}
+        alt="Sarah's Homegrown Baby Ghosts & Goblins mini white and black pumpkins"
+      >
+      </SideBySide>
+    </ProductWrapper>
+
+     <ProductWrapper>
+      <SideBySide reverse="row-reverse"
         headerTwo="Candy Corn"
         paragraph="We introduced this festive and fun pumpkin to the market in 2023. Known for it’s fiery colors and long shelf life, the Candy Corn grows into a very consistent size of approximately 10-14 pounds. We’ve had many people ask if it’s sweet like Candy Corn and would recommend decorating versus cooking. The flavor is mild, not sweet as the name might suggest."
         src={data.candyCorn.childImageSharp.fluid}
@@ -101,6 +111,33 @@ const IndexPage = ({ data }) => (
         paragraph="We grow Spaghetti, Butternut and Acorn Spaghetti squash. Each is known for a different flavor profile and texture. Spaghetti squash is mild and neutral, often described as slightly sweet and nutty with a stringy, pasta-like flesh that separates into strands when cooked. Butternut is smooth and creamy with a sweet and buttery flavor, ideal for soups, purees, pies  and as a base for creamy pasta. Acorn squash is tender with a slightly stringy texture and mild, slightly sweet, nutty flavor - ideal for soups , sauces or roasted halves."
         src={data.winterSquash.childImageSharp.fluid}
         alt="Sarah's Homegrown Produce'"
+      >
+      </SideBySide>
+    </ProductWrapper>
+
+    <ProductWrapper>
+      <SideBySide reverse="row-reverse"
+        headerTwo="Honeynut Squash"
+        paragraph="Honeynut squash is a petite winter squash known for its naturally sweet, rich flavor and smooth, creamy texture. A smaller cousin of butternut squash, its deep orange flesh becomes beautifully caramelized when roasted, bringing out warm, nutty notes. Its thin, edible skin and concentrated sweetness make it as easy to prepare as it is delicious."
+        src={data.honeynutSquash.childImageSharp.fluid}
+        alt="Sarah's Homegrown Honeynut Squash in a two pound resealable bag"
+      >
+        <Button link="/recipes/honeynut-ricotta-boats" buttonLabel="View Recipe" />
+      </SideBySide>
+    </ProductWrapper>
+
+    <ProductWrapper>
+      <SideBySide reverse="row-reverse"
+        headerTwo="Pumpkin Pie Mix"
+        paragraph={
+    <>
+      For more than 30 years, we have been growing pumpkins&mdash;and redefining what a pumpkin can be through innovation and seed selection. Our Autumn Couleur &reg; variety has been a top seller based on colors, shapes and flavor. We&rsquo;re bringing that same passion from the field to the kitchen with our Farm-to-Jar Heirloom Pumpkin Pie Mix.
+      <br /><br />
+      Made with a carefully selected blend of our heirloom pumpkins, this one-of-a-kind pie mix captures the naturally rich flavor and sweetness of varieties chosen specifically for exceptional eating and baking. We add just a handful of simple ingredients, so creating a delicious, homemade-tasting pumpkin pie has never been easier.
+    </>
+  }
+        src={data.pumpkinPieMix.childImageSharp.fluid}
+        alt="Sarah's Homegrown Farm-to-Jar Heirloom Pumpkin Pie Mix"
       >
       </SideBySide>
     </ProductWrapper>
@@ -162,7 +199,7 @@ query {
       }
     }
   }
-  heirloomStacker: file(relativePath: { eq: "products/heirloom-2.jpg" }) {
+  heirloomStacker: file(relativePath: { eq: "products/heirloom-stacker-2026.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
@@ -205,6 +242,27 @@ query {
     }
   }
   winterSquash: file(relativePath: { eq: "products/winterSquash.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  babyGhostsGoblins: file(relativePath: { eq: "products/baby-ghosts-goblins.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  honeynutSquash: file(relativePath: { eq: "products/honeynut-squash.png" }) {
+    childImageSharp {
+      fluid(maxWidth: 750, quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  pumpkinPieMix: file(relativePath: { eq: "products/pumpkin-pie-mix.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 750, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp
