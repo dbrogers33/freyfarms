@@ -82,6 +82,7 @@ const NavigationBar = ({ logoData }) => {
         { label: 'Watermelons', path: '/what-we-grow/watermelons' },
         { label: 'Sweet Corn', path: '/what-we-grow/sweet-corn' },
         { label: 'Pumpkins', path: '/what-we-grow/pumpkins' },
+        { label: 'Pumpkin Pie', path: '/what-we-grow/pumpkins#pumpkin-pie-mix' },
         { label: 'Cabbage', path: '/what-we-grow/cabbage' },
         { label: 'Broccoli', path: '/what-we-grow/broccoli' }
       ]
