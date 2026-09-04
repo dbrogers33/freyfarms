@@ -127,7 +127,7 @@ const IndexPage = ({ data }) => (
     </ProductWrapper>
 
     <ProductWrapper id="pumpkin-pie-mix">
-      <SideBySide reverse="row-reverse" fillImage
+      <SideBySide reverse="row-reverse"
         headerTwo="Pumpkin Pie Mix"
         paragraph={
     <>

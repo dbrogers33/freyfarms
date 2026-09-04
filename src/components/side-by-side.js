@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { StaticQuery, graphql } from 'gatsby'
 
 import H2 from '../components/typography/h2'
@@ -8,7 +8,7 @@ import P from '../components/typography/p'
 import Img from "gatsby-image/withIEPolyfill"
 
 
-export default ({ headerThree, headerTwo, paragraph, alt, src, children, reverse, fillImage }) => (
+export default ({ headerThree, headerTwo, paragraph, alt, src, children, reverse }) => (
     <StaticQuery
       query={graphql`
         query {
@@ -23,15 +23,13 @@ export default ({ headerThree, headerTwo, paragraph, alt, src, children, reverse
       `}
       render={data => (
 
-            <Wrapper className="wrapper" reverse={reverse} $fill={fillImage}>
-                <ImageItem $fill={fillImage}>
+            <Wrapper className="wrapper" reverse={reverse}>
+                <FlexItem>
                     <Image
                         fluid={src}
                         alt={alt}
-                        objectFit="cover"
-                        objectPosition="50% 58%"
                     />
-                    </ImageItem>
+                    </FlexItem>
                 <FlexItem>
                     <Copy>
                         <H3>{headerThree}</H3>
@@ -56,7 +54,7 @@ const Wrapper = styled.div`
     position: relative;
     @media (min-width: 900px) {
         display: flex;
-        align-items: ${props => (props.$fill ? "stretch" : "center")};
+        align-items: center;
         flex-direction: ${props => props.reverse || "row"};
     }
 `
@@ -83,25 +81,6 @@ const FlexItem = styled.div`
     width: 100%;
     @media (min-width: 900px) {
         width: calc(100% / 2);
-    }
-`
-// Lets a wide image cover its half of the section instead of leaving
-// whitespace above and below it when the copy column is taller.
-const ImageItem = styled(FlexItem)`
-    @media (min-width: 900px) {
-        ${props =>
-            props.$fill &&
-            css`
-                position: relative;
-                overflow: hidden;
-                & > .gatsby-image-wrapper {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                }
-            `}
     }
 `
 
