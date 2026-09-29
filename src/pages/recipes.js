@@ -24,74 +24,6 @@ const IndexPage = ({ data }) => (
     <Products>
     <ProductWrapper>
       <SideBySide reverse="row-reverse"
-        headerTwo={<H2>Watermelon Pizza</H2>}
-        paragraph={<P>A fun, summer twist on pizza — topped with small, diced watermelon for a sweet and refreshing bite.</P>}
-        images={[
-          { fluid: data.watermelonPizzaOne.childImageSharp.fluid },
-        ]}
-        alt="Watermelon Pizza"
-      >
-        <Button
-          link="/recipes/watermelon-pizza"
-          buttonLabel="View Recipe"
-        />
-      </SideBySide>
-    </ProductWrapper>
-
-    <ProductWrapper>
-      <SideBySide reverse="row-reverse"
-        headerTwo={<H2>Watermelon Salsa</H2>}
-        paragraph={<P>A fresh and vibrant Watermelon Salsa made with diced watermelon, quartered cherry tomatoes, sweet onion, basil, olive oil, and a splash of balsamic vinegar. Mix it all together, chill, and serve.</P>}
-        images={[
-          { fluid: data.watermelonSalsaOne.childImageSharp.fluid },
-          { fluid: data.watermelonSalsaTwo.childImageSharp.fluid },
-        ]}
-        alt="Watermelon Salsa"
-      >
-        <Button
-          link="/recipes/watermelon-salsa"
-          buttonLabel="View Recipe"
-        />
-      </SideBySide>
-    </ProductWrapper>
-
-    <ProductWrapper>
-      <SideBySide reverse="row-reverse"
-        headerTwo={<H2>Yellow Melon Salad</H2>}
-        paragraph={<P>Toss together a simple Yellow Watermelon Salad with cubed yellow watermelon, sliced Persian cucumbers, crumbled feta, and fresh basil and mint. Bright, refreshing, and ready in minutes.</P>}
-        images={[
-          { fluid: data.melonSaladOne.childImageSharp.fluid },
-          { fluid: data.melonSaladTwo.childImageSharp.fluid },
-        ]}
-        alt="Yellow Melon Salad"
-      >
-        <Button
-          link="/recipes/yellow-melon-salad"
-          buttonLabel="View Recipe"
-        />
-      </SideBySide>
-    </ProductWrapper>
-
-    <ProductWrapper>
-      <SideBySide reverse="row-reverse"
-        headerTwo={<H2>Watermelon Feta & Sweet Corn Salad</H2>}
-        paragraph={<P> A bright, summer-fresh salad that hits all the right notes—sweet, salty, and zesty. Juicy watermelon and grilled sweet corn are tossed with creamy feta, crisp red onion, and fresh mint, then finished with a light lime-garlic dressing. It’s quick to make, incredibly refreshing, and perfect for cookouts, potlucks, or an easy warm-weather side.</P>}
-        images={[
-          { fluid: data.fetaWatermelon.childImageSharp.fluid },
-          { fluid: data.fetaWatermelonTwo.childImageSharp.fluid },
-          { fluid: data.fetaWatermelonThree.childImageSharp.fluid }
-        ]}
-        alt="Seedless and Seeded Watermelons’"
-      >
-        <Button
-          link="/recipes/watermelon-sweet-corn-feta"
-          buttonLabel="View Recipe"
-        />
-      </SideBySide>
-    </ProductWrapper>
-
-    <ProductWrapper>
-      <SideBySide reverse="row-reverse"
         headerTwo={<H2>Sweet Sliced Cushaw</H2>}
         paragraph={<P> Sweet Sliced Cushaw is a simple and nostalgic Southern-style side dish that highlights the natural sweetness of cushaw squash. Thinly sliced pieces are brushed with melted butter, sprinkled with brown sugar and cinnamon, and roasted until tender and caramelized. The result is a golden, fragrant dish that’s equal parts cozy dessert and comforting vegetable bake—perfect for fall gatherings or holiday meals.</P>}
         images={[
@@ -194,6 +126,74 @@ const IndexPage = ({ data }) => (
       </SideBySide>
     </ProductWrapper>
 
+    <ProductWrapper>
+      <SideBySide reverse="row-reverse"
+        headerTwo={<H2>Watermelon Pizza</H2>}
+        paragraph={<P>A fun, summer twist on pizza — topped with small, diced watermelon for a sweet and refreshing bite.</P>}
+        images={[
+          { fluid: data.watermelonPizzaOne.childImageSharp.fluid },
+        ]}
+        alt="Watermelon Pizza"
+      >
+        <Button
+          link="/recipes/watermelon-pizza"
+          buttonLabel="View Recipe"
+        />
+      </SideBySide>
+    </ProductWrapper>
+
+    <ProductWrapper>
+      <SideBySide reverse="row-reverse"
+        headerTwo={<H2>Watermelon Salsa</H2>}
+        paragraph={<P>A fresh and vibrant Watermelon Salsa made with diced watermelon, quartered cherry tomatoes, sweet onion, basil, olive oil, and a splash of balsamic vinegar. Mix it all together, chill, and serve.</P>}
+        images={[
+          { fluid: data.watermelonSalsaOne.childImageSharp.fluid },
+          { fluid: data.watermelonSalsaTwo.childImageSharp.fluid },
+        ]}
+        alt="Watermelon Salsa"
+      >
+        <Button
+          link="/recipes/watermelon-salsa"
+          buttonLabel="View Recipe"
+        />
+      </SideBySide>
+    </ProductWrapper>
+
+    <ProductWrapper>
+      <SideBySide reverse="row-reverse"
+        headerTwo={<H2>Yellow Melon Salad</H2>}
+        paragraph={<P>Toss together a simple Yellow Watermelon Salad with cubed yellow watermelon, sliced Persian cucumbers, crumbled feta, and fresh basil and mint. Bright, refreshing, and ready in minutes.</P>}
+        images={[
+          { fluid: data.melonSaladOne.childImageSharp.fluid },
+          { fluid: data.melonSaladTwo.childImageSharp.fluid },
+        ]}
+        alt="Yellow Melon Salad"
+      >
+        <Button
+          link="/recipes/yellow-melon-salad"
+          buttonLabel="View Recipe"
+        />
+      </SideBySide>
+    </ProductWrapper>
+
+    <ProductWrapper>
+      <SideBySide reverse="row-reverse"
+        headerTwo={<H2>Watermelon Feta & Sweet Corn Salad</H2>}
+        paragraph={<P> A bright, summer-fresh salad that hits all the right notes—sweet, salty, and zesty. Juicy watermelon and grilled sweet corn are tossed with creamy feta, crisp red onion, and fresh mint, then finished with a light lime-garlic dressing. It’s quick to make, incredibly refreshing, and perfect for cookouts, potlucks, or an easy warm-weather side.</P>}
+        images={[
+          { fluid: data.fetaWatermelon.childImageSharp.fluid },
+          { fluid: data.fetaWatermelonTwo.childImageSharp.fluid },
+          { fluid: data.fetaWatermelonThree.childImageSharp.fluid }
+        ]}
+        alt="Seedless and Seeded Watermelons’"
+      >
+        <Button
+          link="/recipes/watermelon-sweet-corn-feta"
+          buttonLabel="View Recipe"
+        />
+      </SideBySide>
+    </ProductWrapper>
+
     </Products>
 
   </Layout>
@@ -231,7 +231,7 @@ const ProductWrapper = styled.section`
 
 export const query = graphql`
 query {
-  hero: file(relativePath: { eq: "hero-images/recipe-hero-new.jpg" }) {
+  hero: file(relativePath: { eq: "hero-images/recipe-hero.jpg" }) {
     childImageSharp {
       fluid(maxWidth: 1500, quality: 100) {
         ...GatsbyImageSharpFluid_withWebp_noBase64
